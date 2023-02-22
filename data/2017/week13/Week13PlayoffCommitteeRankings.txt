@@ -1,0 +1,25 @@
+1:Clemson
+2:Auburn
+3:Oklahoma
+4:Wisconsin
+5:Alabama
+6:Georgia
+7:Miami
+8:Ohio State
+9:Penn State
+10:USC
+11:TCU
+12:Stanford
+13:Washington
+14:UCF
+15:Notre Dame
+16:Michigan State
+17:LSU
+18:Washington State
+19:Oklahoma State
+20:Memphis
+21:Northwestern
+22:Virginia Tech
+23:Mississippi State
+24:NC State
+25:Fresno State

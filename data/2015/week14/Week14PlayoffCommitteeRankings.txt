@@ -1,0 +1,25 @@
+1:Clemson:0.990
+2:Alabama:0.954
+3:Michigan State:0.920
+4:Oklahoma:0.900
+5:Iowa:0.892
+6:Stanford:0.877
+7:Ohio State:0.868
+8:Notre Dame:0.857
+9:Florida State:0.845
+10:North Carolina:0.840
+11:TCU:0.834
+12:Ole Miss:0.825
+13:Northwestern:0.814
+14:Michigan:0.799
+15:Oregon:0.795
+16:Oklahoma State:0.789
+17:Baylor:0.776
+18:Houston:0.765
+19:Florida:0.753
+20:LSU:0.748
+21:Navy:0.735
+22:Utah:0.726
+23:Tennessee:0.719
+24:Temple:0.709
+25:USC:0.706

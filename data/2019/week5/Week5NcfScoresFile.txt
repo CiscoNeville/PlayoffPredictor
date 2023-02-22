@@ -1,0 +1,340 @@
+week 1: Final : Miami 20 - Florida 24
+week 1: Final : Arizona 38 - Hawaii 45
+week 1: Final : Georgia Tech 14 - Clemson 52
+week 1: Final : Texas State 7 - Texas A&M 41
+week 1: Final : Utah 30 - BYU 12
+week 1: Final : Florida A&M 0 - UCF 62
+week 1: Final : UCLA 14 - Cincinnati 24
+week 1: Final : Wagner 21 - UConn 24
+week 1: Final : Morgan State 3 - Bowling Green 46
+week 1: Final : Robert Morris 10 - Buffalo 38
+week 1: Final : Central Arkansas 35 - Western Kentucky 28
+week 1: Final : Gardner-Webb 28 - Charlotte 49
+week 1: Final : Florida International 14 - Tulane 42
+week 1: Final : Alabama State 19 - UAB 24
+week 1: Final : Albany 21 - Central Michigan 38
+week 1: Final : South Dakota State 21 - Minnesota 28
+week 1: Final : Kent State 7 - Arizona State 30
+week 1: Final : Northern Colorado 18 - San Jose State 35
+week 1: Final : Tulsa 7 - Michigan State 28
+week 1: Final : Wisconsin 49 - South Florida 0
+week 1: Final : Rice 7 - Army 14
+week 1: Final : UMass 21 - Rutgers 48
+week 1: Final : Utah State 35 - Wake Forest 38
+week 1: Final : Purdue 31 - Nevada 34
+week 1: Final : Colorado State 31 - Colorado 52
+week 1: Final : Oklahoma State 52 - Oregon State 36
+week 1: Final : Duke 3 - Alabama 42
+week 1: Final : Georgia 30 - Vanderbilt 6
+week 1: Final : Florida Atlantic 21 - Ohio State 45
+week 1: Final : Georgia Southern 3 - LSU 55
+week 1: Final : Middle Tennessee 21 - Michigan 40
+week 1: Final : Louisiana Tech 14 - Texas 45
+week 1: Final : Oregon 21 - Auburn 27
+week 1: Final : Eastern Washington 14 - Washington 47
+week 1: Final : Idaho 7 - Penn State 79
+week 1: Final : Miami (OH) 14 - Iowa 38
+week 1: Final : Northern Iowa 26 - Iowa State 29
+week 1: Final : Syracuse 24 - Liberty 0
+week 1: Final : New Mexico State 7 - Washington State 58
+week 1: Final : South Alabama 21 - Nebraska 35
+week 1: Final : Northwestern 7 - Stanford 17
+week 1: Final : Akron 3 - Illinois 42
+week 1: Final : Indiana 34 - Ball State 24
+week 1: Final : Boise State 36 - Florida State 31
+week 1: Final : East Carolina 6 - NC State 34
+week 1: Final : Indiana State 17 - Kansas 24
+week 1: Final : Toledo 24 - Kentucky 38
+week 1: Final : Ole Miss 10 - Memphis 15
+week 1: Final : Mississippi State 38 - Louisiana 28
+week 1: Final : Howard 0 - Maryland 79
+week 1: Final : James Madison 13 - West Virginia 20
+week 1: Final : Rhode Island 20 - Ohio 41
+week 1: Final : Bucknell 12 - Temple 56
+week 1: Final : Colgate 7 - Air Force 48
+week 1: Final : Holy Cross 7 - Navy 45
+week 1: Final : Eastern Michigan 30 - Coastal Carolina 23
+week 1: Final : South Carolina 20 - North Carolina 24
+week 1: Final : Georgia State 38 - Tennessee 30
+week 1: Final : East Tennessee State 7 - Appalachian State 42
+week 1: Final : Portland State 13 - Arkansas 20
+week 1: Final : Montana State 10 - Texas Tech 45
+week 1: Final : Virginia Tech 28 - Boston College 35
+week 1: Final : Sam Houston State 31 - New Mexico 39
+week 1: Final : Incarnate Word 7 - UTSA 35
+week 1: Final : Campbell 14 - Troy 43
+week 1: Final : UC Davis 13 - California 27
+week 1: Final : VMI 17 - Marshall 56
+week 1: Final : Norfolk State 21 - Old Dominion 24
+week 1: Final : Alcorn State 10 - Southern Mississippi 38
+week 1: Final : Illinois State 10 - Northern Illinois 24
+week 1: Final : Monmouth 13 - Western Michigan 48
+week 1: Final : SMU 37 - Arkansas State 30
+week 1: Final : Nicholls 14 - Kansas State 49
+week 1: Final : Stephen F. Austin 17 - Baylor 56
+week 1: Final : Missouri 31 - Wyoming 37
+week 1: Final : Virginia 30 - Pittsburgh 14
+week 1: Final : Abilene Christian 31 - North Texas 51
+week 1: Final : Houston Baptist 34 - UTEP 36
+week 1: Final : Arkansas-Pine Bluff 7 - TCU 39
+week 1: Final : Grambling 9 - UL Monroe 31
+week 1: Final : Weber State 0 - San Diego State 6
+week 1: Final : Southern Utah 23 - UNLV 56
+week 1: Final : Fresno State 23 - USC 31
+week 1: Final : Houston 31 - Oklahoma 49
+week 1: Final : Notre Dame 35 - Louisville 17
+week 2: Final : Marshall 7 - Boise State 14
+week 2: Final : William & Mary 17 - Virginia 52
+week 2: Final : Wake Forest 41 - Rice 21
+week 2: Final : Sacramento State 7 - Arizona State 19
+week 2: Final : Texas A&M 10 - Clemson 24
+week 2: Final : New Mexico State 10 - Alabama 62
+week 2: Final : Murray State 17 - Georgia 63
+week 2: Final : South Dakota 14 - Oklahoma 70
+week 2: Final : Cincinnati 0 - Ohio State 42
+week 2: Final : LSU 45 - Texas 38
+week 2: Final : Army 21 - Michigan 24
+week 2: Final : Tulane 6 - Auburn 24
+week 2: Final : UT Martin 0 - Florida 45
+week 2: Final : Northern Illinois 17 - Utah 35
+week 2: Final : California 20 - Washington 19
+week 2: Final : Buffalo 13 - Penn State 45
+week 2: Final : Nevada 6 - Oregon 77
+week 2: Final : Central Michigan 0 - Wisconsin 61
+week 2: Final : UCF 48 - Florida Atlantic 14
+week 2: Final : Western Michigan 17 - Michigan State 51
+week 2: Final : Rutgers 0 - Iowa 30
+week 2: Final : Syracuse 20 - Maryland 63
+week 2: Final : Northern Colorado 17 - Washington State 59
+week 2: Final : Stanford 20 - USC 45
+week 2: Final : Nebraska 31 - Colorado 34
+week 2: Final : Ohio 10 - Pittsburgh 20
+week 2: Final : Old Dominion 17 - Virginia Tech 31
+week 2: Final : UAB 31 - Akron 20
+week 2: Final : Kennesaw State 23 - Kent State 26
+week 2: Final : Southern 24 - Memphis 55
+week 2: Final : West Virginia 7 - Missouri 38
+week 2: Final : Charleston Southern 10 - South Carolina 72
+week 2: Final : Vanderbilt 24 - Purdue 42
+week 2: Final : Bowling Green 0 - Kansas State 52
+week 2: Final : Western Carolina 0 - NC State 41
+week 2: Final : Fordham 29 - Ball State 57
+week 2: Final : South Florida 10 - Georgia Tech 14
+week 2: Final : Tennessee Tech 17 - Miami (OH) 48
+week 2: Final : Southern Illinois 45 - UMass 20
+week 2: Final : Charlotte 41 - Appalachian State 56
+week 2: Final : Grambling 14 - Louisiana Tech 20
+week 2: Final : Richmond 13 - Boston College 45
+week 2: Final : Illinois 31 - UConn 23
+week 2: Final : Eastern Illinois 0 - Indiana 52
+week 2: Final : Southern Mississippi 15 - Mississippi State 38
+week 2: Final : UTSA 14 - Baylor 63
+week 2: Final : Western Illinois 13 - Colorado State 38
+week 2: Final : San Diego State 23 - UCLA 14
+week 2: Final : UL Monroe 44 - Florida State 45
+week 2: Final : North Carolina A&T 13 - Duke 45
+week 2: Final : Gardner-Webb 9 - East Carolina 48
+week 2: Final : Maine 18 - Georgia Southern 26
+week 2: Final : Furman 42 - Georgia State 48
+week 2: Final : Jackson State 14 - South Alabama 37
+week 2: Final : Wyoming 23 - Texas State 14
+week 2: Final : Western Kentucky 20 - Florida International 14
+week 2: Final : Tennessee State 26 - Middle Tennessee 45
+week 2: Final : North Texas 27 - SMU 49
+week 2: Final : Eastern Kentucky 0 - Louisville 42
+week 2: Final : BYU 29 - Tennessee 26
+week 2: Final : Coastal Carolina 12 - Kansas 7
+week 2: Final : McNeese 14 - Oklahoma State 56
+week 2: Final : Eastern Michigan 17 - Kentucky 38
+week 2: Final : Arkansas 17 - Ole Miss 31
+week 2: Final : Stony Brook 7 - Utah State 62
+week 2: Final : Liberty 14 - Louisiana 35
+week 2: Final : Prairie View A&M 17 - Houston 37
+week 2: Final : Miami 25 - North Carolina 28
+week 2: Final : UTEP 3 - Texas Tech 38
+week 2: Final : Tulsa 34 - San Jose State 16
+week 2: Final : Arkansas State 43 - UNLV 17
+week 2: Final : Minnesota 38 - Fresno State 35
+week 2: Final : Northern Arizona 41 - Arizona 65
+week 2: Final : Oregon State 28 - Hawaii 31
+week 3: Final : Washington State 31 - Houston 24
+week 3: Final : North Carolina 18 - Wake Forest 24
+week 3: Final : Kansas 48 - Boston College 24
+week 3: Final : Clemson 41 - Syracuse 6
+week 3: Final : Alabama 47 - South Carolina 23
+week 3: Final : Arkansas State 0 - Georgia 55
+week 3: Final : Northwestern State 14 - LSU 65
+week 3: Final : Oklahoma 48 - UCLA 14
+week 3: Final : Ohio State 51 - Indiana 10
+week 3: Final : New Mexico 14 - Notre Dame 66
+week 3: Final : Kent State 16 - Auburn 55
+week 3: Final : Florida 29 - Kentucky 21
+week 3: Final : Idaho State 0 - Utah 31
+week 3: Final : Texas 48 - Rice 13
+week 3: Final : Pittsburgh 10 - Penn State 17
+week 3: Final : Montana 3 - Oregon 35
+week 3: Final : Lamar 3 - Texas A&M 62
+week 3: Final : Stanford 27 - UCF 45
+week 3: Final : Arizona State 10 - Michigan State 7
+week 3: Final : Iowa 18 - Iowa State 17
+week 3: Final : Maryland 17 - Temple 20
+week 3: Final : Portland State 10 - Boise State 45
+week 3: Final : Hawaii 20 - Washington 52
+week 3: Final : USC 27 - BYU 30
+week 3: Final : Florida State 24 - Virginia 31
+week 3: Final : Miami (OH) 13 - Cincinnati 35
+week 3: Final : Chattanooga 0 - Tennessee 45
+week 3: Final : Kansas State 31 - Mississippi State 24
+week 3: Final : Furman 17 - Virginia Tech 24
+week 3: Final : NC State 27 - West Virginia 44
+week 3: Final : Eastern Michigan 34 - Illinois 31
+week 3: Final : The Citadel 27 - Georgia Tech 24
+week 3: Final : Air Force 30 - Colorado 23
+week 3: Final : Florida Atlantic 41 - Ball State 31
+week 3: Final : Norfolk State 7 - Coastal Carolina 46
+week 3: Final : Akron 24 - Central Michigan 45
+week 3: Final : East Carolina 10 - Navy 42
+week 3: Final : Memphis 42 - South Alabama 6
+week 3: Final : Army 31 - UTSA 13
+week 3: Final : Georgia Southern 32 - Minnesota 35
+week 3: Final : UNLV 14 - Northwestern 30
+week 3: Final : Oklahoma State 40 - Tulsa 21
+week 3: Final : SE Louisiana 29 - Ole Miss 40
+week 3: Final : Colorado State 34 - Arkansas 55
+week 3: Final : Louisville 38 - Western Kentucky 21
+week 3: Final : Bethune-Cookman 0 - Miami 63
+week 3: Final : North Texas 17 - California 23
+week 3: Final : Cal Poly 7 - Oregon State 45
+week 3: Final : Louisiana Tech 35 - Bowling Green 7
+week 3: Final : Idaho 16 - Wyoming 21
+week 3: Final : Buffalo 17 - Liberty 35
+week 3: Final : South Carolina State 16 - South Florida 55
+week 3: Final : UMass 17 - Charlotte 52
+week 3: Final : Southern Mississippi 47 - Troy 42
+week 3: Final : Ohio 31 - Marshall 33
+week 3: Final : New Hampshire 17 - Florida International 30
+week 3: Final : Texas State 17 - SMU 47
+week 3: Final : Weber State 13 - Nevada 19
+week 3: Final : Georgia State 10 - Western Michigan 57
+week 3: Final : Murray State 0 - Toledo 45
+week 3: Final : Duke 41 - Middle Tennessee 18
+week 3: Final : TCU 34 - Purdue 13
+week 3: Final : Southeast Missouri State 0 - Missouri 50
+week 3: Final : Texas Southern 6 - Louisiana 77
+week 3: Final : San Diego State 31 - New Mexico State 10
+week 3: Final : Missouri State 6 - Tulane 58
+week 3: Final : Northern Illinois 8 - Nebraska 44
+week 3: Final : Texas Tech 14 - Arizona 28
+week 4: Final : Houston 31 - Tulane 38
+week 4: Final : Utah 23 - USC 30
+week 4: Final : Air Force 19 - Boise State 30
+week 4: Final : Florida International 31 - Louisiana Tech 43
+week 4: Final : Charlotte 10 - Clemson 52
+week 4: Final : Southern Mississippi 7 - Alabama 49
+week 4: Final : Notre Dame 17 - Georgia 23
+week 4: Final : LSU 66 - Vanderbilt 38
+week 4: Final : Miami (OH) 5 - Ohio State 76
+week 4: Final : Auburn 28 - Texas A&M 20
+week 4: Final : Tennessee 3 - Florida 34
+week 4: Final : Michigan 14 - Wisconsin 35
+week 4: Final : Oklahoma State 30 - Texas 36
+week 4: Final : UCF 34 - Pittsburgh 35
+week 4: Final : Oregon 21 - Stanford 6
+week 4: Final : UCLA 67 - Washington State 63
+week 4: Final : Old Dominion 17 - Virginia 28
+week 4: Final : Washington 45 - BYU 19
+week 4: Final : California 28 - Ole Miss 20
+week 4: Final : Colorado 34 - Arizona State 31
+week 4: Final : SMU 41 - TCU 38
+week 4: Final : Western Michigan 33 - Syracuse 52
+week 4: Final : Elon 7 - Wake Forest 49
+week 4: Final : Boston College 30 - Rutgers 16
+week 4: Final : UL Monroe 20 - Iowa State 72
+week 4: Final : UConn 3 - Indiana 38
+week 4: Final : Michigan State 31 - Northwestern 10
+week 4: Final : Morgan State 21 - Army 52
+week 4: Final : Coastal Carolina 62 - UMass 28
+week 4: Final : Louisiana 45 - Ohio 25
+week 4: Final : Troy 35 - Akron 7
+week 4: Final : Central Connecticut 29 - Eastern Michigan 34
+week 4: Final : Temple 22 - Buffalo 38
+week 4: Final : Bowling Green 20 - Kent State 62
+week 4: Final : Wyoming 21 - Tulsa 24
+week 4: Final : South Alabama 3 - UAB 35
+week 4: Final : Louisville 24 - Florida State 35
+week 4: Final : Appalachian State 34 - North Carolina 31
+week 4: Final : Central Michigan 12 - Miami 17
+week 4: Final : Kentucky 13 - Mississippi State 28
+week 4: Final : South Carolina 14 - Missouri 34
+week 4: Final : West Virginia 29 - Kansas 24
+week 4: Final : New Mexico State 52 - New Mexico 55
+week 4: Final : Hampton 27 - Liberty 62
+week 4: Final : William & Mary 7 - East Carolina 19
+week 4: Final : Wagner 7 - Florida Atlantic 42
+week 4: Final : Southern Illinois 28 - Arkansas State 41
+week 4: Final : Georgia State 34 - Texas State 37
+week 4: Final : Baylor 21 - Rice 13
+week 4: Final : Ball State 23 - NC State 34
+week 4: Final : San Jose State 31 - Arkansas 24
+week 4: Final : UTSA 3 - North Texas 45
+week 4: Final : Nevada 37 - UTEP 21
+week 4: Final : Nebraska 42 - Illinois 38
+week 4: Final : Sacramento State 20 - Fresno State 34
+week 4: Final : Toledo 41 - Colorado State 35
+week 4: Final : Utah State 23 - San Diego State 17
+week 4: Final : Central Arkansas 16 - Hawaii 35
+week 5: Final : Navy 23 - Memphis 35
+week 5: Final : Penn State 59 - Maryland 0
+week 5: Final : Arizona State 24 - California 17
+week 5: Final : Duke 45 - Virginia Tech 10
+week 5: Final : San Jose State 24 - Air Force 41
+week 5: Final : Clemson 21 - North Carolina 20
+week 5: Final : Ole Miss 31 - Alabama 59
+week 5: Final : Ohio State 48 - Nebraska 7
+week 5: Final : Texas Tech 16 - Oklahoma 55
+week 5: Final : Mississippi State 23 - Auburn 56
+week 5: Final : Northwestern 15 - Wisconsin 24
+week 5: Final : Towson 0 - Florida 38
+week 5: Final : Virginia 20 - Notre Dame 35
+week 5: Final : Middle Tennessee 3 - Iowa 48
+week 5: Final : USC 14 - Washington 28
+week 5: Final : Washington State 13 - Utah 38
+week 5: Final : Rutgers 0 - Michigan 52
+week 5: Final : UConn 21 - UCF 56
+week 5: Final : Texas A&M 31 - Arkansas 27
+week 5: Final : Kansas State 13 - Oklahoma State 26
+week 5: Final : Indiana 31 - Michigan State 40
+week 5: Final : Holy Cross 3 - Syracuse 41
+week 5: Final : Northern Illinois 18 - Vanderbilt 24
+week 5: Final : Kansas 14 - TCU 51
+week 5: Final : BYU 21 - Toledo 28
+week 5: Final : Buffalo 20 - Miami (OH) 34
+week 5: Final : Central Michigan 15 - Western Michigan 31
+week 5: Final : Delaware 14 - Pittsburgh 17
+week 5: Final : Florida Atlantic 45 - Charlotte 27
+week 5: Final : Georgia Tech 2 - Temple 24
+week 5: Final : Wake Forest 27 - Boston College 24
+week 5: Final : Iowa State 21 - Baylor 23
+week 5: Final : Minnesota 38 - Purdue 31
+week 5: Final : Coastal Carolina 37 - Appalachian State 56
+week 5: Final : Akron 29 - UMass 37
+week 5: Final : SMU 48 - South Florida 21
+week 5: Final : Cincinnati 52 - Marshall 14
+week 5: Final : New Mexico 10 - Liberty 17
+week 5: Final : East Carolina 24 - Old Dominion 21
+week 5: Final : Arkansas State 50 - Troy 43
+week 5: Final : Louisiana 37 - Georgia Southern 24
+week 5: Final : South Alabama 17 - UL Monroe 30
+week 5: Final : Nicholls 3 - Texas State 24
+week 5: Final : UTEP 13 - Southern Mississippi 31
+week 5: Final : UAB 13 - Western Kentucky 20
+week 5: Final : Louisiana Tech 23 - Rice 20
+week 5: Final : Stanford 31 - Oregon State 28
+week 5: Final : NC State 13 - Florida State 31
+week 5: Final : Kentucky 7 - South Carolina 24
+week 5: Final : Colorado State 24 - Utah State 34
+week 5: Final : UNLV 17 - Wyoming 53
+week 5: Final : Fresno State 30 - New Mexico State 17
+week 5: Final : Houston 46 - North Texas 25
+week 5: Final : UCLA 17 - Arizona 20
+week 5: Final : Hawaii 54 - Nevada 3

@@ -1,0 +1,129 @@
+Boston College averageRatingBiasThroughWeek15 is 0
+Clemson averageRatingBiasThroughWeek15 is 0.0205
+Duke averageRatingBiasThroughWeek15 is 0.0111
+Florida State averageRatingBiasThroughWeek15 is 0.0032
+Georgia Tech averageRatingBiasThroughWeek15 is 0.0184
+Louisville averageRatingBiasThroughWeek15 is 0.0292
+Miami (FL) averageRatingBiasThroughWeek15 is 0
+North Carolina averageRatingBiasThroughWeek15 is 0
+NC State averageRatingBiasThroughWeek15 is 0
+Pittsburgh averageRatingBiasThroughWeek15 is 0
+Syracuse averageRatingBiasThroughWeek15 is 0
+Virginia averageRatingBiasThroughWeek15 is 0
+Virginia Tech averageRatingBiasThroughWeek15 is 0
+Wake Forest averageRatingBiasThroughWeek15 is 0
+Baylor averageRatingBiasThroughWeek15 is 0.0932
+Iowa State averageRatingBiasThroughWeek15 is 0
+Kansas averageRatingBiasThroughWeek15 is 0
+Kansas State averageRatingBiasThroughWeek15 is 0.0651
+Oklahoma averageRatingBiasThroughWeek15 is 0.0236
+Oklahoma State averageRatingBiasThroughWeek15 is 0
+TCU averageRatingBiasThroughWeek15 is 0.0644
+Texas averageRatingBiasThroughWeek15 is 0
+Texas Tech averageRatingBiasThroughWeek15 is 0
+West Virginia averageRatingBiasThroughWeek15 is 0.0081
+Illinois averageRatingBiasThroughWeek15 is 0
+Indiana averageRatingBiasThroughWeek15 is 0
+Iowa averageRatingBiasThroughWeek15 is 0
+Maryland averageRatingBiasThroughWeek15 is 0
+Michigan averageRatingBiasThroughWeek15 is 0
+Michigan State averageRatingBiasThroughWeek15 is 0.0778
+Minnesota averageRatingBiasThroughWeek15 is 0.0249
+Nebraska averageRatingBiasThroughWeek15 is -0.005
+Northwestern averageRatingBiasThroughWeek15 is 0
+Ohio State averageRatingBiasThroughWeek15 is 0.0122
+Penn State averageRatingBiasThroughWeek15 is 0
+Purdue averageRatingBiasThroughWeek15 is 0
+Rutgers averageRatingBiasThroughWeek15 is 0
+Wisconsin averageRatingBiasThroughWeek15 is 0.0295
+Arizona averageRatingBiasThroughWeek15 is 0.0283
+Arizona State averageRatingBiasThroughWeek15 is 0.0301
+California averageRatingBiasThroughWeek15 is 0
+Colorado averageRatingBiasThroughWeek15 is 0
+Oregon averageRatingBiasThroughWeek15 is 0.0571
+Oregon State averageRatingBiasThroughWeek15 is 0
+Stanford averageRatingBiasThroughWeek15 is 0
+UCLA averageRatingBiasThroughWeek15 is -0.0325
+USC averageRatingBiasThroughWeek15 is 0.0038
+Utah averageRatingBiasThroughWeek15 is 0.035
+Washington averageRatingBiasThroughWeek15 is 0
+Washington State averageRatingBiasThroughWeek15 is 0
+Alabama averageRatingBiasThroughWeek15 is 0.042
+Arkansas averageRatingBiasThroughWeek15 is 0
+Auburn averageRatingBiasThroughWeek15 is -0.0063
+Florida averageRatingBiasThroughWeek15 is 0
+Georgia averageRatingBiasThroughWeek15 is 0.0448
+Kentucky averageRatingBiasThroughWeek15 is 0
+LSU averageRatingBiasThroughWeek15 is -0.0015
+Mississippi State averageRatingBiasThroughWeek15 is 0.0229
+Missouri averageRatingBiasThroughWeek15 is -0.0009
+Ole Miss averageRatingBiasThroughWeek15 is -0.0019
+South Carolina averageRatingBiasThroughWeek15 is 0
+Tennessee averageRatingBiasThroughWeek15 is 0
+Texas A&M averageRatingBiasThroughWeek15 is -0.0003
+Vanderbilt averageRatingBiasThroughWeek15 is 0
+Cincinnati averageRatingBiasThroughWeek15 is 0
+Connecticut averageRatingBiasThroughWeek15 is 0
+East Carolina averageRatingBiasThroughWeek15 is 0.0106
+Houston averageRatingBiasThroughWeek15 is 0
+Memphis averageRatingBiasThroughWeek15 is 0
+SMU averageRatingBiasThroughWeek15 is 0
+South Florida averageRatingBiasThroughWeek15 is 0
+Temple averageRatingBiasThroughWeek15 is 0
+Tulane averageRatingBiasThroughWeek15 is 0
+Tulsa averageRatingBiasThroughWeek15 is 0
+UCF averageRatingBiasThroughWeek15 is 0
+Florida Atlantic averageRatingBiasThroughWeek15 is 0
+Florida Intl averageRatingBiasThroughWeek15 is 0
+Louisiana Tech averageRatingBiasThroughWeek15 is 0
+Marshall averageRatingBiasThroughWeek15 is -0.0505
+Middle Tennessee averageRatingBiasThroughWeek15 is 0
+North Texas averageRatingBiasThroughWeek15 is 0
+Old Dominion averageRatingBiasThroughWeek15 is 0
+Rice averageRatingBiasThroughWeek15 is 0
+Southern Mississippi averageRatingBiasThroughWeek15 is 0
+UAB averageRatingBiasThroughWeek15 is 0
+UTEP averageRatingBiasThroughWeek15 is 0
+Texas San Antonio averageRatingBiasThroughWeek15 is 0
+Western Kentucky averageRatingBiasThroughWeek15 is 0
+Akron averageRatingBiasThroughWeek15 is 0
+Ball State averageRatingBiasThroughWeek15 is 0
+Bowling Green averageRatingBiasThroughWeek15 is 0
+Buffalo averageRatingBiasThroughWeek15 is 0
+Central Michigan averageRatingBiasThroughWeek15 is 0
+Eastern Michigan averageRatingBiasThroughWeek15 is 0
+Kent State averageRatingBiasThroughWeek15 is 0
+Massachusetts averageRatingBiasThroughWeek15 is 0
+Miami (OH) averageRatingBiasThroughWeek15 is 0
+Northern Illinois averageRatingBiasThroughWeek15 is 0
+Ohio averageRatingBiasThroughWeek15 is 0
+Toledo averageRatingBiasThroughWeek15 is 0
+Western Michigan averageRatingBiasThroughWeek15 is 0
+Air Force averageRatingBiasThroughWeek15 is 0
+Boise State averageRatingBiasThroughWeek15 is -0.0685
+Colorado State averageRatingBiasThroughWeek15 is -0.0581
+Fresno State averageRatingBiasThroughWeek15 is 0
+Hawaii averageRatingBiasThroughWeek15 is 0
+Nevada averageRatingBiasThroughWeek15 is 0
+New Mexico averageRatingBiasThroughWeek15 is 0
+San Diego State averageRatingBiasThroughWeek15 is 0
+San Jose State averageRatingBiasThroughWeek15 is 0
+UNLV averageRatingBiasThroughWeek15 is 0
+Utah State averageRatingBiasThroughWeek15 is 0
+Wyoming averageRatingBiasThroughWeek15 is 0
+Appalachian State averageRatingBiasThroughWeek15 is 0
+Arkansas State averageRatingBiasThroughWeek15 is 0
+Georgia Southern averageRatingBiasThroughWeek15 is 0
+Georgia State averageRatingBiasThroughWeek15 is 0
+Idaho averageRatingBiasThroughWeek15 is 0
+Louisiana Lafayette averageRatingBiasThroughWeek15 is 0
+Louisiana Monroe averageRatingBiasThroughWeek15 is 0
+New Mexico State averageRatingBiasThroughWeek15 is 0
+South Alabama averageRatingBiasThroughWeek15 is 0
+Texas State averageRatingBiasThroughWeek15 is 0
+Troy averageRatingBiasThroughWeek15 is 0
+Army averageRatingBiasThroughWeek15 is 0
+BYU averageRatingBiasThroughWeek15 is 0
+Navy averageRatingBiasThroughWeek15 is 0
+Notre Dame averageRatingBiasThroughWeek15 is -0.0024
+1AA averageRatingBiasThroughWeek15 is 0

@@ -1,0 +1,131 @@
+Boston College averageRatingBiasThroughWeek14 is 0
+Clemson averageRatingBiasThroughWeek14 is 0.0064
+Duke averageRatingBiasThroughWeek14 is 0
+Florida State averageRatingBiasThroughWeek14 is 0
+Georgia Tech averageRatingBiasThroughWeek14 is 0
+Louisville averageRatingBiasThroughWeek14 is 0
+Miami averageRatingBiasThroughWeek14 is 0
+North Carolina averageRatingBiasThroughWeek14 is 0
+NC State averageRatingBiasThroughWeek14 is 0.0556
+Pittsburgh averageRatingBiasThroughWeek14 is 0.019
+Syracuse averageRatingBiasThroughWeek14 is 0
+Virginia averageRatingBiasThroughWeek14 is 0
+Virginia Tech averageRatingBiasThroughWeek14 is 0
+Wake Forest averageRatingBiasThroughWeek14 is -0.02
+Baylor averageRatingBiasThroughWeek14 is 0.0248
+Iowa State averageRatingBiasThroughWeek14 is 0
+Kansas averageRatingBiasThroughWeek14 is 0
+Kansas State averageRatingBiasThroughWeek14 is 0
+Oklahoma averageRatingBiasThroughWeek14 is -0.0092
+Oklahoma State averageRatingBiasThroughWeek14 is -0.0243
+TCU averageRatingBiasThroughWeek14 is 0
+Texas averageRatingBiasThroughWeek14 is 0
+Texas Tech averageRatingBiasThroughWeek14 is 0
+West Virginia averageRatingBiasThroughWeek14 is 0
+Illinois averageRatingBiasThroughWeek14 is 0
+Indiana averageRatingBiasThroughWeek14 is 0
+Iowa averageRatingBiasThroughWeek14 is -0.0414
+Maryland averageRatingBiasThroughWeek14 is 0
+Michigan averageRatingBiasThroughWeek14 is -0.0246
+Michigan State averageRatingBiasThroughWeek14 is -0.008
+Minnesota averageRatingBiasThroughWeek14 is 0.0025
+Nebraska averageRatingBiasThroughWeek14 is 0
+Northwestern averageRatingBiasThroughWeek14 is 0
+Ohio State averageRatingBiasThroughWeek14 is -0.0069
+Penn State averageRatingBiasThroughWeek14 is -0.0058
+Purdue averageRatingBiasThroughWeek14 is -0.0083
+Rutgers averageRatingBiasThroughWeek14 is 0
+Wisconsin averageRatingBiasThroughWeek14 is -0.0467
+Arizona averageRatingBiasThroughWeek14 is 0
+Arizona State averageRatingBiasThroughWeek14 is 0
+California averageRatingBiasThroughWeek14 is 0
+Colorado averageRatingBiasThroughWeek14 is 0
+Oregon averageRatingBiasThroughWeek14 is 0.1008
+Oregon State averageRatingBiasThroughWeek14 is 0
+Stanford averageRatingBiasThroughWeek14 is 0
+UCLA averageRatingBiasThroughWeek14 is 0
+USC averageRatingBiasThroughWeek14 is 0
+Utah averageRatingBiasThroughWeek14 is 0.0416
+Washington averageRatingBiasThroughWeek14 is 0
+Washington State averageRatingBiasThroughWeek14 is 0
+Alabama averageRatingBiasThroughWeek14 is 0.0315
+Arkansas averageRatingBiasThroughWeek14 is 0.0109
+Auburn averageRatingBiasThroughWeek14 is 0.0096
+Florida averageRatingBiasThroughWeek14 is 0
+Georgia averageRatingBiasThroughWeek14 is -0.002
+Kentucky averageRatingBiasThroughWeek14 is 0.0104
+LSU averageRatingBiasThroughWeek14 is 0
+Mississippi State averageRatingBiasThroughWeek14 is 0.0078
+Missouri averageRatingBiasThroughWeek14 is 0
+Ole Miss averageRatingBiasThroughWeek14 is 0.0115
+South Carolina averageRatingBiasThroughWeek14 is 0
+Tennessee averageRatingBiasThroughWeek14 is 0
+Texas A&M averageRatingBiasThroughWeek14 is 0.0244
+Vanderbilt averageRatingBiasThroughWeek14 is 0
+Cincinnati averageRatingBiasThroughWeek14 is 0.0049
+UConn averageRatingBiasThroughWeek14 is 0
+East Carolina averageRatingBiasThroughWeek14 is 0
+Houston averageRatingBiasThroughWeek14 is -0.0291
+Memphis averageRatingBiasThroughWeek14 is 0
+SMU averageRatingBiasThroughWeek14 is -0.0011
+South Florida averageRatingBiasThroughWeek14 is 0
+Temple averageRatingBiasThroughWeek14 is 0
+Tulane averageRatingBiasThroughWeek14 is 0
+Tulsa averageRatingBiasThroughWeek14 is 0
+UCF averageRatingBiasThroughWeek14 is 0
+Charlotte averageRatingBiasThroughWeek14 is 0
+Florida Atlantic averageRatingBiasThroughWeek14 is 0
+Florida International averageRatingBiasThroughWeek14 is 0
+Louisiana Tech averageRatingBiasThroughWeek14 is 0
+Marshall averageRatingBiasThroughWeek14 is 0
+Middle Tennessee averageRatingBiasThroughWeek14 is 0
+North Texas averageRatingBiasThroughWeek14 is 0
+Old Dominion averageRatingBiasThroughWeek14 is 0
+Rice averageRatingBiasThroughWeek14 is 0
+Southern Miss averageRatingBiasThroughWeek14 is 0
+UTEP averageRatingBiasThroughWeek14 is 0
+UTSA averageRatingBiasThroughWeek14 is -0.0775
+Western Kentucky averageRatingBiasThroughWeek14 is 0
+Akron averageRatingBiasThroughWeek14 is 0
+Ball State averageRatingBiasThroughWeek14 is 0
+Bowling Green averageRatingBiasThroughWeek14 is 0
+Buffalo averageRatingBiasThroughWeek14 is 0
+Central Michigan averageRatingBiasThroughWeek14 is 0
+Eastern Michigan averageRatingBiasThroughWeek14 is 0
+Kent State averageRatingBiasThroughWeek14 is 0
+UMass averageRatingBiasThroughWeek14 is 0
+Miami (OH) averageRatingBiasThroughWeek14 is 0
+Northern Illinois averageRatingBiasThroughWeek14 is 0
+Ohio averageRatingBiasThroughWeek14 is 0
+Toledo averageRatingBiasThroughWeek14 is 0
+Western Michigan averageRatingBiasThroughWeek14 is 0
+Air Force averageRatingBiasThroughWeek14 is -0.0011
+Boise State averageRatingBiasThroughWeek14 is 0
+Colorado State averageRatingBiasThroughWeek14 is 0
+Fresno State averageRatingBiasThroughWeek14 is 0.0088
+Hawaii averageRatingBiasThroughWeek14 is 0
+Nevada averageRatingBiasThroughWeek14 is 0
+New Mexico averageRatingBiasThroughWeek14 is 0
+San Diego State averageRatingBiasThroughWeek14 is -0.0157
+San Jose State averageRatingBiasThroughWeek14 is 0
+UNLV averageRatingBiasThroughWeek14 is 0
+Utah State averageRatingBiasThroughWeek14 is 0
+Wyoming averageRatingBiasThroughWeek14 is 0
+Appalachian State averageRatingBiasThroughWeek14 is -0.0258
+Arkansas State averageRatingBiasThroughWeek14 is 0
+Georgia Southern averageRatingBiasThroughWeek14 is 0
+Georgia State averageRatingBiasThroughWeek14 is 0
+Liberty averageRatingBiasThroughWeek14 is 0
+Louisiana averageRatingBiasThroughWeek14 is -0.0094
+UL Monroe averageRatingBiasThroughWeek14 is 0
+New Mexico State averageRatingBiasThroughWeek14 is 0
+South Alabama averageRatingBiasThroughWeek14 is 0
+Texas State averageRatingBiasThroughWeek14 is 0
+Troy averageRatingBiasThroughWeek14 is 0
+Army averageRatingBiasThroughWeek14 is 0
+BYU averageRatingBiasThroughWeek14 is 0.0312
+Navy averageRatingBiasThroughWeek14 is 0
+Notre Dame averageRatingBiasThroughWeek14 is -0.0422
+UAB averageRatingBiasThroughWeek14 is 0
+Coastal Carolina averageRatingBiasThroughWeek14 is 0
+1AA averageRatingBiasThroughWeek14 is 0

@@ -1,0 +1,131 @@
+Boston College averageRatingBiasThroughWeek12 is 0.0267
+Clemson averageRatingBiasThroughWeek12 is 0.0032
+Duke averageRatingBiasThroughWeek12 is 0
+Florida State averageRatingBiasThroughWeek12 is 0
+Georgia Tech averageRatingBiasThroughWeek12 is 0
+Louisville averageRatingBiasThroughWeek12 is 0
+Miami averageRatingBiasThroughWeek12 is 0
+North Carolina averageRatingBiasThroughWeek12 is 0
+NC State averageRatingBiasThroughWeek12 is 0.001
+Pittsburgh averageRatingBiasThroughWeek12 is 0
+Syracuse averageRatingBiasThroughWeek12 is 0.0243
+Virginia averageRatingBiasThroughWeek12 is 0.005
+Virginia Tech averageRatingBiasThroughWeek12 is 0
+Wake Forest averageRatingBiasThroughWeek12 is 0
+Baylor averageRatingBiasThroughWeek12 is 0
+Iowa State averageRatingBiasThroughWeek12 is 0.0379
+Kansas averageRatingBiasThroughWeek12 is 0
+Kansas State averageRatingBiasThroughWeek12 is 0
+Oklahoma averageRatingBiasThroughWeek12 is 0
+Oklahoma State averageRatingBiasThroughWeek12 is 0
+TCU averageRatingBiasThroughWeek12 is 0
+Texas averageRatingBiasThroughWeek12 is 0.016
+Texas Tech averageRatingBiasThroughWeek12 is 0
+West Virginia averageRatingBiasThroughWeek12 is 0.0045
+Illinois averageRatingBiasThroughWeek12 is 0
+Indiana averageRatingBiasThroughWeek12 is 0
+Iowa averageRatingBiasThroughWeek12 is 0.0065
+Maryland averageRatingBiasThroughWeek12 is 0
+Michigan averageRatingBiasThroughWeek12 is 0.0043
+Michigan State averageRatingBiasThroughWeek12 is -0.0064
+Minnesota averageRatingBiasThroughWeek12 is 0
+Nebraska averageRatingBiasThroughWeek12 is 0
+Northwestern averageRatingBiasThroughWeek12 is 0.0103
+Ohio State averageRatingBiasThroughWeek12 is -0.0189
+Penn State averageRatingBiasThroughWeek12 is -0.0094
+Purdue averageRatingBiasThroughWeek12 is 0
+Rutgers averageRatingBiasThroughWeek12 is 0
+Wisconsin averageRatingBiasThroughWeek12 is 0
+Arizona averageRatingBiasThroughWeek12 is 0
+Arizona State averageRatingBiasThroughWeek12 is 0
+California averageRatingBiasThroughWeek12 is 0
+Colorado averageRatingBiasThroughWeek12 is 0
+Oregon averageRatingBiasThroughWeek12 is 0
+Oregon State averageRatingBiasThroughWeek12 is 0
+Stanford averageRatingBiasThroughWeek12 is 0
+UCLA averageRatingBiasThroughWeek12 is 0
+USC averageRatingBiasThroughWeek12 is 0
+Utah averageRatingBiasThroughWeek12 is 0.0132
+Washington averageRatingBiasThroughWeek12 is 0.0279
+Washington State averageRatingBiasThroughWeek12 is 0.0522
+Alabama averageRatingBiasThroughWeek12 is 0.0327
+Arkansas averageRatingBiasThroughWeek12 is 0
+Auburn averageRatingBiasThroughWeek12 is 0.0103
+Florida averageRatingBiasThroughWeek12 is 0.0099
+Georgia averageRatingBiasThroughWeek12 is -0.0046
+Kentucky averageRatingBiasThroughWeek12 is -0.0148
+LSU averageRatingBiasThroughWeek12 is 0.0152
+Mississippi State averageRatingBiasThroughWeek12 is 0.0305
+Missouri averageRatingBiasThroughWeek12 is -0.0025
+Ole Miss averageRatingBiasThroughWeek12 is 0
+South Carolina averageRatingBiasThroughWeek12 is -0.0049
+Tennessee averageRatingBiasThroughWeek12 is 0
+Texas A&M averageRatingBiasThroughWeek12 is 0.0097
+Vanderbilt averageRatingBiasThroughWeek12 is 0
+Cincinnati averageRatingBiasThroughWeek12 is -0.0293
+UConn averageRatingBiasThroughWeek12 is 0
+East Carolina averageRatingBiasThroughWeek12 is 0
+Houston averageRatingBiasThroughWeek12 is 0
+Memphis averageRatingBiasThroughWeek12 is 0
+SMU averageRatingBiasThroughWeek12 is 0
+South Florida averageRatingBiasThroughWeek12 is 0
+Temple averageRatingBiasThroughWeek12 is 0
+Tulane averageRatingBiasThroughWeek12 is 0
+Tulsa averageRatingBiasThroughWeek12 is 0
+UCF averageRatingBiasThroughWeek12 is -0.0396
+Charlotte averageRatingBiasThroughWeek12 is 0
+Florida Atlantic averageRatingBiasThroughWeek12 is 0
+Florida Intl averageRatingBiasThroughWeek12 is 0
+Louisiana Tech averageRatingBiasThroughWeek12 is 0
+Marshall averageRatingBiasThroughWeek12 is 0
+Middle Tennessee averageRatingBiasThroughWeek12 is 0
+North Texas averageRatingBiasThroughWeek12 is 0
+Old Dominion averageRatingBiasThroughWeek12 is 0
+Rice averageRatingBiasThroughWeek12 is 0
+Southern Mississippi averageRatingBiasThroughWeek12 is 0
+UTEP averageRatingBiasThroughWeek12 is 0
+UTSA averageRatingBiasThroughWeek12 is 0
+Western Kentucky averageRatingBiasThroughWeek12 is 0
+Akron averageRatingBiasThroughWeek12 is 0
+Ball State averageRatingBiasThroughWeek12 is 0
+Bowling Green averageRatingBiasThroughWeek12 is 0
+Buffalo averageRatingBiasThroughWeek12 is -0.0274
+Central Michigan averageRatingBiasThroughWeek12 is 0
+Eastern Michigan averageRatingBiasThroughWeek12 is 0
+Kent State averageRatingBiasThroughWeek12 is 0
+UMass averageRatingBiasThroughWeek12 is 0
+Miami (OH) averageRatingBiasThroughWeek12 is 0
+Northern Illinois averageRatingBiasThroughWeek12 is 0
+Ohio averageRatingBiasThroughWeek12 is 0
+Toledo averageRatingBiasThroughWeek12 is 0
+Western Michigan averageRatingBiasThroughWeek12 is 0
+Air Force averageRatingBiasThroughWeek12 is 0
+Boise State averageRatingBiasThroughWeek12 is -0.0189
+Colorado State averageRatingBiasThroughWeek12 is 0
+Fresno State averageRatingBiasThroughWeek12 is -0.0122
+Hawaii averageRatingBiasThroughWeek12 is 0
+Nevada averageRatingBiasThroughWeek12 is 0
+New Mexico averageRatingBiasThroughWeek12 is 0
+San Diego State averageRatingBiasThroughWeek12 is 0
+San Jose State averageRatingBiasThroughWeek12 is 0
+UNLV averageRatingBiasThroughWeek12 is 0
+Utah State averageRatingBiasThroughWeek12 is -0.0023
+Wyoming averageRatingBiasThroughWeek12 is 0
+Appalachian State averageRatingBiasThroughWeek12 is 0
+Arkansas State averageRatingBiasThroughWeek12 is 0
+Georgia Southern averageRatingBiasThroughWeek12 is -0.0074
+Georgia State averageRatingBiasThroughWeek12 is 0
+Liberty averageRatingBiasThroughWeek12 is 0
+Louisiana averageRatingBiasThroughWeek12 is 0
+UL Monroe averageRatingBiasThroughWeek12 is 0
+New Mexico State averageRatingBiasThroughWeek12 is 0
+South Alabama averageRatingBiasThroughWeek12 is 0
+Texas State averageRatingBiasThroughWeek12 is 0
+Troy averageRatingBiasThroughWeek12 is 0
+Army averageRatingBiasThroughWeek12 is -0.0278
+BYU averageRatingBiasThroughWeek12 is 0
+Navy averageRatingBiasThroughWeek12 is 0
+Notre Dame averageRatingBiasThroughWeek12 is -0.0357
+UAB averageRatingBiasThroughWeek12 is -0.0013
+Coastal Carolina averageRatingBiasThroughWeek12 is 0
+1AA averageRatingBiasThroughWeek12 is 0

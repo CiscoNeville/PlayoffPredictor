@@ -1,0 +1,132 @@
+Boston College averageRatingBiasThroughWeek10 is 0
+Clemson averageRatingBiasThroughWeek10 is 0.0563
+Duke averageRatingBiasThroughWeek10 is 0
+Florida State averageRatingBiasThroughWeek10 is -0.027
+Georgia Tech averageRatingBiasThroughWeek10 is 0
+Louisville averageRatingBiasThroughWeek10 is 0
+Miami averageRatingBiasThroughWeek10 is 0
+North Carolina averageRatingBiasThroughWeek10 is 0.035
+NC State averageRatingBiasThroughWeek10 is 0.0056
+Pittsburgh averageRatingBiasThroughWeek10 is 0
+Syracuse averageRatingBiasThroughWeek10 is -0.0126
+Virginia averageRatingBiasThroughWeek10 is 0
+Virginia Tech averageRatingBiasThroughWeek10 is 0
+Wake Forest averageRatingBiasThroughWeek10 is 0
+Baylor averageRatingBiasThroughWeek10 is 0
+Iowa State averageRatingBiasThroughWeek10 is 0
+Kansas averageRatingBiasThroughWeek10 is -0.0068
+Kansas State averageRatingBiasThroughWeek10 is -0.1202
+Oklahoma averageRatingBiasThroughWeek10 is 0
+Oklahoma State averageRatingBiasThroughWeek10 is 0.0214
+TCU averageRatingBiasThroughWeek10 is 0.0339
+Texas averageRatingBiasThroughWeek10 is -0.0531
+Texas Tech averageRatingBiasThroughWeek10 is 0
+West Virginia averageRatingBiasThroughWeek10 is 0
+Illinois averageRatingBiasThroughWeek10 is 0.0223
+Indiana averageRatingBiasThroughWeek10 is 0
+Iowa averageRatingBiasThroughWeek10 is 0
+Maryland averageRatingBiasThroughWeek10 is 0
+Michigan averageRatingBiasThroughWeek10 is -0.0081
+Michigan State averageRatingBiasThroughWeek10 is 0
+Minnesota averageRatingBiasThroughWeek10 is 0
+Nebraska averageRatingBiasThroughWeek10 is 0
+Northwestern averageRatingBiasThroughWeek10 is 0
+Ohio State averageRatingBiasThroughWeek10 is -0.0129
+Penn State averageRatingBiasThroughWeek10 is -0.0213
+Purdue averageRatingBiasThroughWeek10 is 0
+Rutgers averageRatingBiasThroughWeek10 is 0
+Wisconsin averageRatingBiasThroughWeek10 is 0
+Arizona averageRatingBiasThroughWeek10 is 0
+Arizona State averageRatingBiasThroughWeek10 is 0
+California averageRatingBiasThroughWeek10 is 0
+Colorado averageRatingBiasThroughWeek10 is 0
+Oregon averageRatingBiasThroughWeek10 is 0.0216
+Oregon State averageRatingBiasThroughWeek10 is -0.0141
+Stanford averageRatingBiasThroughWeek10 is 0
+UCLA averageRatingBiasThroughWeek10 is -0.026
+USC averageRatingBiasThroughWeek10 is 0.0154
+Utah averageRatingBiasThroughWeek10 is 0.0079
+Washington averageRatingBiasThroughWeek10 is 0.008
+Washington State averageRatingBiasThroughWeek10 is 0
+Alabama averageRatingBiasThroughWeek10 is -0.0708
+Arkansas averageRatingBiasThroughWeek10 is 0
+Auburn averageRatingBiasThroughWeek10 is 0
+Florida averageRatingBiasThroughWeek10 is 0
+Georgia averageRatingBiasThroughWeek10 is -0.0267
+Kentucky averageRatingBiasThroughWeek10 is 0.0629
+LSU averageRatingBiasThroughWeek10 is 0.0366
+Mississippi State averageRatingBiasThroughWeek10 is -0.0101
+Missouri averageRatingBiasThroughWeek10 is 0
+Ole Miss averageRatingBiasThroughWeek10 is 0.0233
+South Carolina averageRatingBiasThroughWeek10 is 0
+Tennessee averageRatingBiasThroughWeek10 is -0.0115
+Texas A&M averageRatingBiasThroughWeek10 is 0
+Vanderbilt averageRatingBiasThroughWeek10 is 0
+Cincinnati averageRatingBiasThroughWeek10 is 0
+UConn averageRatingBiasThroughWeek10 is 0
+East Carolina averageRatingBiasThroughWeek10 is 0
+Houston averageRatingBiasThroughWeek10 is 0
+Memphis averageRatingBiasThroughWeek10 is 0
+SMU averageRatingBiasThroughWeek10 is 0
+South Florida averageRatingBiasThroughWeek10 is 0
+Temple averageRatingBiasThroughWeek10 is 0
+Tulane averageRatingBiasThroughWeek10 is 0.0206
+Tulsa averageRatingBiasThroughWeek10 is 0
+UCF averageRatingBiasThroughWeek10 is -0.0121
+Charlotte averageRatingBiasThroughWeek10 is 0
+Florida Atlantic averageRatingBiasThroughWeek10 is 0
+Florida International averageRatingBiasThroughWeek10 is 0
+Louisiana Tech averageRatingBiasThroughWeek10 is 0
+Marshall averageRatingBiasThroughWeek10 is 0
+Middle Tennessee averageRatingBiasThroughWeek10 is 0
+North Texas averageRatingBiasThroughWeek10 is 0
+Old Dominion averageRatingBiasThroughWeek10 is 0
+Rice averageRatingBiasThroughWeek10 is 0
+Southern Miss averageRatingBiasThroughWeek10 is 0
+UTEP averageRatingBiasThroughWeek10 is 0
+UTSA averageRatingBiasThroughWeek10 is 0
+Western Kentucky averageRatingBiasThroughWeek10 is 0
+Akron averageRatingBiasThroughWeek10 is 0
+Ball State averageRatingBiasThroughWeek10 is 0
+Bowling Green averageRatingBiasThroughWeek10 is 0
+Buffalo averageRatingBiasThroughWeek10 is 0
+Central Michigan averageRatingBiasThroughWeek10 is 0
+Eastern Michigan averageRatingBiasThroughWeek10 is 0
+Kent State averageRatingBiasThroughWeek10 is 0
+UMass averageRatingBiasThroughWeek10 is 0
+Miami (OH) averageRatingBiasThroughWeek10 is 0
+Northern Illinois averageRatingBiasThroughWeek10 is 0
+Ohio averageRatingBiasThroughWeek10 is 0
+Toledo averageRatingBiasThroughWeek10 is 0
+Western Michigan averageRatingBiasThroughWeek10 is 0
+Air Force averageRatingBiasThroughWeek10 is 0
+Boise State averageRatingBiasThroughWeek10 is 0
+Colorado State averageRatingBiasThroughWeek10 is 0
+Fresno State averageRatingBiasThroughWeek10 is 0
+Hawaii averageRatingBiasThroughWeek10 is 0
+Nevada averageRatingBiasThroughWeek10 is 0
+New Mexico averageRatingBiasThroughWeek10 is 0
+San Diego State averageRatingBiasThroughWeek10 is 0
+San Jose State averageRatingBiasThroughWeek10 is 0
+UNLV averageRatingBiasThroughWeek10 is 0
+Utah State averageRatingBiasThroughWeek10 is 0
+Wyoming averageRatingBiasThroughWeek10 is 0
+Appalachian State averageRatingBiasThroughWeek10 is 0
+Arkansas State averageRatingBiasThroughWeek10 is 0
+Georgia Southern averageRatingBiasThroughWeek10 is 0
+Georgia State averageRatingBiasThroughWeek10 is 0
+Liberty averageRatingBiasThroughWeek10 is 0
+Louisiana averageRatingBiasThroughWeek10 is 0
+UL Monroe averageRatingBiasThroughWeek10 is 0
+New Mexico State averageRatingBiasThroughWeek10 is 0
+South Alabama averageRatingBiasThroughWeek10 is 0
+Texas State averageRatingBiasThroughWeek10 is 0
+Troy averageRatingBiasThroughWeek10 is 0
+Army averageRatingBiasThroughWeek10 is 0
+BYU averageRatingBiasThroughWeek10 is 0
+Navy averageRatingBiasThroughWeek10 is 0
+Notre Dame averageRatingBiasThroughWeek10 is 0.011
+UAB averageRatingBiasThroughWeek10 is 0
+Coastal Carolina averageRatingBiasThroughWeek10 is 0
+James Madison averageRatingBiasThroughWeek10 is 0
+1AA averageRatingBiasThroughWeek10 is 0

@@ -1,0 +1,25 @@
+1:Alabama:0.987
+2:Clemson:0.950
+3:Michigan:0.915
+4:Washington:0.900
+5:Ohio State:0.899
+6:Louisville:0.883
+7:Wisconsin:0.854
+8:Texas A&M:0.843
+9:Auburn:0.828
+10:Penn State:0.818
+11:Oklahoma:0.813
+12:Colorado:0.808
+13:Oklahoma State:0.802
+14:Virginia Tech:0.794
+15:Utah:0.789
+16:West Virginia:0.781
+17:North Carolina:0.770
+18:Florida State:0.765
+19:Nebraska:0.757
+20:USC:0.746
+21:W Michigan:0.733
+22:Boise State:0.726
+23:Washington St:0.723
+24:LSU:0.716
+25:Arkansas:0.707

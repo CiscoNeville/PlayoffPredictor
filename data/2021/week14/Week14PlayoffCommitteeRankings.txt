@@ -1,0 +1,25 @@
+1:Alabama
+2:Michigan
+3:Georgia
+4:Cincinnati
+5:Notre Dame
+6:Baylor
+7:Ohio State
+8:Ole Miss
+9:Oklahoma State
+10:Utah
+11:Michigan State
+12:BYU
+13:Pittsburgh
+14:Oklahoma
+15:Oregon
+16:Louisiana
+17:Iowa
+18:NC State
+19:Clemson
+20:Wake Forest
+21:Houston
+22:Arkansas
+23:Texas A&M
+24:UTSA
+25:Kentucky

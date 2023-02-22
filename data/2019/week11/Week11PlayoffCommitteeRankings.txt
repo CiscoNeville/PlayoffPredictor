@@ -1,0 +1,25 @@
+1:LSU
+2:Ohio State
+3:Clemson
+4:Georgia
+5:Alabama
+6:Oregon
+7:Utah
+8:Minnesota
+9:Penn State
+10:Oklahoma
+11:Florida
+12:Auburn
+13:Baylor
+14:Wisconsin
+15:Michigan
+16:Notre Dame
+17:Cincinnati
+18:Memphis
+19:Texas
+20:Iowa
+21:Boise State
+22:Oklahoma State
+23:Navy
+24:Kansas State
+25:Appalachian St

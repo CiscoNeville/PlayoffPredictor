@@ -1,0 +1,25 @@
+1:Mississippi State:0.987
+2:Florida State:0.950
+3:Auburn:0.915
+4:Oregon:0.900
+5:Alabama:0.899
+6:TCU:0.883
+7:Kansas State:0.854
+8:Michigan State:0.843
+9:Arizona State:0.828
+10:Notre Dame:0.818
+11:Ole Miss:0.813
+12:Baylor:0.808
+13:Nebraska:0.802
+14:Ohio State:0.794
+15:Oklahoma:0.789
+16:LSU:0.781
+17:Utah:0.770
+18:UCLA:0.765
+19:Arizona:0.757
+20:Georgia:0.746
+21:Clemson:0.733
+22:Duke:0.726
+23:West Virginia:0.723
+24:Georgia Tech:0.716
+25:Wisconsin:0.707

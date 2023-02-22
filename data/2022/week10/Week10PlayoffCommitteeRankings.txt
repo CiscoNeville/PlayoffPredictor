@@ -1,0 +1,25 @@
+1:Georgia
+2:Ohio State
+3:Michigan
+4:TCU
+5:Tennessee
+6:Oregon
+7:LSU
+8:USC
+9:Alabama
+10:Clemson
+11:Ole Miss
+12:UCLA
+13:Utah
+14:Penn State
+15:North Carolina
+16:NC State
+17:Tulane
+18:Texas
+19:Kansas State
+20:Notre Dame
+21:Illinois
+22:UCF
+23:Florida State
+24:Kentucky
+25:Washington

@@ -1,0 +1,6 @@
+# Ignore testing area for scripts
+scripts/testing/
+
+# Ignore any hidden files (starting with .)
+.*
+!/.gitignore

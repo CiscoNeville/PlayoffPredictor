@@ -1,0 +1,25 @@
+1:Alabama
+2:Notre Dame
+3:Clemson
+4:Ohio State
+5:Texas A&M
+6:Florida
+7:Cincinnati
+8:Northwestern
+9:Georgia
+10:Miami
+11:Oklahoma
+12:Indiana
+13:Iowa State
+14:BYU
+15:Oregon
+16:Wisconsin
+17:Texas
+18:USC
+19:North Carolina
+20:C. Carolina
+21:Marshall
+22:Auburn
+23:Oklahoma State
+24:Iowa
+25:Tulsa

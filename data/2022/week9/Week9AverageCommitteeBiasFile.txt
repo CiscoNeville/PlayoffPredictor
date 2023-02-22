@@ -1,0 +1,132 @@
+Boston College averageRatingBiasThroughWeek9 is 0
+Clemson averageRatingBiasThroughWeek9 is 0.1083
+Duke averageRatingBiasThroughWeek9 is 0
+Florida State averageRatingBiasThroughWeek9 is 0
+Georgia Tech averageRatingBiasThroughWeek9 is 0
+Louisville averageRatingBiasThroughWeek9 is 0
+Miami averageRatingBiasThroughWeek9 is 0
+North Carolina averageRatingBiasThroughWeek9 is 0.0156
+NC State averageRatingBiasThroughWeek9 is 0
+Pittsburgh averageRatingBiasThroughWeek9 is 0
+Syracuse averageRatingBiasThroughWeek9 is -0.0247
+Virginia averageRatingBiasThroughWeek9 is 0
+Virginia Tech averageRatingBiasThroughWeek9 is 0
+Wake Forest averageRatingBiasThroughWeek9 is 0
+Baylor averageRatingBiasThroughWeek9 is 0
+Iowa State averageRatingBiasThroughWeek9 is 0
+Kansas averageRatingBiasThroughWeek9 is 0
+Kansas State averageRatingBiasThroughWeek9 is -0.1553
+Oklahoma averageRatingBiasThroughWeek9 is 0
+Oklahoma State averageRatingBiasThroughWeek9 is 0.0429
+TCU averageRatingBiasThroughWeek9 is -0.0344
+Texas averageRatingBiasThroughWeek9 is -0.0518
+Texas Tech averageRatingBiasThroughWeek9 is 0
+West Virginia averageRatingBiasThroughWeek9 is 0
+Illinois averageRatingBiasThroughWeek9 is 0.0126
+Indiana averageRatingBiasThroughWeek9 is 0
+Iowa averageRatingBiasThroughWeek9 is 0
+Maryland averageRatingBiasThroughWeek9 is 0
+Michigan averageRatingBiasThroughWeek9 is -0.0161
+Michigan State averageRatingBiasThroughWeek9 is 0
+Minnesota averageRatingBiasThroughWeek9 is 0
+Nebraska averageRatingBiasThroughWeek9 is 0
+Northwestern averageRatingBiasThroughWeek9 is 0
+Ohio State averageRatingBiasThroughWeek9 is -0.0258
+Penn State averageRatingBiasThroughWeek9 is -0.0256
+Purdue averageRatingBiasThroughWeek9 is 0
+Rutgers averageRatingBiasThroughWeek9 is 0
+Wisconsin averageRatingBiasThroughWeek9 is 0
+Arizona averageRatingBiasThroughWeek9 is 0
+Arizona State averageRatingBiasThroughWeek9 is 0
+California averageRatingBiasThroughWeek9 is 0
+Colorado averageRatingBiasThroughWeek9 is 0
+Oregon averageRatingBiasThroughWeek9 is 0
+Oregon State averageRatingBiasThroughWeek9 is -0.0282
+Stanford averageRatingBiasThroughWeek9 is 0
+UCLA averageRatingBiasThroughWeek9 is -0.0327
+USC averageRatingBiasThroughWeek9 is 0.0038
+Utah averageRatingBiasThroughWeek9 is 0.0154
+Washington averageRatingBiasThroughWeek9 is 0
+Washington State averageRatingBiasThroughWeek9 is 0
+Alabama averageRatingBiasThroughWeek9 is -0.0577
+Arkansas averageRatingBiasThroughWeek9 is 0
+Auburn averageRatingBiasThroughWeek9 is 0
+Florida averageRatingBiasThroughWeek9 is 0
+Georgia averageRatingBiasThroughWeek9 is -0.0533
+Kentucky averageRatingBiasThroughWeek9 is 0
+LSU averageRatingBiasThroughWeek9 is 0.0453
+Mississippi State averageRatingBiasThroughWeek9 is -0.0064
+Missouri averageRatingBiasThroughWeek9 is 0
+Ole Miss averageRatingBiasThroughWeek9 is 0.0287
+South Carolina averageRatingBiasThroughWeek9 is 0
+Tennessee averageRatingBiasThroughWeek9 is 0.0791
+Texas A&M averageRatingBiasThroughWeek9 is 0
+Vanderbilt averageRatingBiasThroughWeek9 is 0
+Cincinnati averageRatingBiasThroughWeek9 is 0
+UConn averageRatingBiasThroughWeek9 is 0
+East Carolina averageRatingBiasThroughWeek9 is 0
+Houston averageRatingBiasThroughWeek9 is 0
+Memphis averageRatingBiasThroughWeek9 is 0
+SMU averageRatingBiasThroughWeek9 is 0
+South Florida averageRatingBiasThroughWeek9 is 0
+Temple averageRatingBiasThroughWeek9 is 0
+Tulane averageRatingBiasThroughWeek9 is 0
+Tulsa averageRatingBiasThroughWeek9 is 0
+UCF averageRatingBiasThroughWeek9 is 0
+Charlotte averageRatingBiasThroughWeek9 is 0
+Florida Atlantic averageRatingBiasThroughWeek9 is 0
+Florida International averageRatingBiasThroughWeek9 is 0
+Louisiana Tech averageRatingBiasThroughWeek9 is 0
+Marshall averageRatingBiasThroughWeek9 is 0
+Middle Tennessee averageRatingBiasThroughWeek9 is 0
+North Texas averageRatingBiasThroughWeek9 is 0
+Old Dominion averageRatingBiasThroughWeek9 is 0
+Rice averageRatingBiasThroughWeek9 is 0
+Southern Miss averageRatingBiasThroughWeek9 is 0
+UTEP averageRatingBiasThroughWeek9 is 0
+UTSA averageRatingBiasThroughWeek9 is 0
+Western Kentucky averageRatingBiasThroughWeek9 is 0
+Akron averageRatingBiasThroughWeek9 is 0
+Ball State averageRatingBiasThroughWeek9 is 0
+Bowling Green averageRatingBiasThroughWeek9 is 0
+Buffalo averageRatingBiasThroughWeek9 is 0
+Central Michigan averageRatingBiasThroughWeek9 is 0
+Eastern Michigan averageRatingBiasThroughWeek9 is 0
+Kent State averageRatingBiasThroughWeek9 is 0
+UMass averageRatingBiasThroughWeek9 is 0
+Miami (OH) averageRatingBiasThroughWeek9 is 0
+Northern Illinois averageRatingBiasThroughWeek9 is 0
+Ohio averageRatingBiasThroughWeek9 is 0
+Toledo averageRatingBiasThroughWeek9 is 0
+Western Michigan averageRatingBiasThroughWeek9 is 0
+Air Force averageRatingBiasThroughWeek9 is 0
+Boise State averageRatingBiasThroughWeek9 is 0
+Colorado State averageRatingBiasThroughWeek9 is 0
+Fresno State averageRatingBiasThroughWeek9 is 0
+Hawaii averageRatingBiasThroughWeek9 is 0
+Nevada averageRatingBiasThroughWeek9 is 0
+New Mexico averageRatingBiasThroughWeek9 is 0
+San Diego State averageRatingBiasThroughWeek9 is 0
+San Jose State averageRatingBiasThroughWeek9 is 0
+UNLV averageRatingBiasThroughWeek9 is 0
+Utah State averageRatingBiasThroughWeek9 is 0
+Wyoming averageRatingBiasThroughWeek9 is 0
+Appalachian State averageRatingBiasThroughWeek9 is 0
+Arkansas State averageRatingBiasThroughWeek9 is 0
+Georgia Southern averageRatingBiasThroughWeek9 is 0
+Georgia State averageRatingBiasThroughWeek9 is 0
+Liberty averageRatingBiasThroughWeek9 is 0
+Louisiana averageRatingBiasThroughWeek9 is 0
+UL Monroe averageRatingBiasThroughWeek9 is 0
+New Mexico State averageRatingBiasThroughWeek9 is 0
+South Alabama averageRatingBiasThroughWeek9 is 0
+Texas State averageRatingBiasThroughWeek9 is 0
+Troy averageRatingBiasThroughWeek9 is 0
+Army averageRatingBiasThroughWeek9 is 0
+BYU averageRatingBiasThroughWeek9 is 0
+Navy averageRatingBiasThroughWeek9 is 0
+Notre Dame averageRatingBiasThroughWeek9 is 0
+UAB averageRatingBiasThroughWeek9 is 0
+Coastal Carolina averageRatingBiasThroughWeek9 is 0
+James Madison averageRatingBiasThroughWeek9 is 0
+1AA averageRatingBiasThroughWeek9 is 0

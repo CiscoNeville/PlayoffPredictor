@@ -1,0 +1,129 @@
+Boston College averageRatingBiasThroughWeek13 is 0
+Clemson averageRatingBiasThroughWeek13 is -0.0003
+Duke averageRatingBiasThroughWeek13 is 0
+Florida State averageRatingBiasThroughWeek13 is 0.0558
+Georgia Tech averageRatingBiasThroughWeek13 is 0
+Louisville averageRatingBiasThroughWeek13 is 0.0866
+Miami averageRatingBiasThroughWeek13 is 0
+North Carolina averageRatingBiasThroughWeek13 is 0.027
+NC State averageRatingBiasThroughWeek13 is 0
+Pittsburgh averageRatingBiasThroughWeek13 is 0
+Syracuse averageRatingBiasThroughWeek13 is 0
+Virginia averageRatingBiasThroughWeek13 is 0
+Virginia Tech averageRatingBiasThroughWeek13 is 0.0412
+Wake Forest averageRatingBiasThroughWeek13 is 0
+Baylor averageRatingBiasThroughWeek13 is 0.0272
+Iowa State averageRatingBiasThroughWeek13 is 0
+Kansas averageRatingBiasThroughWeek13 is 0
+Kansas State averageRatingBiasThroughWeek13 is 0
+Oklahoma averageRatingBiasThroughWeek13 is 0.0929
+Oklahoma State averageRatingBiasThroughWeek13 is 0.1324
+TCU averageRatingBiasThroughWeek13 is 0
+Texas averageRatingBiasThroughWeek13 is 0
+Texas Tech averageRatingBiasThroughWeek13 is 0
+West Virginia averageRatingBiasThroughWeek13 is 0.0454
+Illinois averageRatingBiasThroughWeek13 is 0
+Indiana averageRatingBiasThroughWeek13 is 0
+Iowa averageRatingBiasThroughWeek13 is 0
+Maryland averageRatingBiasThroughWeek13 is 0
+Michigan averageRatingBiasThroughWeek13 is 0.0182
+Michigan State averageRatingBiasThroughWeek13 is 0
+Minnesota averageRatingBiasThroughWeek13 is 0
+Nebraska averageRatingBiasThroughWeek13 is -0.0071
+Northwestern averageRatingBiasThroughWeek13 is 0
+Ohio State averageRatingBiasThroughWeek13 is 0.0196
+Penn State averageRatingBiasThroughWeek13 is 0.0247
+Purdue averageRatingBiasThroughWeek13 is 0
+Rutgers averageRatingBiasThroughWeek13 is 0
+Wisconsin averageRatingBiasThroughWeek13 is 0.0569
+Arizona averageRatingBiasThroughWeek13 is 0
+Arizona State averageRatingBiasThroughWeek13 is 0
+California averageRatingBiasThroughWeek13 is 0
+Colorado averageRatingBiasThroughWeek13 is 0.0604
+Oregon averageRatingBiasThroughWeek13 is 0
+Oregon State averageRatingBiasThroughWeek13 is 0
+Stanford averageRatingBiasThroughWeek13 is 0.0063
+UCLA averageRatingBiasThroughWeek13 is 0
+USC averageRatingBiasThroughWeek13 is 0.0407
+Utah averageRatingBiasThroughWeek13 is 0.0922
+Washington averageRatingBiasThroughWeek13 is 0.056
+Washington State averageRatingBiasThroughWeek13 is -0.0079
+Alabama averageRatingBiasThroughWeek13 is -0.0106
+Arkansas averageRatingBiasThroughWeek13 is 0.0016
+Auburn averageRatingBiasThroughWeek13 is 0.0663
+Florida averageRatingBiasThroughWeek13 is 0.0311
+Georgia averageRatingBiasThroughWeek13 is 0
+Kentucky averageRatingBiasThroughWeek13 is 0
+LSU averageRatingBiasThroughWeek13 is 0.075
+Mississippi State averageRatingBiasThroughWeek13 is 0
+Missouri averageRatingBiasThroughWeek13 is 0
+Ole Miss averageRatingBiasThroughWeek13 is 0
+South Carolina averageRatingBiasThroughWeek13 is 0
+Tennessee averageRatingBiasThroughWeek13 is -0.0141
+Texas A&M averageRatingBiasThroughWeek13 is 0.0193
+Vanderbilt averageRatingBiasThroughWeek13 is 0
+Cincinnati averageRatingBiasThroughWeek13 is 0
+Connecticut averageRatingBiasThroughWeek13 is 0
+East Carolina averageRatingBiasThroughWeek13 is 0
+Houston averageRatingBiasThroughWeek13 is 0.0097
+Memphis averageRatingBiasThroughWeek13 is 0
+SMU averageRatingBiasThroughWeek13 is 0
+South Florida averageRatingBiasThroughWeek13 is -0.0171
+Temple averageRatingBiasThroughWeek13 is 0
+Tulane averageRatingBiasThroughWeek13 is 0
+Tulsa averageRatingBiasThroughWeek13 is 0
+UCF averageRatingBiasThroughWeek13 is 0
+Charlotte averageRatingBiasThroughWeek13 is 0
+Florida Atlantic averageRatingBiasThroughWeek13 is 0
+Florida Intl averageRatingBiasThroughWeek13 is 0
+Louisiana Tech averageRatingBiasThroughWeek13 is 0
+Marshall averageRatingBiasThroughWeek13 is 0
+Middle Tennessee averageRatingBiasThroughWeek13 is 0
+North Texas averageRatingBiasThroughWeek13 is 0
+Old Dominion averageRatingBiasThroughWeek13 is 0
+Rice averageRatingBiasThroughWeek13 is 0
+Southern Mississippi averageRatingBiasThroughWeek13 is 0
+UTEP averageRatingBiasThroughWeek13 is 0
+Texas San Antonio averageRatingBiasThroughWeek13 is 0
+Western Kentucky averageRatingBiasThroughWeek13 is 0
+Akron averageRatingBiasThroughWeek13 is 0
+Ball State averageRatingBiasThroughWeek13 is 0
+Bowling Green averageRatingBiasThroughWeek13 is 0
+Buffalo averageRatingBiasThroughWeek13 is 0
+Central Michigan averageRatingBiasThroughWeek13 is 0
+Eastern Michigan averageRatingBiasThroughWeek13 is 0
+Kent State averageRatingBiasThroughWeek13 is 0
+Massachusetts averageRatingBiasThroughWeek13 is 0
+Miami (OH) averageRatingBiasThroughWeek13 is 0
+Northern Illinois averageRatingBiasThroughWeek13 is 0
+Ohio averageRatingBiasThroughWeek13 is 0
+Toledo averageRatingBiasThroughWeek13 is 0
+Western Michigan averageRatingBiasThroughWeek13 is -0.1073
+Air Force averageRatingBiasThroughWeek13 is 0
+Boise State averageRatingBiasThroughWeek13 is -0.0694
+Colorado State averageRatingBiasThroughWeek13 is 0
+Fresno State averageRatingBiasThroughWeek13 is 0
+Hawaii averageRatingBiasThroughWeek13 is 0
+Nevada averageRatingBiasThroughWeek13 is 0
+New Mexico averageRatingBiasThroughWeek13 is 0
+San Diego State averageRatingBiasThroughWeek13 is 0
+San Jose State averageRatingBiasThroughWeek13 is 0
+UNLV averageRatingBiasThroughWeek13 is 0
+Utah State averageRatingBiasThroughWeek13 is 0
+Wyoming averageRatingBiasThroughWeek13 is 0
+Appalachian State averageRatingBiasThroughWeek13 is 0.0021
+Arkansas State averageRatingBiasThroughWeek13 is 0
+Georgia Southern averageRatingBiasThroughWeek13 is 0
+Georgia State averageRatingBiasThroughWeek13 is 0
+Idaho averageRatingBiasThroughWeek13 is 0
+Louisiana Lafayette averageRatingBiasThroughWeek13 is 0
+Louisiana Monroe averageRatingBiasThroughWeek13 is 0
+New Mexico State averageRatingBiasThroughWeek13 is 0
+South Alabama averageRatingBiasThroughWeek13 is 0
+Texas State averageRatingBiasThroughWeek13 is 0
+Troy averageRatingBiasThroughWeek13 is -0.0228
+Army averageRatingBiasThroughWeek13 is 0
+BYU averageRatingBiasThroughWeek13 is 0
+Navy averageRatingBiasThroughWeek13 is 0.0022
+Notre Dame averageRatingBiasThroughWeek13 is 0
+1AA averageRatingBiasThroughWeek13 is 0
