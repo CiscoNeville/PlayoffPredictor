@@ -44,8 +44,8 @@ $calculatedRatingsFile = "/home/neville/cfbPlayoffPredictor/data/current/Current
 #If called with two arguments use historical data
 elsif ($#ARGV == 1) {  
 ($year,$week) = @ARGV;
-if (($year < 2014) || ($year > 2050))  {
-print "year should be 2014 - 2050\n";
+if (($year < 1947) || ($year > 2050))  {
+print "year should be 1947 - 2050\n";
 die;
  }
 if (($week < 1) || ($week > 17))  {
@@ -99,7 +99,7 @@ my %seasonLosses;
 my $useMarginOfVictory = 1;   
 my $mov;
 my $movFactor;
-my $alpha = -0.333;     #If alpha=0 this should simplify to original colley matrix.
+my $alpha = -0.5;     #If alpha=0 this should simplify to original colley matrix.
 
 
 my @agaRating;
@@ -168,40 +168,29 @@ $hTeamName = "1AA";
 }
 
 #populate the matrix with the data
-$mov=abs($hTotal - $aTotal);
+$mov=($hTotal - $aTotal);
 
 
-#$movFactor=((1/80)*$mov)-.0125;                #simple linear MoV
-#$movFactor=((atan2(.1*$mov-1.7,1))/2.53)+.4001;   #atan MoV
-#$movFactor=log($mov)/log(80);                   #log MoV, base 80
+#tiered MoV AS PER PAPER WHICH WILL BE CANON
+$movFactor = 0; #standard game
+if (($mov>=1) && ($mov<=2)) {$movFactor=-0.2} elsif (($mov<=-1) && ($mov>=-2)) {$movFactor=+0.2} #close game type 1
+if (($mov>=25) && ($mov<=34)) {$movFactor=+0.2} elsif (($mov<=-25) && ($mov>=-34)) {$movFactor=-0.2} #blowout type 1
+if ($mov>=35) {$movFactor=+0.3} elsif ($mov<=-35) {$movFactor=-0.3} #blowout type 2
 
-#tiered MoV
-#if ($mov>=1 && $mov<=16) {$movFactor=0;}
-#if ($mov>=17 && $mov<=31) {$movFactor=0.5;}
-#if ($mov>=32) {$movFactor=1;}
+#add in elements of the matrix
+my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName});   #row,column so bottom left element of the 2 teams, assuming home team is lower team number
+$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+($alpha*$movFactor));
+my $y = $cM->element($teamH{$aTeamName},$teamH{$hTeamName});                #top right
+$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$y-1+(-$alpha*$movFactor)); 
 
-#simple linear MoV
-$movFactor=0.01*($mov-1);
-
-
-
-
-
-
-#add in elements of the matrix that are not dependent on who won
-my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
+my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});     #diagonal top-left
 $cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
+my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});     #diagonal bottom-right
+$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+(-$alpha*$movFactor));
 
 
 my $b1 = $bCV->element($teamH{$hTeamName},1);
 my $b2 = $bCV->element($teamH{$aTeamName},1);
-
 
 #Figure out which team won and give it to the @results array in 1-0 format
  if ($hTotal > $aTotal)  {    #home team won
@@ -211,8 +200,8 @@ $seasonWins{$hTeamName} = $seasonWins{$hTeamName} + 1;
 $seasonLosses{$aTeamName}++;
 
 
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
+$bCV->assign($teamH{$hTeamName},1,$b1+0.5);
+$bCV->assign($teamH{$aTeamName},1,$b2-0.5);
 
 }
 else {    #away team won. No ties anymore...
@@ -220,8 +209,8 @@ $results[$k] = "$aTeamName 1-0 $hTeamName";
 $seasonWins{$aTeamName}++;
 $seasonLosses{$hTeamName}++;
 
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
+$bCV->assign($teamH{$aTeamName},1,$b2+0.5);
+$bCV->assign($teamH{$hTeamName},1,$b1-0.5);
 
 
 }
