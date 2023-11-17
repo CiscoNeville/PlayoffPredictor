@@ -82,7 +82,12 @@ my %isInTop4;
 my %isTheTop4;
 my $thisTop4Result;
 
-$year = 2022;
+
+# set $year automatically based on current date. Can clobber if needed (below)
+my $year = 1900 + (localtime)[5];
+if ( ((localtime)[4] == 0) || ((localtime)[4] == 1) )  {$year = $year -1;}  #If in Jan or Feb, use last year for football season year
+$year = 2023;
+
 
 if ($year ge 2018) {
  $useMarginOfVictory = 1;   #default is to use it from 2018 season onwards. Does not need to be called dynamically from previous page, just needs to be selectable here in backend code is enough
@@ -226,13 +231,13 @@ close NCFSCORESFILE;
 my @ratingBias;
 open (AVERAGECOMMITTEEBIASFILE, "<$averageCommitteeBiasFile") or die "$! error trying to open";
 for my $line (<AVERAGECOMMITTEEBIASFILE>) {
-$line =~ m/(.+?) averageRatingBiasThroughWeek\d\d is (.+)/;
+$line =~ m/(.+?) averageRatingBiasThroughWeek\d+ is (.+)/;
 $ratingBias [$teamH{$1}] = $2;
 }
 #$ratingBias [$teamH{"1AA"}] = 0;     # need this so addition here is defined later
 close AVERAGECOMMITTEEBIASFILE;
 
-#print "auburn ratingBias is $ratingBias[$teamH{'Auburn'}]\n";
+#print "georgia ratingBias is $ratingBias[$teamH{'Georgia'}]\n";
 
 my %computerRating;
 #read input data for teams current computer ratings
@@ -241,7 +246,7 @@ for my $data (<CURRENTCALCULATEDRATINGSFILE>) {
 my ($teamName, $teamRating, $record) = (split /:/, $data); 
 $computerRating{"$teamName"} = $teamRating + $ratingBias[$teamH{"$teamName"}];      #makes $computerRating{Alabama} = 0.900 + .050 = 0.950
 }
-
+#print "georgia computerRating is $computerRating{'Georgia'}\n";
 
 
 
@@ -259,7 +264,7 @@ chomp $hTeamName;
 unless (  ($aTeamName ~~ [values %team])    )  {$aTeamName = "1AA"; }
 unless (  ($hTeamName ~~ [values %team])    )  {$hTeamName = "1AA"; }  
 
-$movFactor = 0;  #for future wins and losses we assume no MoV - that is final scores are 1-0
+$movFactor = 0;  #for future wins and losses we assume no MoV - that is final scores are 14-0
 
 #add in elements of the matrix that are not dependent on who won
 my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
@@ -278,7 +283,7 @@ my $b2 = $bCV->element($teamH{$aTeamName},1);
 my $divisor = 1;  #base = 1000,  divisor =1
 
 my $homeFieldAdvantageNumber;
-if ($week ne "week 14"){$homeFieldAdvantageNumber = 0.04;} else {$homeFieldAdvantageNumber = 0;}
+if ($week ne "week 14"){$homeFieldAdvantageNumber = 0.05;} else {$homeFieldAdvantageNumber = 0;}
 
 my $probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
 my $probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
@@ -415,8 +420,8 @@ if ( $agaRating[$teamH{$secWestTeam[$i]}] > $secWestWinnerRating ) {
     $secWestWinnerRating = $agaRating[$teamH{$secWestTeam[$i]}];
 }
 }
-$secWestWinner = "LSU";   #If you need to clobber
-$secWestWinnerRating = $agaRating[$teamH{"LSU"}];
+#$secWestWinner = "LSU";   #If you need to clobber
+#$secWestWinnerRating = $agaRating[$teamH{"LSU"}];
 #print "sec East winner was $secEastWinner with a rating of $agaRating[$teamH{$secEastWinner}]\n";
 #print "sec West winner was $secWestWinner with a rating of $agaRating[$teamH{$secWestWinner}]\n";
 
@@ -570,20 +575,20 @@ push @week14Results, "$aTeamName beats $hTeamName (SEC Championship)";
 $k++;
 
 #decide BigTen Champion
-my ($aTeamName, $hTeamName) = ($bigTenEastWinner, $bigTenWestWinner);
+($aTeamName, $hTeamName) = ($bigTenEastWinner, $bigTenWestWinner);
 #add in elements of the matrix that are not dependent on who won
-my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
+$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
 $cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
 $cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
+$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
 $cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
+$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
 $cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-my $b1 = $bCV->element($teamH{$hTeamName},1);
-my $b2 = $bCV->element($teamH{$aTeamName},1);
-my $probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-my $probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-my $rand = rand();
+$b1 = $bCV->element($teamH{$hTeamName},1);
+$b2 = $bCV->element($teamH{$aTeamName},1);
+$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
+$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
+$rand = rand();
 if ($rand <= $probA)  {    #home team won
 $results[$k] = "$hTeamName 1-0 $aTeamName";
 $seasonWins{$hTeamName}++;
@@ -604,20 +609,20 @@ $k++;
 
 
 #decide Pac12 Champion
-my ($aTeamName, $hTeamName) = ($pac12No1, $pac12No2);
+($aTeamName, $hTeamName) = ($pac12No1, $pac12No2);
 #add in elements of the matrix that are not dependent on who won
-my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
+$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
 $cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
 $cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
+$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
 $cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
+$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
 $cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-my $b1 = $bCV->element($teamH{$hTeamName},1);
-my $b2 = $bCV->element($teamH{$aTeamName},1);
-my $probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-my $probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-my $rand = rand();
+$b1 = $bCV->element($teamH{$hTeamName},1);
+$b2 = $bCV->element($teamH{$aTeamName},1);
+$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
+$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
+$rand = rand();
 if ($rand <= $probA)  {    #home team won
 $results[$k] = "$hTeamName 1-0 $aTeamName";
 $seasonWins{$hTeamName}++;
@@ -638,20 +643,20 @@ $k++;
 
 
 #decide ACC Champion
-my ($aTeamName, $hTeamName) = ($accAtlanticWinner, $accCoastalWinner);
+($aTeamName, $hTeamName) = ($accAtlanticWinner, $accCoastalWinner);
 #add in elements of the matrix that are not dependent on who won
-my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
+$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
 $cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
 $cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
+$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
 $cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
+$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
 $cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-my $b1 = $bCV->element($teamH{$hTeamName},1);
-my $b2 = $bCV->element($teamH{$aTeamName},1);
-my $probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-my $probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-my $rand = rand();
+$b1 = $bCV->element($teamH{$hTeamName},1);
+$b2 = $bCV->element($teamH{$aTeamName},1);
+$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
+$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
+$rand = rand();
 if ($rand <= $probA)  {    #home team won
 $results[$k] = "$hTeamName 1-0 $aTeamName";
 $seasonWins{$hTeamName}++;
@@ -672,20 +677,20 @@ $k++;
 
 
 #decide Big12 Champion
-my ($aTeamName, $hTeamName) = ($big12No1, $big12No2);
+($aTeamName, $hTeamName) = ($big12No1, $big12No2);
 #add in elements of the matrix that are not dependent on who won
-my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
+$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
 $cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
 $cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
+$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
 $cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
+$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
 $cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-my $b1 = $bCV->element($teamH{$hTeamName},1);
-my $b2 = $bCV->element($teamH{$aTeamName},1);
-my $probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-my $probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-my $rand = rand();
+$b1 = $bCV->element($teamH{$hTeamName},1);
+$b2 = $bCV->element($teamH{$aTeamName},1);
+$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
+$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
+$rand = rand();
 if ($rand <= $probA)  {    #home team won
 $results[$k] = "$hTeamName 1-0 $aTeamName";
 $seasonWins{$hTeamName}++;

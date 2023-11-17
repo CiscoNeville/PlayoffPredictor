@@ -36,8 +36,8 @@ print "year should be 2014 - 2050\n";
 die;
  }
 
-if (($week < 9) || ($week > 15))  {
-print "week should be between 9 - 15\n";
+if (($week < 1) || ($week > 15))  {
+print "week should be between 1 - 15\n";
 die;
  }
 
@@ -71,12 +71,15 @@ print "$j".". $committeeRankings[$i] \n";
 for (my $i = 0; $i<$#committeeRankings+1; $i++ ) {  
 if ($committeeRankings[$i] eq "Miss St")  {$committeeRankings[$i] = "Mississippi State"}
 if ($committeeRankings[$i] eq "FSU")  {$committeeRankings[$i] = "Florida State"}
+if ($committeeRankings[$i] eq "Florida St")  {$committeeRankings[$i] = "Florida State"}
 if ($committeeRankings[$i] eq "OSU")  {$committeeRankings[$i] = "Ohio State"}
 if ($committeeRankings[$i] eq "ECU")  {$committeeRankings[$i] = "East Carolina"}
 if ($committeeRankings[$i] eq "Washington St")  {$committeeRankings[$i] = "Washington State"}
 if ($committeeRankings[$i] eq "C. Carolina")  {$committeeRankings[$i] = "Coastal Carolina"}
 if ($committeeRankings[$i] eq "Oklahoma St")  {$committeeRankings[$i] = "Oklahoma State"}
 if ($committeeRankings[$i] eq "Mississippi St")  {$committeeRankings[$i] = "Mississippi State"}
+if ($committeeRankings[$i] eq "Kansas St")  {$committeeRankings[$i] = "Kansas State"}
+if ($committeeRankings[$i] eq "Oregon St")  {$committeeRankings[$i] = "Oregon State"}
 }
 
 
@@ -105,6 +108,12 @@ if (!exists $teamH{$committeeRankings[$i]}) {
 
 # write out top 25 to file
 my $committeeRankingsFile = "/home/neville/cfbPlayoffPredictor/data/$year/week$week/Week$week"."PlayoffCommitteeRankings.txt";
+
+if (($week < 9) || ($week == 17)) {
+$committeeRankingsFile = "/home/neville/cfbPlayoffPredictor/data/$year/week$week/Week$week"."APRankings.txt";  #use the moniker APRankings if it is not a cfp committee week
+}
+
+
 open (CFPRANKINGS, ">$committeeRankingsFile") or die "$! error trying to overwrite";
 for (my $i = 1 ; $i <=24 ; $i++) {
 print CFPRANKINGS "$i:$committeeRankings[$i-1]\n";
