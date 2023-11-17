@@ -40,11 +40,13 @@ my %team2;
 my $score1;
 my $score2;
 my %status;
+my $gameScoreEntered =  0;
+my $gameScheduleEntered = 0;
 
 # set $seasonYear automatically based on current date. Can clobber if needed (below)
 my $seasonYear = 1900 + (localtime)[5];
 if ( ((localtime)[4] == 0) || ((localtime)[4] == 1) )  {$seasonYear = $seasonYear -1;}  #If in Jan or Feb, use last year for football season year
-# $seasonYear = "2020";
+$seasonYear = "2023";
 
 
 
@@ -198,6 +200,7 @@ $score1 = $competitors[1] -> {"score"}    ;
 
 print "week $weekNumber: $gameStatus : $team1 $score1 - $team2 $score2\n";
 print NCFSCORESFILE "week $weekNumber: $gameStatus : $team1 $score1 - $team2 $score2\n";   #convert to 1-0 format in cm.pl. need it in this format now cause like to see final scores in analyze schedule
+$gameScoreEntered++;
 }
 
 
@@ -210,32 +213,16 @@ else {  #game still to be played out
 
 print "week $weekNumber: $gameStatus : $team1 vs $team2\n";    #$type{'description'} should say "Scheduled"
 print NCFSCHEDULEFILE "week $weekNumber:$team1 - $team2\n"; 
- 
+$gameScheduleEntered++; 
 }
 }
-#print "$i2\n";
+
 }
-#print "$i1\n";
-}
-
-
-
-
 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -244,9 +231,6 @@ print NCFSCHEDULEFILE "week $weekNumber:$team1 - $team2\n";
 
 open (NCFSCORESFILE, ">>$ncfScoresFile") or die "$! error trying to append";
 open (NCFSCHEDULEFILE, ">>$ncfScheduleFile") or die "$! error trying to append";
-
-
-
 
 
 
@@ -261,6 +245,10 @@ scrapeScoresESPN (80, $seasonYear, 2, $k);
 #get bowl games - uncomment this after bowl season is announced
 print "getting $seasonYear bowl games\n";  # (season 3 week 1 = my week 17
 scrapeScoresESPN (80,$seasonYear,3,1);
+
+
+print "Output writtten to $ncfScoresFile   ($gameScoreEntered rows)\n";
+print "Output writtten to $ncfScheduleFile ($gameScheduleEntered rows)\n";
 
 print "All done.\n";
 
