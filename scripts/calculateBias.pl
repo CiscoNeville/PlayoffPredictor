@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-##############
+################
 #
 # calculateBias.pl
 # Determine the FBS playoff committee bias per team 
