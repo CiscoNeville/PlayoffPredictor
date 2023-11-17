@@ -27,7 +27,7 @@ import numpy
 import pandas
 import cfbd
 
-# Get the current date and time
+# Get the Current date and time
 current_datetime = datetime.datetime.now()
 
 def main():
