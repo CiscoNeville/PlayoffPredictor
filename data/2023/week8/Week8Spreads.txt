@@ -1,0 +1,56 @@
+#Data retrieved 2023-10-31 08:17:36.611503
+#year : week : id : awayTeam : HomeTeam : spread : overUnder : provider
+2023:week 8:401520333:Tennessee:Alabama:-8.5:47.5:Bovada
+2023:week 8:401520341:South Carolina:Missouri:-7.5:57.5:Bovada
+2023:week 8:401520335:Ole Miss:Auburn:6.5:55.5:Bovada
+2023:week 8:401520334:Mississippi State:Arkansas:-7:46:Bovada
+2023:week 8:401532429:Akron:Bowling Green:-7:37:Bovada
+2023:week 8:401532427:Toledo:Miami (OH):2:46.5:Bovada
+2023:week 8:401532428:Western Michigan:Ohio:-16.5:52:Bovada
+2023:week 8:401532426:Eastern Michigan:Northern Illinois:-11.5:43.5:Bovada
+2023:week 8:401532425:Central Michigan:Ball State:5:42:Bovada
+2023:week 8:401532430:Buffalo:Kent State:6.5:44:Bovada
+2023:week 8:401525528:Boston College:Georgia Tech:-6:57:Bovada
+2023:week 8:401525529:Clemson:Miami:6:45:Bovada
+2023:week 8:401525531:Virginia:North Carolina:-24:58:Bovada
+2023:week 8:401525530:Duke:Florida State:-14:48.5:Bovada
+2023:week 8:401520339:Army:LSU:-33:60:Bovada
+2023:week 8:401525872:Oklahoma State:West Virginia:-3:48:Bovada
+2023:week 8:401525868:Baylor:Cincinnati:-2.5:51.5:Bovada
+2023:week 8:401525869:Texas:Houston:24:60.5:Bovada
+2023:week 8:401525867:Texas Tech:BYU:3:49:Bovada
+2023:week 8:401525870:TCU:Kansas State:-5.5:60:Bovada
+2023:week 8:401525532:Pittsburgh:Wake Forest:3:45:Bovada
+2023:week 8:401532602:Utah State:San Jose State:-4:65:Bovada
+2023:week 8:401532599:Colorado State:UNLV:-6.5:60:Bovada
+2023:week 8:401531434:Air Force:Navy:11:34:Bovada
+2023:week 8:401532601:Nevada:San Diego State:-11:48.5:Bovada
+2023:week 8:401532600:Hawaii:New Mexico:1.5:60:Bovada
+2023:week 8:401520337:Rutgers:Indiana:6:39.5:Bovada
+2023:week 8:401520340:Michigan:Michigan State:25.5:46.5:Bovada
+2023:week 8:401520343:Penn State:Ohio State:-4:46.5:Bovada
+2023:week 8:401520336:Wisconsin:Illinois:3:41:Bovada
+2023:week 8:401520338:Minnesota:Iowa:-3.5:30.5:Bovada
+2023:week 8:401520342:Northwestern:Nebraska:-10.5:40:Bovada
+2023:week 8:401520344:South Florida:UConn:-1:57:Bovada
+2023:week 8:401531382:Memphis:UAB:7.5:61.5:Bovada
+2023:week 8:401531391:SMU:Temple:24:53:Bovada
+2023:week 8:401520329:Western Kentucky:Jacksonville State:7.5:60.5:Bovada
+2023:week 8:401520331:Florida International:Sam Houston:-6:42:Bovada
+2023:week 8:401520330:Middle Tennessee:Liberty:-16:56.5:Bovada
+2023:week 8:401524038:Arizona State:Washington:-28:59.5:Bovada
+2023:week 8:401524036:UCLA:Stanford:17:52:Bovada
+2023:week 8:401524037:Utah:USC:-7.5:51.5:Bovada
+2023:week 8:401524035:Washington State:Oregon:-19.5:60.5:Bovada
+2023:week 8:401531893:James Madison:Marshall:5:49:Bovada
+2023:week 8:401531896:Coastal Carolina:Arkansas State:8.5:59:Bovada
+2023:week 8:401531895:Appalachian State:Old Dominion:6:56:Bovada
+2023:week 8:401531897:Georgia State:Louisiana:-3:62:Bovada
+2023:week 8:401531894:UL Monroe:Georgia Southern:-16.5:60.5:Bovada
+2023:week 8:401531892:Southern Miss:South Alabama:-18.5:51:Bovada
+2023:week 8:401525871:UCF:Oklahoma:-17:67.5:Bovada
+2023:week 8:401531406:Charlotte:East Carolina:-6:39.5:Bovada
+2023:week 8:401531372:North Texas:Tulane:-20:63.5:Bovada
+2023:week 8:401531341:Rice:Tulsa:-3:56.5:Bovada
+2023:week 8:401531397:UTSA:Florida Atlantic:2.5:58.5:Bovada
+2023:week 8:401520332:New Mexico State:UTEP:3:48.5:Bovada

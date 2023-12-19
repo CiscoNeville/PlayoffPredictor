@@ -1,0 +1,121 @@
+Auburn:1.051932768: record is 14 and 0
+TCU:1.002756191: record is 13 and 0
+Stanford:0.9934532102: record is 12 and 1
+Boise State:0.9804837879: record is 12 and 1
+Oklahoma:0.9763911824: record is 12 and 2
+Ohio State:0.9575417961: record is 12 and 1
+Oregon:0.9518143964: record is 12 and 1
+Oklahoma State:0.9039373803: record is 11 and 2
+Alabama:0.8919104489: record is 10 and 3
+LSU:0.887730132: record is 11 and 2
+Arkansas:0.8560969373: record is 10 and 3
+Nevada:0.8391361744: record is 13 and 1
+Missouri:0.8348197972: record is 10 and 3
+Wisconsin:0.8297566844: record is 11 and 2
+Texas A&M:0.7956772124: record is 9 and 4
+Michigan State:0.7943663394: record is 11 and 2
+Virginia Tech:0.7786851264: record is 11 and 3
+Florida State:0.7760709348: record is 10 and 4
+Utah:0.7595672648: record is 10 and 3
+Nebraska:0.7484583502: record is 10 and 4
+Mississippi State:0.730922566: record is 9 and 4
+NC State:0.7269711794: record is 9 and 4
+South Carolina:0.7217141039: record is 9 and 5
+Hawaii:0.7204180566: record is 10 and 3
+Notre Dame:0.7146378733: record is 8 and 5
+USC:0.690563431: record is 8 and 5
+West Virginia:0.6903984865: record is 9 and 4
+Iowa:0.6784855193: record is 8 and 5
+Florida:0.6744618113: record is 8 and 5
+Maryland:0.6722789539: record is 9 and 4
+Air Force:0.6710076152: record is 9 and 4
+UCF:0.6469995377: record is 11 and 3
+San Diego State:0.6409297402: record is 9 and 4
+Texas Tech:0.6325445369: record is 8 and 5
+Northern Illinois:0.6279704528: record is 11 and 3
+Arizona:0.6236757702: record is 7 and 6
+Tulsa:0.6182633756: record is 10 and 3
+North Carolina:0.6121923201: record is 8 and 5
+Illinois:0.6055316499: record is 7 and 6
+Pittsburgh:0.6052579791: record is 8 and 5
+Navy:0.6022960281: record is 9 and 4
+Miami:0.597944891: record is 7 and 6
+Penn State:0.5849806412: record is 7 and 6
+BYU:0.582517291: record is 7 and 6
+Washington:0.5789509797: record is 7 and 6
+Oregon State:0.5771186613: record is 5 and 7
+Michigan:0.5663595391: record is 7 and 6
+Fresno State:0.5616614991: record is 8 and 5
+Arizona State:0.5610026378: record is 6 and 6
+Baylor:0.5544703694: record is 7 and 6
+South Florida:0.553668772: record is 8 and 5
+Connecticut:0.5490708507: record is 8 and 5
+Boston College:0.5448008302: record is 7 and 6
+Kansas State:0.544395757: record is 7 and 6
+Georgia:0.5286345397: record is 6 and 7
+Miami (OH):0.5269930491: record is 10 and 4
+California:0.5250337289: record is 5 and 7
+Syracuse:0.5242405966: record is 8 and 5
+Clemson:0.5134160999: record is 6 and 7
+Southern Mississippi:0.5053984949: record is 8 and 5
+Temple:0.4987322968: record is 8 and 4
+Louisville:0.4896657489: record is 7 and 6
+Texas:0.4872644112: record is 5 and 7
+Iowa State:0.4825989503: record is 5 and 7
+Tennessee:0.4803756185: record is 6 and 7
+Northwestern:0.476893105: record is 7 and 6
+SMU:0.4665714105: record is 7 and 7
+Colorado:0.461342721: record is 5 and 7
+Troy:0.4516172248: record is 8 and 5
+Toledo:0.4453319236: record is 8 and 5
+Kentucky:0.4414467189: record is 6 and 7
+East Carolina:0.4380611427: record is 6 and 7
+Army:0.4347896436: record is 7 and 6
+Georgia Tech:0.4281804325: record is 6 and 7
+Louisiana Tech:0.4253866752: record is 5 and 7
+Ohio:0.4222744651: record is 8 and 5
+Cincinnati:0.4209506052: record is 4 and 8
+UCLA:0.4058620451: record is 4 and 8
+Idaho:0.3974748391: record is 6 and 7
+Ole Miss:0.3930493085: record is 4 and 8
+Houston:0.3759598371: record is 5 and 7
+Western Michigan:0.3732779934: record is 6 and 6
+Florida Intl:0.3670021571: record is 6 and 6
+Utah State:0.3589385242: record is 4 and 8
+Indiana:0.3585249205: record is 5 and 7
+Purdue:0.357916936: record is 4 and 8
+Minnesota:0.3430265431: record is 3 and 9
+Marshall:0.3366386344: record is 5 and 7
+Rutgers:0.3243431771: record is 4 and 8
+Virginia:0.3219916586: record is 4 and 8
+UTEP:0.3100781948: record is 6 and 7
+Louisiana Monroe:0.3053201646: record is 5 and 7
+Kent State:0.293146888: record is 5 and 7
+Wake Forest:0.2891171794: record is 3 and 9
+Washington State:0.2794741418: record is 2 and 10
+Duke:0.2792872657: record is 3 and 9
+Kansas:0.2778308895: record is 3 and 9
+Wyoming:0.2751848882: record is 3 and 9
+Colorado State:0.274525878: record is 3 and 9
+Rice:0.2680221298: record is 4 and 8
+UAB:0.2613448113: record is 4 and 8
+Tulane:0.2520313824: record is 4 and 8
+Arkansas State:0.2437997681: record is 4 and 8
+Middle Tennessee:0.2412486116: record is 6 and 7
+UNLV:0.2388085174: record is 2 and 11
+Vanderbilt:0.2212576453: record is 2 and 10
+Central Michigan:0.2018675316: record is 3 and 9
+Florida Atlantic:0.1930487281: record is 4 and 8
+New Mexico State:0.1554613388: record is 2 and 10
+Ball State:0.1423206739: record is 4 and 8
+Louisiana:0.1418027147: record is 3 and 9
+San Jose State:0.1378726916: record is 1 and 12
+North Texas:0.1284660494: record is 3 and 9
+New Mexico:0.1244152094: record is 1 and 11
+Bowling Green:0.1240567158: record is 2 and 10
+Eastern Michigan:0.09083299217: record is 2 and 10
+Buffalo:0.07354766883: record is 2 and 10
+Western Kentucky:0.07157055234: record is 2 and 10
+1AA:0.07020972344: record is 8 and 84
+Memphis:0.06987650858: record is 1 and 11
+Akron:-8.345329566e-05: record is 1 and 11
