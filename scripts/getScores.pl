@@ -11,6 +11,24 @@
 # 
 ##############
 
+#Use these variable locations when processing on production debian server
+#my $ncfScoresFile = "/home/neville/cfbPlayoffPredictor/data/current/ncfScoresFile.txt";
+#my $ncfScheduleFile = "/home/neville/cfbPlayoffPredictor/data/current/ncfScheduleFile.txt";
+
+
+#Use these variable locations when processing on local macbook
+my $ncfScoresFile = "/Users/neaga/Dropbox/documents/playoff predictor/github_repo/PlayoffPredictor/data/current/ncfScoresFile.txt";
+my $ncfScheduleFile = "/Users/neaga/Dropbox/documents/playoff predictor/github_repo/PlayoffPredictor/data/current/ncfScheduleFile.txt";
+
+
+#############################################
+
+#Hold temporary score files.  copy at end of script so atomic changeover to new data
+my $tempScoresFile = "/tmp/tempScoresFile.txt";
+my $tempScheduleFile = "/tmp/tempScheduleFile.txt";
+
+
+
 use utf8;
 use strict;
 use warnings;
@@ -20,12 +38,7 @@ use WWW::Mechanize;
 use HTML::TokeParser;
 use File::Copy;
 use JSON;
-use Data::Dumper;
 use feature qw/ say /;
-
-my $ncfScoresFile = "/home/neville/cfbPlayoffPredictor/data/current/ncfScoresFile.txt";
-my $ncfScheduleFile = "/home/neville/cfbPlayoffPredictor/data/current/ncfScheduleFile.txt";
-
 
 my $confId;    #80 is all FBS
 my $seasonType;   # 2 = regular season;  3 = bowls  
@@ -46,18 +59,7 @@ my $gameScheduleEntered = 0;
 # set $seasonYear automatically based on current date. Can clobber if needed (below)
 my $seasonYear = 1900 + (localtime)[5];
 if ( ((localtime)[4] == 0) || ((localtime)[4] == 1) )  {$seasonYear = $seasonYear -1;}  #If in Jan or Feb, use last year for football season year
-$seasonYear = "2023";
-
-
-
-#Clear out any previous scorefiles:
-open (NCFSCORESFILE, ">$ncfScoresFile") or die "$! error trying to overwrite";
-print NCFSCORESFILE ""; 
-close NCFSCORESFILE;
-
-open (NCFSCHEDULEFILE, ">$ncfScheduleFile") or die "$! error trying to overwrite";
-print NCFSCHEDULEFILE ""; 
-close NCFSCHEDULEFILE;
+#$seasonYear = "2023";
 
 
 
@@ -86,22 +88,11 @@ $html = $browser->content;
 #print SCORES1 "$html\n";
 
 
-
-
-
-
 #$html =~ /(.+)<\/script><script>window.espn.scoreboardData 	= (.+?)\;window.espn.scoreboardSettings/sg;        #this is where to find the json prior to 2021-11-18
 $html =~ /\"evts\"\:(.+?)\,\"crntSzn/sg;        #this is where to find the json after to 2021-11-19
 my $json = $1;  #this should be all the espn json
 $json = '{ "evts":' . $json;      #put the key that starts the json string back in the beginning
 $json = $json . '}' ;             #balance and end the json
-
-##testing for valid input
-#open (SCORES2A, '</tmp/scores-test-for-json.json') or die $!;
-#while (<SCORES2A>){
-#    $json = $json . $_ ;
-#}
-#close SCORES2A;
 
 
 use open qw/ :std :encoding(utf-8) /;
@@ -109,29 +100,12 @@ $json =~ s/[^a-zA-Z0-9,\[\]\{\}\"\'\\\/\-\:\ \&\(\)]//g;    #have to get rid of 
 
 
 
+#open (SCORES2, ">/tmp/scores.json") or die "$! error trying to overwrite";
+#print SCORES2 "$json\n";
+#close SCORES2;
 
 
-open (SCORES2, ">/tmp/scores.json") or die "$! error trying to overwrite";
-print SCORES2 "$json\n";
-close SCORES2;
-
-
-##read it right back in - formatting? UTF8??
-#$json = '';
-#open (SCORES2B, '</tmp/scores.json') or die $!;
-#while (<SCORES2B>){
-#    $json = $json . $_ ;
-#}
-#close SCORES2B;
-
-
-
-
-
-
-
-my $k;
-my $v;
+#my ($k, $v);
 
 #$json = utf8::downgrade($json);   #ESPN propduces some weird characters 
 my $data = decode_json $json;
@@ -139,12 +113,9 @@ my $data = decode_json $json;
 
 #print Dumper $data;
 my $dumpedData = Dumper $data;
-open (SCORES3, ">/tmp/scores3.txt") or die "$! error trying to overwrite";
-print SCORES3 "$dumpedData";
-close SCORES3;
-#print "got here\n";
-#die;
-
+#open (SCORES3, ">/tmp/scores3.txt") or die "$! error trying to overwrite";
+#print SCORES3 "$dumpedData";
+#close SCORES3;
 
 
 my @evts = @{ $data -> {"evts"}    };			 #understand that evts points to a [] , so use a @array
@@ -199,7 +170,7 @@ $score1 = $competitors[1] -> {"score"}    ;
 
 
 print "week $weekNumber: $gameStatus : $team1 $score1 - $team2 $score2\n";
-print NCFSCORESFILE "week $weekNumber: $gameStatus : $team1 $score1 - $team2 $score2\n";   #convert to 1-0 format in cm.pl. need it in this format now cause like to see final scores in analyze schedule
+print TEMP_SCORESFILE "week $weekNumber: $gameStatus : $team1 $score1 - $team2 $score2\n";   #do not use 1-0 format, depricated
 $gameScoreEntered++;
 }
 
@@ -212,25 +183,25 @@ print "Canceled|Postponed game. week $weekNumber: $gameStatus : $team1 vs $team2
 else {  #game still to be played out
 
 print "week $weekNumber: $gameStatus : $team1 vs $team2\n";    #$type{'description'} should say "Scheduled"
-print NCFSCHEDULEFILE "week $weekNumber:$team1 - $team2\n"; 
+print TEMP_SCHEDULEFILE "week $weekNumber:$team1 - $team2\n"; 
 $gameScheduleEntered++; 
 }
-}
+}  #end of if TBD vs TBD check
 
-}
+}  #end of foreach $b (@competitors)  { 
 
-}
+}  #end of foreach $a (@evts)  { 
 
-
-}
-
+}  #end of sub scrapeScoresESPN
 
 
 
 
 
-open (NCFSCORESFILE, ">>$ncfScoresFile") or die "$! error trying to append";
-open (NCFSCHEDULEFILE, ">>$ncfScheduleFile") or die "$! error trying to append";
+
+
+open (TEMP_SCORESFILE, ">$tempScoresFile") or die "$! error trying to overwrite";
+open (TEMP_SCHEDULEFILE, ">$tempScheduleFile") or die "$! error trying to overwrite";
 
 
 
@@ -242,18 +213,23 @@ scrapeScoresESPN (80, $seasonYear, 2, $k);
 }
 
 
-#get bowl games - uncomment this after bowl season is announced
+#get bowl games 
 print "getting $seasonYear bowl games\n";  # (season 3 week 1 = my week 17
 scrapeScoresESPN (80,$seasonYear,3,1);
+
+
+
+close TEMP_SCORESFILE;
+close TEMP_SCHEDULEFILE;
+
+
+#Copy temp files to real files
+copy($tempScoresFile, $ncfScoresFile) or die "Copy failed: $!";
+copy($tempScheduleFile, $ncfScheduleFile) or die "Copy failed: $!";
+
 
 
 print "Output writtten to $ncfScoresFile   ($gameScoreEntered rows)\n";
 print "Output writtten to $ncfScheduleFile ($gameScheduleEntered rows)\n";
 
 print "All done.\n";
-
-
-
-
-close NCFSCORESFILE;
-close NCFSCHEDULEFILE;
