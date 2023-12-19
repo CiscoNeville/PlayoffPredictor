@@ -11,17 +11,9 @@
 # 
 ##############
 
-#Use these variable locations when processing on production debian server
-#my $ncfScoresFile = "/home/neville/cfbPlayoffPredictor/data/current/ncfScoresFile.txt";
-#my $ncfScheduleFile = "/home/neville/cfbPlayoffPredictor/data/current/ncfScheduleFile.txt";
-
-
-#Use these variable locations when processing on local macbook
-my $ncfScoresFile = "/Users/neaga/Dropbox/documents/playoff predictor/github_repo/PlayoffPredictor/data/current/ncfScoresFile.txt";
-my $ncfScheduleFile = "/Users/neaga/Dropbox/documents/playoff predictor/github_repo/PlayoffPredictor/data/current/ncfScheduleFile.txt";
-
-
-#############################################
+#Use relative path so can be called on debian server or macbook
+my $ncfScoresFile = "./../data/current/ncfScoresFile.txt";
+my $ncfScheduleFile = "./../data/current/ncfScheduleFile.txt";
 
 #Hold temporary score files.  copy at end of script so atomic changeover to new data
 my $tempScoresFile = "/tmp/tempScoresFile.txt";
