@@ -80,6 +80,13 @@ if ($committeeRankings[$i] eq "Oklahoma St")  {$committeeRankings[$i] = "Oklahom
 if ($committeeRankings[$i] eq "Mississippi St")  {$committeeRankings[$i] = "Mississippi State"}
 if ($committeeRankings[$i] eq "Kansas St")  {$committeeRankings[$i] = "Kansas State"}
 if ($committeeRankings[$i] eq "Oregon St")  {$committeeRankings[$i] = "Oregon State"}
+if ($committeeRankings[$i] eq "Appalachian St")  {$committeeRankings[$i] = "Appalachian State"}
+if ($committeeRankings[$i] eq "Boise St")  {$committeeRankings[$i] = "Boise State"}
+if ($committeeRankings[$i] eq "San Diego St")  {$committeeRankings[$i] = "San Diego State"}
+
+
+
+
 }
 
 

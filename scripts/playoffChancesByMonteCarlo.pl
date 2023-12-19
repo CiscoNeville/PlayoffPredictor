@@ -391,8 +391,8 @@ $agaRating[$teamH{$team}] = $teamRating;
 
 
 
-
-
+#if (1==2)     #skip this all if week 14 games are already in schedule
+#{
 
 
 
@@ -736,7 +736,7 @@ if ( ($dim,$rCV,$base) =  $LRM->solve_LR($bCV) ) {
 }
 else {print "crap, there was no solution to the Colley Matrix  (This should not have happened\n)"; die;}
 
-
+#}
 
 
 # week 14 stuff now all completed, get top 4 for this season itieration

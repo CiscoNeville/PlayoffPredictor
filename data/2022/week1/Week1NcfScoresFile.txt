@@ -90,3 +90,5 @@ week 1: Final : Idaho 17 - Washington State 24
 week 1: Final : Boise State 17 - Oregon State 34
 week 1: Final : Kent State 20 - Washington 45
 week 1: Final : Western Kentucky 49 - Hawaii 17
+week 1: Final : Florida State 24 - LSU 23
+week 1: Final : Clemson 41 - Georgia Tech 10

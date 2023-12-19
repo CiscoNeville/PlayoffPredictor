@@ -1,19 +1,8 @@
-Georgia:992
-Michigan:989
-Ohio State:986
-TCU:982
-Clemson:8
-Washington:8
-Alabama:6
-Kansas:6
-Iowa State:4
-USC:3
-Oklahoma State:3
-Tennessee:3
-Duke:2
-Penn State:2
-Washington State:2
-Oregon State:1
-UCLA:1
-Syracuse:1
-LSU:1
+Michigan:990
+Texas:990
+Florida State:990
+Washington:990
+Wyoming:10
+Western Kentucky:10
+Western Michigan:10
+Wisconsin:10

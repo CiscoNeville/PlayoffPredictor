@@ -1,25 +1,25 @@
-1:Georgia
-2:Michigan
-3:TCU
-4:Ohio State
-5:Alabama
-6:Tennessee
-7:Utah
-8:USC
-9:Penn State
-10:Clemson
-11:Kansas St
-12:Washington
-13:Florida St
-14:Tulane
-15:Oregon
-16:LSU
-17:Oregon St
-18:UCLA
-19:Notre Dame
-20:South Carolina
-21:Texas
-22:UTSA
-23:Troy
-24:Mississippi State
-25:NC State
+1:Michigan
+2:Washington
+3:Texas
+4:Alabama
+5:Florida State
+6:Georgia
+7:Ohio State
+8:Oregon
+9:Missouri
+10:Penn State
+11:Ole Miss
+12:Oklahoma
+13:LSU
+14:Arizona
+15:Louisville
+16:Notre Dame
+17:Iowa
+18:NC State
+19:Oregon State
+20:Oklahoma State
+21:Tennessee
+22:Clemson
+23:Liberty
+24:SMU
+25:Kansas State

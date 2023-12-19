@@ -20,6 +20,6 @@
 20:Northwestern
 21:Washington State
 22:Virginia Tech
-23:USF
+23:South Florida
 24:Mississippi State
 25:Boise State

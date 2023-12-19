@@ -8,13 +8,13 @@
 8:USC
 9:Penn State
 10:Clemson
-11:Kansas St
+11:Kansas State
 12:Washington
-13:Florida St
+13:Florida State
 14:Tulane
 15:Oregon
 16:LSU
-17:Oregon St
+17:Oregon State
 18:UCLA
 19:Notre Dame
 20:South Carolina

@@ -3,6 +3,7 @@
 # Teams can be double-counted / over represented.
 #  example - Louisiana => LAYLAF  and Louisiana Lafayette => LAYLAF as 2 separate lines are fine
 1AA => NCAA
+FCS => NCAA
 Air Force => AF
 Akron => AKRON
 Alabama => BAMA
@@ -63,6 +64,7 @@ LSU => LSU
 Marshall => MRSHL
 Maryland => MD
 UMass => UMASS
+Massachusetts => UMASS
 Memphis => MEMP
 Miami => MIAMI
 Miami (OH) => MIAOH
@@ -143,3 +145,5 @@ Wyoming => WYO
 Coastal Carolina => CSTCAR
 Liberty => LIB
 James Madison => JMAD
+Sam Houston => SAMHOU
+Jacksonville State => JAXST
