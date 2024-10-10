@@ -373,7 +373,7 @@ chomp $sortedOutput2[$i];
  print " <html> <head> <title>PlayoffPredictor.com formula based true rankings and ratings of teams</title>";
  print " <link type=\"text\/css\" rel=\"stylesheet\" href=\"\/style.css\" \/> <\/head>";
  
-
+print "<h3>This version is 6 years old. Please upgrade to the new version of this app on the App Store titled \"<a href=\"https://apps.apple.com/us/app/cfb-playoff-predictor/id6462927364\">College Football Playoff Calc</a>\"</h3><p></p> ";
  
 print " <body> <h2>Aga matrix method</h2><h4>Last update of scores $ncfScoresFileModTime CST</h4><p></p>";
 #print out all the teams

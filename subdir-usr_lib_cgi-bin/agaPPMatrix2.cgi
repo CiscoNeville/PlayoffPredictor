@@ -5,7 +5,7 @@
 # Determine the FBS playoff committee bias per team and predict the future playoff committee rankings by implementing the 
 # Aga Playoff Predictor Matrix method.
 # The Aga Playoff Predictor Matrix method uses ideas first proposed by Wes Colley in the Colley Matrix method
-# with the addition of a single team to represent all 1AA schools
+# with the addition of a single team to represent all FCS schools
 # Furthermore, the method computes a playoff committee rating bias (rbCV)  which is used to predict the order the playoff committee will rank the teams in the future 
 # on the dataset plus an team bias determined by the committee
 #
@@ -21,8 +21,6 @@ use strict;
 use warnings;   #comment out -- too much in error log
 use CGI ':standard';
 use Math::MatrixReal;
-#use Number::Format;
-#use Sort::Naturally;
 use Data::Dumper;
 use List::MoreUtils qw(first_index);
 
@@ -45,8 +43,8 @@ my @teamLosses;
 
 my $mov;
 my $movFactor;
-my $alpha = 0;     #If alpha=0 this should simplify to original colley matrix.
-my $useMarginOfVictory = 0;   #will get set to 1 if using year >= 2018
+my $alpha = -0.5;     #If alpha=0 this should simplify to original colley matrix.
+my $useMarginOfVictory = 1;   #want to use MoV for all years. Want to see how good 2001 Miami was with this model, for instance
 
 my %seasonWins;
 my %seasonLosses;
@@ -69,13 +67,6 @@ my $week;
 my $weekNumber;
 
 $year = $q->param("year");
-
-if ($year ge 2018) {
- $useMarginOfVictory = 1;   #default is to use it from 2018 season onwards. Does not need to be called dynamically from previous page, just needs to be selectable here in backend code is enough
- $alpha = -0.1;   #this is the weighting of MoV relative to W/L. At this point chosen as -0.1 based on 2021 game research data. Should weight in future based on math.  Expressed as a negative number. Cij = Cii = alpha.   Bi = -alpha.  
- #HATE TO DO it like the above, but -0.1 gets weird rating for 1AA for 2021 week 17. Have to investigate
-}
-
 $week = $q->param("week");
 $week =~ m/Week(\d+)/;
 $weekNumber = $1;
@@ -89,14 +80,14 @@ my $averageCommitteeBiasFile = '/home/neville/cfbPlayoffPredictor/data/'."$year"
 
 my $fbsTeams = "/home/neville/cfbPlayoffPredictor/data/"."$year"."/fbsTeamNames.txt";
 
-
+#$alpha = $alpha * (1/(1+$weekNumber));   #testing - compute full season 2019 before you go here.
 
 #Check to make sure week 15 of a 14 week season (2015-2018) is not being called.  If so, insturct this week only exists for Army-Navy game
-if (($weekNumber == 15) && ($year != 2014)) {
+if ($weekNumber == 15 && ($year != 2014 && $year != 2019))  {
  print header();
 print start_html(-title => " predicted rankings",  -style=>{-src=>'/style.css'});
 
-print "<p>Week 15 consists only of the Army-Navy game.  Week 14 is the final cfb ranking and prediction for $year. <br><br>Please enter another year/week to research. </p>";
+print "<p>Except in years 2014 and 2019, Week 15 consists only of the Army-Navy game.  Week 14 is the final cfb ranking and prediction for $year. <br><br>Please enter another year/week to research. </p>";
  
 exit;
 }
@@ -110,6 +101,7 @@ open (FBSTEAMS, "<", $fbsTeams) or die "Can't open the file $fbsTeams";
 while (my $line = <FBSTEAMS> )   {
     chomp ($line);
     my ($a, $b) = split(" => ", $line);   #this will result in $key holding the name of a team (1st thing before split)
+    if ($a eq '1AA') {$a = 'FCS'}   #if fbsTeamName file contains 1AA, switch it to FCS
     $team{$b} = $a;
     $teamH{$a} = $b;
 }     #at the conclusion of this block $team{4} will be "Florida State" and $teamH{Auburn} will be "53"
@@ -187,20 +179,20 @@ my $hTeamName = $3;
 my $hTotal = $4;
 
 
-# Determine if a team is a 1AA team and assign them to the team "1AA"
+# Determine if a team is a FCS team and assign them to the team "FCS"
 if (  ($aTeamName ~~ [values %team])    )  {
 #that's great, away team is FBS. Do Nothing
 }
-else {   #otherwise it was a 1AA team
-$aTeamName = "1AA";
+else {   #otherwise it was a FCS team
+$aTeamName = "FCS";
 }
 
 
-if (  ($hTeamName ~~ [values %team])    )  {    #Like it would ever happen -- a 1A team plays a game on the road against a 1AA team
+if (  ($hTeamName ~~ [values %team])    )  {    #Like it would ever happen -- a 1A team plays a game on the road against a FCS team
 #that's great, home team is FBS. Do Nothing
 }
-else {   #otherwise it was a 1AA team
-$hTeamName = "1AA";
+else {   #otherwise it was a FCS team
+$hTeamName = "FCS";
 }
 
 
@@ -215,22 +207,24 @@ $hTeamName = "1AA";
 
 
 #populate the matrix with the data
-$mov=abs($hTotal - $aTotal);
+$mov=($hTotal - $aTotal);
 
+#tiered MoV AS PER PAPER WHICH WILL BE CANON
+$movFactor = 0; #standard game
+if (($mov>=1) && ($mov<=2)) {$movFactor=-0.2} elsif (($mov<=-1) && ($mov>=-2)) {$movFactor=+0.2} #close game type 1
+if (($mov>=25) && ($mov<=34)) {$movFactor=+0.2} elsif (($mov<=-25) && ($mov>=-34)) {$movFactor=-0.2} #blowout type 1
+if ($mov>=35) {$movFactor=+0.3} elsif ($mov<=-35) {$movFactor=-0.3} #blowout type 2
 
-#$movFactor=((1/80)*$mov)-.0125;                #simple linear MoV
-$movFactor=((atan2(.1*$mov-1.7,1))/2.53)+.4001;   #atan MoV
-#$movFactor=log($mov)/log(80);                   #log MoV, base 80
+#add in elements of the matrix
+my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName});   #row,column so bottom left element of the 2 teams, assuming home team is lower team number
+$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+($alpha*$movFactor));
+my $y = $cM->element($teamH{$aTeamName},$teamH{$hTeamName});                #top right
+$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$y-1+(-$alpha*$movFactor)); 
 
-#add in elements of the matrix that are not dependent on who won
-my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
+my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});     #diagonal top-left
 $cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
+my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});     #diagonal bottom-right
+$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+(-$alpha*$movFactor));
 
 
 my $b1 = $bCV->element($teamH{$hTeamName},1);
@@ -244,8 +238,8 @@ $seasonWins{$hTeamName} = $seasonWins{$hTeamName} + 1;
 $seasonLosses{$aTeamName}++;
 
 
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
+$bCV->assign($teamH{$hTeamName},1,$b1+0.5);
+$bCV->assign($teamH{$aTeamName},1,$b2-0.5);
 
 }
 else {    #away team won. No ties anymore...
@@ -253,8 +247,8 @@ $results[$k] = "$aTeamName 1-0 $hTeamName";
 $seasonWins{$aTeamName}++;
 $seasonLosses{$hTeamName}++;
 
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
+$bCV->assign($teamH{$aTeamName},1,$b2+0.5);
+$bCV->assign($teamH{$hTeamName},1,$b1-0.5);
 
 
 }
@@ -569,14 +563,14 @@ $c = (first_index { $_ eq $a } @agaPPRanking) + 1;
 if ($c > 0) {
 $diffPP = abs(log($i) - log($c)) + $diffPP;
 } else {
-   push (@nonMatchingCfpCommitteeTeamNames, "$a is a playoff committee name, but not a name that matches ESPNs defined names for $year. eta calculation is affected<br>");
+   push (@nonMatchingCfpCommitteeTeamNames, "$a is a playoff committee name, but not a name that matches ESPNs defined names for $year. &#951; calculation is affected<br>");
 }
 $i++;
 }
 my $etaPP = exp(.04 * $diffPP);     #exp [(1/25) * sum of ln differences]
 $etaPP = substr($etaPP,0,4);   #crude truncation
 
-print "&nbsp &nbsp Predictor eta = $etaPP<br>";
+print "&nbsp &nbsp Predictor &#951; = $etaPP<br>";
 print "@nonMatchingCfpCommitteeTeamNames";
 
 }
@@ -620,13 +614,13 @@ $b = (first_index { $_ eq $a } @agaComputerRanking) + 1;
 if ($b > 0) {
 $diffComputer = abs(log($i) - log($b)) + $diffComputer;
 } else {
-  push (@nonMatchingCfpCommitteeTeamNames, "$a is a playoff committee name, but not a name that matches ESPNs defined names for $year. eta calculation is affected<br>");
+  push (@nonMatchingCfpCommitteeTeamNames, "$a is a playoff committee name, but not a name that matches ESPNs defined names for $year. &#951; calculation is affected<br>");
 }
 $i++;
 }
 my $etaComputer = exp(.04 * $diffComputer);     #exp [(1/25) * sum of ln differences]
 $etaComputer = substr($etaComputer,0,4);  #crude truncation
-print "<hr><br>&nbsp &nbsp Computer eta = $etaComputer<br>";   #here is the eta character, I just cant get perl to print it - η
+print "<hr><br>&nbsp &nbsp Computer &#951; = $etaComputer<br>";   #here is the eta character, I just cant get perl to print it - η - html code &#951;
 print "@nonMatchingCfpCommitteeTeamNames";
 
 }
@@ -716,5 +710,4 @@ else {print "Margin of victory <b>has</b> been used in this calculation (year is
 
 print end_html();
 
-  
   

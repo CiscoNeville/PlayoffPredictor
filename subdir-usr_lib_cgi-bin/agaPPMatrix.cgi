@@ -14,7 +14,8 @@
 
 
 use strict;
-use CGI ':standard';
+#use CGI ':standard';
+use CGI;
 use Math::MatrixReal;
 #use Number::Format;
 use Data::Dumper;
@@ -72,15 +73,30 @@ my $numberOfTeams = $#teams + 1;  #$#teams starts counting at zero
 
 my $mov;
 my $movFactor;
-my $alpha = 0;     #If alpha=0 this should simplify to original colley matrix.
-my $useMarginOfVictory = CGI->new()->param('useMarginOfVictory');
+my $alpha = -0.5;     #If alpha=0 this should simplify to original colley matrix.
+
+my $cgi = CGI->new;
+
+print $cgi->header('text/html');
+
+my $useMarginOfVictory = $cgi->param('useMarginOfVictory');
 if ($useMarginOfVictory eq 'yes') {
    $useMarginOfVictory = 1;
-   $alpha = -0.1;   #this is the weighting of MoV relative to W/L. At this point chosen as -0.1 based on 2021 game research data. Should weight in future based on math.  Expressed as a negative number. Cij = Cii = alpha.   Bi = -alpha.  
+   $alpha = -0.5;   #this is the weighting of MoV relative to W/L. At this point chosen as -0.1 based on 2021 game research data. Should weight in future based on math.  Expressed as a negative number. Cij = Cii = alpha.   Bi = -alpha.  
 }
+
+my $isCalledInApp;
+
+my $wasRefererAppTrue = $cgi->param('callingFromApp');
+if ($wasRefererAppTrue == 'true') {
+  $isCalledInApp = 1; 
+  } else {
+   $isCalledInApp = 0;
+}
+#$isCalledInApp = 3;
+
 my %seasonWins;
 my %seasonLosses;
-
 
 
 
@@ -186,10 +202,13 @@ $hTeamName = "1AA";
 #populate the matrix with the data
 $mov=abs($hTotal - $aTotal);
 
+#tiered MoV AS PER PAPER WHICH WILL BE CANON
+$movFactor = 0; #standard game
+if (($mov>=1) && ($mov<=2)) {$movFactor=-0.2} elsif (($mov<=-1) && ($mov>=-2)) {$movFactor=+0.2} #close game type 1
+if (($mov>=25) && ($mov<=34)) {$movFactor=+0.2} elsif (($mov<=-25) && ($mov>=-34)) {$movFactor=-0.2} #blowout type 1
+if ($mov>=35) {$movFactor=+0.3} elsif ($mov<=-35) {$movFactor=-0.3} #blowout type 2
 
-#$movFactor=((1/80)*$mov)-.0125;                #simple linear MoV
-$movFactor=((atan2(.1*$mov-1.7,1))/2.53)+.4001;   #atan MoV
-#$movFactor=log($mov)/log(80);                   #log MoV, base 80
+
 
 #add in elements of the matrix that are not dependent on who won
 my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
@@ -232,7 +251,7 @@ $k++;
 }
 close NCFSCORESFILE;
 
-print header();    # put this in now so debugging can be commented in if needed.  No HTML is actually outputted until the bottom of the file.
+#print header();    # put this in now so debugging can be commented in if needed.  No HTML is actually outputted until the bottom of the file.
 my $q = CGI -> new;
 
 my $r;
@@ -288,10 +307,8 @@ $results[$k] = "$r";
 
 
 
-$mov=1;    # for now predictions are based off 1-0 score, in future you could input score as well. To do, maybe if I want to do it later.   #the movFactor should be such that a 1 point victory equates to a 0 $movFactor
-#$movFactor=((1/80)*$mov)-.0125;                #simple linear MoV
-$movFactor=((atan2(.1*$mov-1.7,1))/2.53)+.4001;   #atan MoV
-#$movFactor=log($mov)/log(80);                   #log MoV, base 80
+$mov=15;    # future predictions are based off 15-0 score, which is no MoV factor
+$movFactor= 0; #standard game;
 
 
 
@@ -482,10 +499,15 @@ $bpCV -> subtract($bCV,$ArbCV);  #b' = b - cM * rb     , where b', b and rb are 
 #print "$bpCV\n\n";
 
 ##########################################
-print start_html(-title => "$r predicted rankings",  -style=>{-src=>'/style.css'});
+print CGI::start_html(-title => "$r predicted rankings",  -style=>{-src=>'/style.css'});
 
+#isCalledInApp = 0;
 
+if ($isCalledInApp != 1) {
 print ' <a href="/"><img src="/playoff-predictor.jpg" alt="pp banner"> </a><br><br> ';
+}
+
+#print "<p>isCalledInApp variable = $isCalledInApp</p>"; 
 
 
 
@@ -557,14 +579,22 @@ if(($daysSinceJan1 >= 296) && ($daysSinceJan1 < 348)) {     #will need to comput
   for ($k=0;$k<4;$k++) {    
 my $m = $k+1;
 $sortedPredictedCommitteeRating[$k] =~ m/(.+?) (.+)/;
-print "$m. <img src=\"http://sports.cbsimg.net/images/collegefootball/logos/50x50/$teamIcon{$2}.png\">  <a href=\"/analyzeSchedule.php?team1=$2\">$2</a>    ($1) <br>";
+if ($isCalledInApp != 1) {
+print "$m. <img src=\"https://sports.cbsimg.net/images/collegefootball/logos/50x50/$teamIcon{$2}.png\">  <a href=\"/analyzeSchedule.php?team1=$2\">$2</a>    ($1) <br>";
+} else {
+print "$m. <img src=\"https://sports.cbsimg.net/images/collegefootball/logos/50x50/$teamIcon{$2}.png\">  $2    ($1) <br>";  #in the app no hyperlink to team schedule
+}
 }
 print "</h5>";
 
   for ($k=4;$k<25;$k++) {    
 my $m = $k+1;
 $sortedPredictedCommitteeRating[$k] =~ m/(.+?) (.+)/;
+if ($isCalledInApp != 1) {
 print "$m. <a href=\"/analyzeSchedule.php?team1=$2\">$2</a>    ($1)<br>";
+} else {
+print "$m. $2    ($1)<br>";
+}
 }
 
 
@@ -594,7 +624,10 @@ if(($daysSinceJan1 >= 296) && ($daysSinceJan1 < 338)) {       #will need to comp
   #don't highlight the top 4 here, just print it all out
 for ($k=1;$k<$numberOfTeams+1;$k++) {
  
+if ($isCalledInApp != 1) {
  $sortedOutput2[$k] = "<a href=\"/analyzeSchedule.php?team1=$teamWithAgaRank[$k]\">" . $sortedOutput2[$k] ;
+} 
+
 $sortedOutput2[$k] =~ s/:/     <\/a> [/;    #pretty things up
  $sortedOutput2[$k] =~ s/: record is /]    (/;
  $sortedOutput2[$k] =~ s/ and /-/;
@@ -610,20 +643,29 @@ print "$k. $sortedOutput2[$k]<br>";
 print "<h5 id=\"top4\">"; 
 for ($k=0;$k<4;$k++) {    
 my $m = $k+1;
+
+if ($isCalledInApp != 1) {
  $sortedOutput2[$m] = "<a href=\"/analyzeSchedule.php?team1=$teamWithAgaRank[$m]\">" . $sortedOutput2[$m] ;
+}
+
  $sortedOutput2[$m] =~ s/:/     <\/a> [/;    #pretty things up
  $sortedOutput2[$m] =~ s/: record is /]    (/;
  $sortedOutput2[$m] =~ s/ and /-/;
  $sortedOutput2[$m] = $sortedOutput2[$m] . ")";
  
-print "$m. <img src=\"http://sports.cbsimg.net/images/collegefootball/logos/50x50/$teamIcon{$teamWithAgaRank[$m]}.png\"> $sortedOutput2[$m]<br>";
+print "$m. <img src=\"https://sports.cbsimg.net/images/collegefootball/logos/50x50/$teamIcon{$teamWithAgaRank[$m]}.png\"> $sortedOutput2[$m]<br>";
 
 
 }
 print "</h5>";
 
   for ($k=5;$k<$numberOfTeams+1;$k++) {    
+
+if ($isCalledInApp != 1) {
  $sortedOutput2[$k] = "<a href=\"/analyzeSchedule.php?team1=$teamWithAgaRank[$k]\">" . $sortedOutput2[$k] ;
+}
+ 
+ 
  $sortedOutput2[$k] =~ s/:/     <\/a> [/;    #pretty things up
  $sortedOutput2[$k] =~ s/: record is /]    (/;
  $sortedOutput2[$k] =~ s/ and /-/;
@@ -681,13 +723,16 @@ my $topFour3 = $2;
 $sortedPredictedCommitteeRating[3] =~ m/(.+?) (.+)/;
 my $topFour4 = $2;
 
+if ($isCalledInApp != 1) {   #only print the tweet on the web
 
-
-print "Tweet this top 4 <a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-url=\"http://football.playoffPredictor.com/predictNextWeek-top15.php\" data-text=\"My #cfbPlayoff top 4 are $topFour1, $topFour2, $topFour3 and $topFour4 . Find your top 4:\">Tweet this top 4</a><br><br>";
+print "Tweet this top 4 <a href=\"https://twitter.com/share\" class=\"twitter-share-button\" data-url=\"https://football.playoffPredictor.com/predictNextWeek-top15.php\" data-text=\"My #cfbPlayoff top 4 are $topFour1, $topFour2, $topFour3 and $topFour4 . Find your top 4:\">Tweet this top 4</a><br><br>";
 print "<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>";
+}
 
 if ($useMarginOfVictory == 1) {print "Margin of victory <b>has</b> been used in this calculation<br>";}
 else {print "Margin of victory <b>has not</b> been used in this calculation<br>";}
+
+print "<h1><a href=\"https://football.playoffpredictor.com/predictFutureWeeks-unified.php?app=true&top15=yes&fullSeason=no\">Return to selection of predictions</a></h1>";
 
 print end_html();
 

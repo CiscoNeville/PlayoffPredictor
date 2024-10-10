@@ -67,8 +67,19 @@ close NCFBIASFILE;
 
 #see if this script is being called in the iPhone app.  If so, will need to format output differently
 use CGI;
-my $isCalledInApp = CGI->new()->param('app');   #look in the URL for ?app=   iPhone browsing will set it to 'true'
+#my $isCalledInApp = CGI->new()->param('app');   #look in the URL for ?app=   iPhone browsing will set it to 'true'
 
+
+my $q = CGI -> new;
+my $team1 = $q->param("team1");
+my $team2 = $q->param("team2");
+my $week= $q->param("weekNumber");
+my $useBiased = $q->param("useBiased");
+my $useHomeFieldAdvantage = $q->param("useHomeFieldAdvantage");
+my $homeFieldAdvantageRatingBoost = 0.04;
+
+
+my $isCalledInApp = $q->param("callingFromApp");
 
 
 #print out the ratings and records teams
@@ -104,13 +115,7 @@ else {
 
 
 #calculate the probabilities
-my $q = CGI -> new;
-my $team1 = $q->param("team1");
-my $team2 = $q->param("team2");
-my $week= $q->param("weekNumber");
-my $useBiased = $q->param("useBiased");
-my $useHomeFieldAdvantage = $q->param("useHomeFieldAdvantage");
-my $homeFieldAdvantageRatingBoost = 0.04;
+
 
 
 if ($useBiased eq "on") {
