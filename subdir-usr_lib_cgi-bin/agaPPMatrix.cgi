@@ -138,8 +138,6 @@ $bCV = new Math::MatrixReal($numberOfTeams,1);
 
 #create zeros for initial wins and losses for every team
 for (my $i = 1; $i<$numberOfTeams+1; $i++ ) {
- $teamWins[$i]=0;
- $teamLosses[$i]=0;
  $seasonWins{$team{$i}}=0;
  $seasonLosses{$team{$i}}=0;
 }
@@ -153,7 +151,6 @@ for (my $i = 1; $i<$#teams+2; $i++ ) {        # dont understand why +2, shuoldnt
 for (my $i = 1; $i<$#teams+2; $i++ ) {        # dont understand why +2, shuoldnt it be +1
  $bCV->assign($i,1,1);  
 }
-
 
 
 #read input data from a file.
@@ -201,7 +198,7 @@ $hTeamName = "FCS";
 
 
 #populate the matrix with the data
-$mov=abs($hTotal - $aTotal);
+$mov=($hTotal - $aTotal);
 
 #tiered MoV AS PER PAPER WHICH WILL BE CANON
 $movFactor = 0; #standard game
@@ -211,16 +208,25 @@ if ($mov>=35) {$movFactor=+0.3} elsif ($mov<=-35) {$movFactor=-0.3} #blowout typ
 
 
 
-#add in elements of the matrix that are not dependent on who won
+#add in elements of the matrix
 my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
+$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+($alpha*$movFactor));
+#my $z = $x-1+($alpha*$movFactor);
+#print "h,a -> $z\n";
 
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
+my $y = $cM->element($teamH{$aTeamName},$teamH{$hTeamName}); 
+$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$y-1+(-$alpha*$movFactor));  
+#print "a,h -> $z\n";
+
+
+my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});   #diagonal
 $cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
+#print "h,h -> $z\n";
 
+
+my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
+$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+(-$alpha*$movFactor));
+#print "a,a -> $z\n";
 
 my $b1 = $bCV->element($teamH{$hTeamName},1);
 my $b2 = $bCV->element($teamH{$aTeamName},1);
@@ -233,17 +239,16 @@ $seasonWins{$hTeamName} = $seasonWins{$hTeamName} + 1;
 $seasonLosses{$aTeamName}++;
 
 
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
-
+$bCV->assign($teamH{$hTeamName},1,$b1+0.5);
+$bCV->assign($teamH{$aTeamName},1,$b2-0.5);
 }
 else {    #away team won. No ties anymore...
 $results[$k] = "$aTeamName 1-0 $hTeamName";
 $seasonWins{$aTeamName}++;
 $seasonLosses{$hTeamName}++;
 
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
+$bCV->assign($teamH{$aTeamName},1,$b2+0.5);
+$bCV->assign($teamH{$hTeamName},1,$b1-0.5);
 
 
 }
