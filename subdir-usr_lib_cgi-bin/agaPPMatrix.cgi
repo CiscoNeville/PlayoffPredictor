@@ -5,7 +5,7 @@
 # Determine the FBS playoff committee bias per team and predict the future playoff committee rankings by Implement the 
 # Aga Playoff Predictor Matrix method.
 # The Aga Playoff Predictor Matrix method uses ideas first proposed by Wes Colley in the Colley Matrix method
-# with the addition of a single team to represent all 1AA schools
+# with the addition of a single team to represent all FCS schools
 # Furthermore, the method computes a playoff committee rating bias (rbCV)  which is used to predict the order the playoff committee will rank the teams in the future 
 # on the dataset plus an team bias determined by the committee
 #
@@ -34,6 +34,7 @@ open (FBSTEAMS, "<", $fbsTeams) or die "Can't open the file $fbsTeams";
 while (my $line = <FBSTEAMS> )   {
     chomp ($line);
     my ($a, $b) = split(" => ", $line);   #this will result in $key holding the name of a team (1st thing before split)
+    if ($a=='1AA') {$a='FCS'}   #is fbsTeamName file contains 1AA, switch it to FCS
     $team{$b} = $a;
     $teamH{$a} = $b;
 }     #at the conclusion of this block $team{4} will be "Florida State" and $teamH{Auburn} will be "53"
@@ -176,20 +177,20 @@ my $hTeamName = $3;
 my $hTotal = $4;
 
 
-# Determine if a team is a 1AA team and assign them to the team "1AA"
+# Determine if a team is a FCS team and assign them to the team "FCS"
 if (  ($aTeamName ~~ [values %team])    )  {
 #that's great, away team is FBS. Do Nothing
 }
-else {   #otherwise it was a 1AA team
-$aTeamName = "1AA";
+else {   #otherwise it was a FCS team
+$aTeamName = "FCS";
 }
 
 
 if (  ($hTeamName ~~ [values %team])    )  {    #Rarely happens -- an FBS team plays a game on the road against a FCS team
 #that's great, home team is FBS. Do Nothing
 }
-else {   #otherwise it was a 1AA team
-$hTeamName = "1AA";
+else {   #otherwise it was a FCS team
+$hTeamName = "FCS";
 }
 
 
