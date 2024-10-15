@@ -18,6 +18,8 @@ use Math::MatrixReal;
 #use Sort::Naturally;
 use Data::Dumper;
 use List::MoreUtils qw(first_index);
+use JSON;
+use List::Util;
 
 
 
@@ -61,7 +63,7 @@ my $useMarginOfVictory = 0;   #will get set to 1 if using year >= 2018
 my %seasonWins;
 my %seasonLosses;
 
-my @agaRating;
+my @agaRating;    #legacy way.  access with $agaRating[35] or $agaRating[$teamH{Georgia}]
 my $rematch =0;
 
 my @sortedOutput1;
@@ -78,15 +80,21 @@ my $year;
 my $week;
 my $weekNumber;
 
-my %isInTop4;
-my %isTheTop4;
-my $thisTop4Result;
+my %isInTop12;
+my %isTheTop12;
+my $thisTop12Result;
+
+my %agaRating;   #The way this should have been done to start - access with $agaRating{Georgia}
+my %agaRanking;
+
+my %conferenceChampion;   # $conferenceChampion{SEC} is Auburn   
+my %championStatus;       # $championStatus{Auburn} is "SEC Champion" 
 
 
 # set $year automatically based on current date. Can clobber if needed (below)
 my $year = 1900 + (localtime)[5];
 if ( ((localtime)[4] == 0) || ((localtime)[4] == 1) )  {$year = $year -1;}  #If in Jan or Feb, use last year for football season year
-$year = 2023;
+#$year = 2023;
 
 
 if ($year ge 2018) {
@@ -116,12 +124,25 @@ while (my $line = <FBSTEAMS> )   {
 my @teams=keys(%team);                     #this creates @teams array which has elements like ("127" , "32" , "90" , "118" ,... , "34") - not sure of the value of that
 my $numberOfTeams = $#teams + 1;  #$#teams starts counting at zero
 
+# Use fbsTeams.json in 2024 for team conference data.  use it exclusively by 2025 and no longer fbsTeamNmaes.txt - todo
+my $fbsTeamsJSON = "/home/neville/cfbPlayoffPredictor/data/"."$year"."/fbsTeams.json";
+
+# Read the JSON file
+open my $fh, '<', $fbsTeamsJSON or die "Cannot open $fbsTeamsJSON: $!";
+my $json_text = do { local $/; <$fh> };
+close $fh;
+
+# Decode JSON
+my $teams_data = decode_json($json_text);
+
+
+
 
 
 
 for (my $l=1; $l<=$itierations; $l++) {
-
-#create the matrix
+    %conferenceChampion = ();      #clear the hashes at the beginning of each iteration
+    %championStatus = ();
 
 #create blank matricies
 $cM = new Math::MatrixReal($numberOfTeams,$numberOfTeams);
@@ -382,153 +403,82 @@ $agaRating[$teamH{$team}] = $teamRating;
 #print "$sortedOutput[0] : $sortedOutput[1] : $sortedOutput[2] : $sortedOutput[3]";
 
 
-
-
-
-
-
-
-
-
-
-#if (1==2)     #skip this all if week 14 games are already in schedule
+#if (1==2)     #skip this all if week 14 games are already in schedule  #todo - make this better
 #{
 
 
-
-
-#Now, have to set up week 14 matches
-#will have to set up logic. All TODO:
-#  is week 14 already in ncfScheduleFile?
-#  division head-head winner
-#  three way tie
-# Hard code the SEC divsions in here. Look at expanding 20xxTeamNames with logic for conference and division
-my @secEastTeam = ("Georgia", "South Carolina", "Kentucky", "Missouri", "Florida", "Tennessee", "Vanderbilt");
-my @secWestTeam = ("Auburn", "Alabama", "Ole Miss", "Mississippi State", "LSU", "Arkansas", "Texas A&M");
-my ($secEastWinner, $secEastWinnerRating);
-for (my $i=0; $i<=6; $i++) {
-if ( $agaRating[$teamH{$secEastTeam[$i]}] > $secEastWinnerRating ) {
-    $secEastWinner = $secEastTeam[$i];
-    $secEastWinnerRating = $agaRating[$teamH{$secEastTeam[$i]}];
-}
-#print "sec East team $secEastTeam[$i] rating is $agaRating[$teamH{$secEastTeam[$i]}]\n";
-}
-my ($secWestWinner, $secWestWinnerRating);
-for (my $i=0; $i<=6; $i++) {
-if ( $agaRating[$teamH{$secWestTeam[$i]}] > $secWestWinnerRating ) {
-    $secWestWinner = $secWestTeam[$i];
-    $secWestWinnerRating = $agaRating[$teamH{$secWestTeam[$i]}];
-}
-}
-#$secWestWinner = "LSU";   #If you need to clobber
-#$secWestWinnerRating = $agaRating[$teamH{"LSU"}];
-#print "sec East winner was $secEastWinner with a rating of $agaRating[$teamH{$secEastWinner}]\n";
-#print "sec West winner was $secWestWinner with a rating of $agaRating[$teamH{$secWestWinner}]\n";
-
-
-#BigTen
-my @bigTenWestTeam = ("Nebraska", "Minnesota", "Wisconsin", "Northwestern", "Iowa", "Illinois", "Purdue");
-my @bigTenEastTeam = ("Michigan", "Michigan State", "Indiana", "Ohio State", "Penn State", "Rutgers", "Maryland");
-my ($bigTenEastWinner, $bigTenEastWinnerRating);
-for (my $i=0; $i<=6; $i++) {
-if ( $agaRating[$teamH{$bigTenEastTeam[$i]}] > $bigTenEastWinnerRating ) {
-    $bigTenEastWinner = $bigTenEastTeam[$i];
-    $bigTenEastWinnerRating = $agaRating[$teamH{$bigTenEastTeam[$i]}];
-}
-}
-my ($bigTenWestWinner, $bigTenWestWinnerRating);
-for (my $i=0; $i<=6; $i++) {
-if ( $agaRating[$teamH{$bigTenWestTeam[$i]}] > $bigTenWestWinnerRating ) {
-    $bigTenWestWinner = $bigTenWestTeam[$i];
-    $bigTenWestWinnerRating = $agaRating[$teamH{$bigTenWestTeam[$i]}];
-}
+# Group teams by conference
+my %conferences;
+foreach my $team (@$teams_data) {
+    push @{$conferences{$team->{conference}}}, $team->{team_name};
 }
 
-
-#Pac12
-#my @pac12NorthTeam = ("Washington", "Washington State", "Oregon", "Oregon State", "Colorado", "Utah");
-#my @pac12SouthTeam = ("California", "Stanford", "USC", "UCLA", "Arizona State", "Arizona");
-#my ($pac12SouthWinner, $pac12SouthWinnerRating);
-#for (my $i=0; $i<=5; $i++) {
-#if ( $agaRating[$teamH{$pac12SouthTeam[$i]}] > $pac12SouthWinnerRating ) {
-#    $pac12SouthWinner = $pac12SouthTeam[$i];
-#    $pac12SouthWinnerRating = $agaRating[$teamH{$pac12SouthTeam[$i]}];
-#}
-#}
-#my ($pac12NorthWinner, $pac12NorthWinnerRating);
-#for (my $i=0; $i<=5; $i++) {
-#if ( $agaRating[$teamH{$pac12NorthTeam[$i]}] > $pac12NorthWinnerRating ) {
-#    $pac12NorthWinner = $pac12NorthTeam[$i];
-#    $pac12NorthWinnerRating = $agaRating[$teamH{$pac12NorthTeam[$i]}];
-#}
-#}
-#print "pac12 N winner was $pac12NorthWinner with a rating of $agaRating[$teamH{$pac12NorthWinner}]\n";
-#print "pac12 S winner was $pac12SouthWinner with a rating of $agaRating[$teamH{$pac12SouthWinner}]\n";
-my @pac12Team = ("Washington", "Washington State", "Oregon", "Oregon State", "Colorado", "Utah", "California", "Stanford", "USC", "UCLA", "Arizona State", "Arizona");
-my ($pac12No1, $pac12No2, $pac12No1Rating, $pac12No2Rating);
-for (my $i=0; $i<=11; $i++) {
-if ( $agaRating[$teamH{$pac12Team[$i]}] > $pac12No1Rating ) {
-    $pac12No1 = $pac12Team[$i];
-    $pac12No1Rating = $agaRating[$teamH{$pac12Team[$i]}];
-}
-}
-for (my $i=0; $i<=11; $i++) {
-if (( $agaRating[$teamH{$pac12Team[$i]}] > $pac12No2Rating )  &&   ($pac12Team[$i] ne $pac12No1))    {
-    $pac12No2 = $pac12Team[$i];
-    $pac12No2Rating = $agaRating[$teamH{$pac12Team[$i]}];
-}
-}
-#print "pac12 #1 was $pac12No1 with a rating of $agaRating[$teamH{$pac12No1}]\n";
-#print "pac12 #2 was $pac12No2 with a rating of $agaRating[$teamH{$pac12No2}]\n";
+#set up conference champion variables
+my ($SEC_Champion, $Big10_Champion, $Big12_Champion, $ACC_Champion, $AAC_Champion, $MountainWest_Champion, $SubBelt_Champion, $CUSA_Champion, $MidAmerican_Champion);  
 
 
+# Function to get top two teams by rating for a given conference
+sub get_top_two_teams {
+    my ($conference_name) = @_;
+    my @conference_teams = @{$conferences{$conference_name}};
+    my ($top1, $top2, $top1_rating, $top2_rating) = (undef, undef, -1, -1);
 
-#ACC
-my @accAtlanticTeam = ("Clemson", "Florida State", "Syracuse", "NC State", "Wake Forest", "Boston College", "Louisville");
-my @accCoastalTeam = ("Virginia Tech", "Duke", "North Carolina", "Miami", "Pittsburgh", "Virginia", "Georgia Tech");
-my ($accCoastalWinner, $accCoastalWinnerRating);
-for (my $i=0; $i<=6; $i++) {
-if ( $agaRating[$teamH{$accCoastalTeam[$i]}] > $accCoastalWinnerRating ) {
-    $accCoastalWinner = $accCoastalTeam[$i];
-    $accCoastalWinnerRating = $agaRating[$teamH{$accCoastalTeam[$i]}];
-}
-}
-my ($accAtlanticWinner, $accAtlanticWinnerRating);
-for (my $i=0; $i<=6; $i++) {
-if ( $agaRating[$teamH{$accAtlanticTeam[$i]}] > $accAtlanticWinnerRating ) {
-    $accAtlanticWinner = $accAtlanticTeam[$i];
-    $accAtlanticWinnerRating = $agaRating[$teamH{$accAtlanticTeam[$i]}];
-}
-}
-#print "ACC C winner was $accCoastalWinner with a rating of $agaRating[$teamH{$accCoastalWinner}]\n";
-#print "ACC A winner was $accAtlanticWinner with a rating of $agaRating[$teamH{$accAtlanticWinner}]\n";
+    foreach my $team (@conference_teams) {
+        my $team_id = $teamH{$team};
+        my $rating = $agaRating[$team_id];
+        if ($rating > $top1_rating) {
+            $top2 = $top1;
+            $top2_rating = $top1_rating;
+            $top1 = $team;
+            $top1_rating = $rating;
+        } elsif ($rating > $top2_rating) {
+            $top2 = $team;
+            $top2_rating = $rating;
+        }
+    }
 
+    return ($top1, $top2, $top1_rating, $top2_rating);
+}
 
+# Set up all week 14 matches
+# just using highest 2 rated teams in a conference. need to put in conference record, 3 way tie, divisions (if those ever come back) - ToDo. 
 
-#Big12
-my @big12Team = ("Iowa State", "Kansas", "Kansas State", "West Virginia", "Oklahoma", "Oklahoma State", "TCU", "Baylor", "Texas Tech", "Texas");
-my ($big12No1, $big12No2, $big12No1Rating, $big12No2Rating);
-for (my $i=0; $i<=9; $i++) {
-if ( $agaRating[$teamH{$big12Team[$i]}] > $big12No1Rating ) {
-    $big12No1 = $big12Team[$i];
-    $big12No1Rating = $agaRating[$teamH{$big12Team[$i]}];
-}
-}
-for (my $i=0; $i<=9; $i++) {
-if (( $agaRating[$teamH{$big12Team[$i]}] > $big12No2Rating )  &&   ($big12Team[$i] ne $big12No1))    {
-    $big12No2 = $big12Team[$i];
-    $big12No2Rating = $agaRating[$teamH{$big12Team[$i]}];
-}
-}
+#my $conference_name = "SEC";
+my ($secNo1, $secNo2, $secNo1Rating, $secNo2Rating) = get_top_two_teams("SEC");
+#print "SEC #1 was $secNo1 with a rating of $agaRating[$teamH{$secNo1}]\n";
+#print "SEC #2 was $secNo2 with a rating of $agaRating[$teamH{$secNo2}]\n";
+
+my ($bigTenNo1, $bigTenNo2, $bigTenNo1Rating, $bigTenNo2Rating) = get_top_two_teams("B10");
+#print "BigTen #1 was $bigTenNo1 with a rating of $agaRating[$teamH{$bigTenNo1}]\n";
+#print "BigTen #2 was $bigTenNo2 with a rating of $agaRating[$teamH{$bigTenNo2}]\n";
+
+my ($accNo1, $accNo2, $accNo1Rating, $accNo2Rating) = get_top_two_teams("ACC");
+#print "ACC #1 was $accNo1 with a rating of $agaRating[$teamH{$accNo1}]\n";
+#print "ACC #2 was $accNo2 with a rating of $agaRating[$teamH{$accNo2}]\n";
+
+my ($big12No1, $big12No2, $big12No1Rating, $big12No2Rating) = get_top_two_teams("B12");
 #print "big12 #1 was $big12No1 with a rating of $agaRating[$teamH{$big12No1}]\n";
 #print "big12 #2 was $big12No2 with a rating of $agaRating[$teamH{$big12No2}]\n";
 
+my ($aacNo1, $aacNo2, $aacNo1Rating, $aacNo2Rating) = get_top_two_teams("AAC");
+#print "AAC #1 was $aacNo1 with a rating of $agaRating[$teamH{$aacNo1}]\n";
+#print "AAC #2 was $aacNo2 with a rating of $agaRating[$teamH{$aacNo2}]\n";
 
+my ($cusaNo1, $cusaNo2, $cusaNo1Rating, $cusaNo2Rating) = get_top_two_teams("CUSA");
+#print "CUSA #1 was $cusaNo1 with a rating of $agaRating[$teamH{$cusaNo1}]\n";
+#print "CUSA #2 was $cusaNo2 with a rating of $agaRating[$teamH{$cusaNo2}]\n";
 
+my ($midAmNo1, $midAmNo2, $midAmNo1Rating, $midAmNo2Rating) = get_top_two_teams("Mid-American");
+#print "MidAm #1 was $midAmNo1 with a rating of $agaRating[$teamH{$midAmNo1}]\n";
+#print "MidAm #2 was $midAmNo2 with a rating of $agaRating[$teamH{$midAmNo2}]\n";
 
+my ($sbNo1, $sbNo2, $sbNo1Rating, $sbNo2Rating) = get_top_two_teams("Sun Belt");
+#print "Sun Belt #1 was $sbNo1 with a rating of $agaRating[$teamH{$sbNo1}]\n";
+#print "Sun Belt #2 was $sbNo2 with a rating of $agaRating[$teamH{$sbNo2}]\n";
 
-
-#CUSA and others TODO
+my ($mwNo1, $mwNo2, $mwNo1Rating, $mwNo2Rating) = get_top_two_teams("Mountain West");
+#print "Mountain West #1 was $mwNo1 with a rating of $agaRating[$teamH{$mwNo1}]\n";
+#print "Mountain West #2 was $mwNo2 with a rating of $agaRating[$teamH{$mwNo2}]\n";
 
 
 
@@ -541,186 +491,94 @@ if (( $agaRating[$teamH{$big12Team[$i]}] > $big12No2Rating )  &&   ($big12Team[$
 my $divisor = 1;  #base = 1000,  divisor =1
 my $homeFieldAdvantageNumber =0; #this is week 14
 
-#set up and decide SEC championship matchup
-my ($aTeamName, $hTeamName) = ($secEastWinner, $secWestWinner);
-#add in elements of the matrix that are not dependent on who won
-my $x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-my $d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
-$cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-my $d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-my $b1 = $bCV->element($teamH{$hTeamName},1);
-my $b2 = $bCV->element($teamH{$aTeamName},1);
-my $probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-my $probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-my $rand = rand();
-if ($rand <= $probA)  {    #home team won
-$results[$k] = "$hTeamName 1-0 $aTeamName";
-$seasonWins{$hTeamName}++;
-$seasonLosses{$aTeamName}++;
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
-push @week14Results, "$hTeamName beats $aTeamName (SEC Championship)";
+
+sub simulate_championship {
+    my ($conf_name, $team1, $team2) = @_;
+    
+    my ($aTeamName, $hTeamName) = ($team1, $team2);
+    
+    # Matrix updates
+    my $x = $cM->element($teamH{$hTeamName}, $teamH{$aTeamName});
+    $cM->assign($teamH{$hTeamName}, $teamH{$aTeamName}, $x - 1 + (-$alpha * $movFactor));
+    $cM->assign($teamH{$aTeamName}, $teamH{$hTeamName}, $x - 1 + (-$alpha * $movFactor));
+    
+    my $d1 = $cM->element($teamH{$hTeamName}, $teamH{$hTeamName});
+    $cM->assign($teamH{$hTeamName}, $teamH{$hTeamName}, $d1 + 1 + ($alpha * $movFactor));
+    
+    my $d2 = $cM->element($teamH{$aTeamName}, $teamH{$aTeamName});
+    $cM->assign($teamH{$aTeamName}, $teamH{$aTeamName}, $d2 + 1 + ($alpha * $movFactor));
+    
+    my $b1 = $bCV->element($teamH{$hTeamName}, 1);
+    my $b2 = $bCV->element($teamH{$aTeamName}, 1);
+    
+    # Probability calculation
+    my $probA = 1 / (1 + (1000 ** (($computerRating{$aTeamName} - ($computerRating{$hTeamName} + $homeFieldAdvantageNumber)) / $divisor)));
+    
+    my $rand = rand();
+    my ($winner, $loser);
+    
+    if ($rand <= $probA) {
+        $winner = $hTeamName;
+        $loser = $aTeamName;
+        $bCV->assign($teamH{$hTeamName}, 1, $b1 + 0.5 + (-$alpha * $movFactor));
+        $bCV->assign($teamH{$aTeamName}, 1, $b2 - 0.5 + ($alpha * $movFactor));
+    } else {
+        $winner = $aTeamName;
+        $loser = $hTeamName;
+        $bCV->assign($teamH{$aTeamName}, 1, $b2 + 0.5 + (-$alpha * $movFactor));
+        $bCV->assign($teamH{$hTeamName}, 1, $b1 - 0.5 + ($alpha * $movFactor));
+    }
+    
+    $seasonWins{$winner}++;
+    $seasonLosses{$loser}++;
+    $conferenceChampion{$conf_name} = $winner;
+    $championStatus{$winner} = "- $conf_name Champion";
+
+    my $result = "$winner 1-0 $loser";
+    my $week14Result = "$winner beats $loser ($conf_name Championship)";
+
+    
+    return ($result, $week14Result, $winner);
 }
-else {    #away team won. No ties.
-$results[$k] = "$aTeamName 1-0 $hTeamName";
-$seasonWins{$aTeamName}++;
-$seasonLosses{$hTeamName}++;
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
-push @week14Results, "$aTeamName beats $hTeamName (SEC Championship)";
-}
-$k++;
 
-#decide BigTen Champion
-($aTeamName, $hTeamName) = ($bigTenEastWinner, $bigTenWestWinner);
-#add in elements of the matrix that are not dependent on who won
-$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
-$cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-$b1 = $bCV->element($teamH{$hTeamName},1);
-$b2 = $bCV->element($teamH{$aTeamName},1);
-$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-$rand = rand();
-if ($rand <= $probA)  {    #home team won
-$results[$k] = "$hTeamName 1-0 $aTeamName";
-$seasonWins{$hTeamName}++;
-$seasonLosses{$aTeamName}++;
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
-push @week14Results, "$hTeamName beats $aTeamName (B10 Championship)";
-}
-else {    #away team won. No ties.
-$results[$k] = "$aTeamName 1-0 $hTeamName";
-$seasonWins{$aTeamName}++;
-$seasonLosses{$hTeamName}++;
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
-push @week14Results, "$aTeamName beats $hTeamName (B10 Championship)";
-}
-$k++;
+# play conference championship games:
+my ($secResult, $secWeek14Result, $SEC_Champion) = simulate_championship("SEC", $secNo1, $secNo2);
+$results[$k++] = $secResult;
+push @week14Results, $secWeek14Result;
+
+my ($bigTenResult, $bigTenWeek14Result, $Big10_Champion) = simulate_championship("B10", $bigTenNo1, $bigTenNo2);
+$results[$k++] = $bigTenResult;
+push @week14Results, $bigTenWeek14Result;
+
+my ($accResult, $accWeek14Result, $ACC_Champion) = simulate_championship("ACC", $accNo1, $accNo2);
+$results[$k++] = $accResult;
+push @week14Results, $accWeek14Result;
+
+my ($big12Result, $big12Week14Result, $Big12_Champion) = simulate_championship("B12", $big12No1, $big12No2);
+$results[$k++] = $big12Result;
+push @week14Results, $big12Week14Result;
 
 
-#decide Pac12 Champion
-($aTeamName, $hTeamName) = ($pac12No1, $pac12No2);
-#add in elements of the matrix that are not dependent on who won
-$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
-$cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-$b1 = $bCV->element($teamH{$hTeamName},1);
-$b2 = $bCV->element($teamH{$aTeamName},1);
-$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-$rand = rand();
-if ($rand <= $probA)  {    #home team won
-$results[$k] = "$hTeamName 1-0 $aTeamName";
-$seasonWins{$hTeamName}++;
-$seasonLosses{$aTeamName}++;
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
-push @week14Results, "$hTeamName beats $aTeamName (Pac12 Championship)";
-}
-else {    #away team won. No ties.
-$results[$k] = "$aTeamName 1-0 $hTeamName";
-$seasonWins{$aTeamName}++;
-$seasonLosses{$hTeamName}++;
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
-push @week14Results, "$aTeamName beats $hTeamName (Pac12 Championship)";
-}
-$k++;
+#G5 championship games
+my ($aacResult, $aacWeek14Result, $AAC_Champion) = simulate_championship("AAC", $aacNo1, $aacNo2);
+$results[$k++] = $aacResult;
+push @week14Results, $aacWeek14Result;
 
+my ($mwResult, $mwWeek14Result, $MountainWest_Champion) = simulate_championship("Mountain West", $mwNo1, $mwNo2);
+$results[$k++] = $mwResult;
+push @week14Results, $mwWeek14Result;
 
-#decide ACC Champion
-($aTeamName, $hTeamName) = ($accAtlanticWinner, $accCoastalWinner);
-#add in elements of the matrix that are not dependent on who won
-$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
-$cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-$b1 = $bCV->element($teamH{$hTeamName},1);
-$b2 = $bCV->element($teamH{$aTeamName},1);
-$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-$rand = rand();
-if ($rand <= $probA)  {    #home team won
-$results[$k] = "$hTeamName 1-0 $aTeamName";
-$seasonWins{$hTeamName}++;
-$seasonLosses{$aTeamName}++;
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
-push @week14Results, "$hTeamName beats $aTeamName (ACC Championship)";
-}
-else {    #away team won. No ties.
-$results[$k] = "$aTeamName 1-0 $hTeamName";
-$seasonWins{$aTeamName}++;
-$seasonLosses{$hTeamName}++;
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
-push @week14Results, "$aTeamName beats $hTeamName (ACC Championship)";
-}
-$k++;
+my ($sbResult, $sbWeek14Result, $SunBelt_Champion) = simulate_championship("Sun Belt", $sbNo1, $sbNo2);   #sunbelt uses divisions - TODO
+$results[$k++] = $sbResult;
+push @week14Results, $sbWeek14Result;
 
+my ($cusaResult, $cusaWeek14Result, $CUSA_Champion) = simulate_championship("CUSA", $cusaNo1, $cusaNo2);
+$results[$k++] = $aacResult;
+push @week14Results, $cusaWeek14Result;
 
-#decide Big12 Champion
-($aTeamName, $hTeamName) = ($big12No1, $big12No2);
-#add in elements of the matrix that are not dependent on who won
-$x = $cM->element($teamH{$hTeamName},$teamH{$aTeamName}); 
-$cM->assign($teamH{$hTeamName},$teamH{$aTeamName},$x-1+(-$alpha*$movFactor));
-$cM->assign($teamH{$aTeamName},$teamH{$hTeamName},$x-1+(-$alpha*$movFactor));  #symmetric matrix, so I don't have to read in this value prior -- assume it is the same as x
-$d1 = $cM->element($teamH{$hTeamName},$teamH{$hTeamName});
-$cM->assign($teamH{$hTeamName},$teamH{$hTeamName},$d1+1+($alpha*$movFactor));
-$d2 = $cM->element($teamH{$aTeamName},$teamH{$aTeamName});
-$cM->assign($teamH{$aTeamName},$teamH{$aTeamName},$d2+1+($alpha*$movFactor));
-$b1 = $bCV->element($teamH{$hTeamName},1);
-$b2 = $bCV->element($teamH{$aTeamName},1);
-$probA = 1/(1+(1000**(($computerRating{"$aTeamName"}-(($computerRating{"$hTeamName"})+$homeFieldAdvantageNumber))/$divisor)));
-$probB = 1/(1+(1000**((($computerRating{"$hTeamName"}+$homeFieldAdvantageNumber)-$computerRating{"$aTeamName"})/$divisor)));
-$rand = rand();
-if ($rand <= $probA)  {    #home team won
-$results[$k] = "$hTeamName 1-0 $aTeamName";
-$seasonWins{$hTeamName}++;
-$seasonLosses{$aTeamName}++;
-$bCV->assign($teamH{$hTeamName},1,$b1+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$aTeamName},1,$b2-0.5+($alpha*$movFactor));
-push @week14Results, "$hTeamName beats $aTeamName (Big12 Championship)";
-}
-else {    #away team won. No ties.
-$results[$k] = "$aTeamName 1-0 $hTeamName";
-$seasonWins{$aTeamName}++;
-$seasonLosses{$hTeamName}++;
-$bCV->assign($teamH{$aTeamName},1,$b2+0.5+(-$alpha*$movFactor));
-$bCV->assign($teamH{$hTeamName},1,$b1-0.5+($alpha*$movFactor));
-push @week14Results, "$aTeamName beats $hTeamName (Big12 Championship)";
-}
-$k++;
-
-
-
-
-
-
-
-
-
-
-
-
-
+my ($midAmResult, $midAmWeek14Result, $MidAmerican_Champion) = simulate_championship("Mid-American", $midAmNo1, $midAmNo2);
+$results[$k++] = $midAmResult;
+push @week14Results, $midAmWeek14Result;
 
 
 
@@ -756,39 +614,74 @@ my @sortedOutput = reverse sort @output;   # This sorts alphabetically, not nume
 #print "@sortedOutput\n";   # gives this weird 60 before it prints the array
 
 #get new ratings into array
-foreach (@sortedOutput) {
-my ($teamRating,$blank,$team,$record) = (split /:/, $_);
-$agaRating[$teamH{$team}] = $teamRating;
+foreach my $index (0 .. $#sortedOutput) {
+    my ($teamRating, $blank, $team, $record) = split /:/, $sortedOutput[$index];
+    $agaRating[$teamH{$team}] = $teamRating;
+    $agaRating{$team} = $teamRating;
+    $agaRanking{$team} = $index+1;
 }
 
 
-#print "Georgia rating is $agaRating[$teamH{Georgia}]\n";
-#print "LSU rating is $agaRating[$teamH{LSU}]\n";
-
-#print "Top 4 computer this iteration post week 14 are:\n";
-#print "$sortedOutput[0]";
-#print "$sortedOutput[1]";
-#print "$sortedOutput[2]";
-#print "$sortedOutput[3]";
+#print "Georgia rating is $agaRating{Georgia} ranked #$agaRanking{Georgia} with $seasonWins{Georgia} wins and $seasonLosses{Georgia} losses\n";   #new good way
+#print "LSU rating is $agaRating[$teamH{LSU}]\n";   #old bad way
 
 
 
+#pick up $teams_data from line 130 for conference affiliation
+#top 4 conference champions get byes in round 1
+#5th highest ranked conference champion gets a 5-12 slot
+#other 7 slots are filled with highest rated teams
 
 
-my @top4Result;  #re-init each itieration
-
-for (my $m=0; $m<=3; $m++) {
-my ($teamRating,$blank,$team,$record) = (split /:/, $sortedOutput[$m]);
-$isInTop4{"$team"} = $isInTop4{"$team"} + 1;
-$top4Result[$m] = $team;
+for (my $m=0; $m<=19; $m++) {
+    my ($teamRating, $blank, $team, $record) = split /:/, $sortedOutput[$m]; #$sortedOutput already has the teams in rank order
+    print "#$agaRanking{$team} $team - $seasonWins{$team}-$seasonLosses{$team}  $championStatus{$team}\n";
 }
 
-@top4Result = sort @top4Result;
-print "Top 4 computer this iteration post week 14 are (sorted alphabetically): ";
-$thisTop4Result = "$top4Result[0]:$top4Result[1]:$top4Result[2]:$top4Result[3]";
-print "$thisTop4Result\n";
 
-$isTheTop4{"$thisTop4Result"} = $isTheTop4{"$thisTop4Result"} + 1;
+#print "$conferenceChampion{SEC}\n";
+
+
+
+my @champions = ();  #reset these at the beginning of each run
+my @non_champions = ();
+my @final_selection = ();
+
+# First, separate champions and non-champions
+for my $team_info (@sortedOutput) {
+    my ($teamRating, $blank, $team, $record) = split /:/, $team_info;
+    if (exists $championStatus{$team}) {
+        push @champions, $team;
+    } else {
+        push @non_champions, $team;
+    }
+}
+
+# Select top 5 champions
+push @final_selection, @champions[0..4];
+
+# Fill the rest with top 7 non-champions
+push @final_selection, @non_champions[0..6];
+
+# Now @final_selection contains the desired 12 teams
+
+# Print the results and update isInTop12
+for (my $m = 0; $m < 12; $m++) {
+    my $team = $final_selection[$m];
+    my ($teamRating, $blank, $dummy, $record) = split /:/, (grep { /:$team:/ } @sortedOutput)[0];
+#   print "#$agaRanking{$team} $team - $seasonWins{$team}-$seasonLosses{$team} $championStatus{$team}\n";
+    $isInTop12{$team}++;
+}
+
+my @top12Result = @final_selection;
+
+
+@top12Result = sort @top12Result;
+print "Top 12 computer this iteration post week 14 are (sorted alphabetically): ";
+$thisTop12Result = "$top12Result[0]:$top12Result[1]:$top12Result[2]:$top12Result[3]:$top12Result[4]:$top12Result[5]:$top12Result[6]:$top12Result[7]:$top12Result[8]:$top12Result[9]:$top12Result[10]:$top12Result[11]";
+print "$thisTop12Result\n";
+
+$isTheTop12{"$thisTop12Result"} = $isTheTop12{"$thisTop12Result"} + 1;
 
 
 
@@ -804,29 +697,29 @@ my $u;
 foreach $u (@significantUpsets) {
 print "$u\n";
 }
-print "-------------\n";
-foreach $u (@week14Results) {
-print "$u\n";
-}
+#print "-------------\n";
+#foreach $u (@week14Results) {
+#print "$u\n";
+#}
 
 
 
 print "===============\n";
-#print "Alabama was in $isInTop4{'Alabama'} times\n";
+#print "Alabama was in $isInTop12{'Alabama'} times\n";
 
-foreach my $key ( sort { $isInTop4{$b} <=> $isInTop4{$a} } keys %isInTop4 ) {
-   print "$key was in $isInTop4{$key} times\n"; 
+foreach my $key ( sort { $isInTop12{$b} <=> $isInTop12{$a} } keys %isInTop12 ) {
+   print "$key was in $isInTop12{$key} times\n"; 
 }
 
 print "\n";
 
-#while (my ($k,$v)=each %isTheTop4){print "$k $v\n"}   #if you want to print out every top4 that occured to see which occurs most often
+#while (my ($k,$v)=each %isTheTop12){print "$k $v\n"}   #if you want to print out every top12 that occured to see which occurs most often
 
-my @mostCommonTop4 = sort { $isTheTop4{$a} <=> $isTheTop4{$b} } keys %isTheTop4;
-my $theMostCommonAlphabatizedTiedOccurence = $mostCommonTop4[-1];
-print "Most common top 4 is $theMostCommonAlphabatizedTiedOccurence $isTheTop4{ $theMostCommonAlphabatizedTiedOccurence } occurences. (May be others tied) \n";
+my @mostCommonTop12 = sort { $isTheTop12{$a} <=> $isTheTop12{$b} } keys %isTheTop12;
+my $theMostCommonAlphabatizedTiedOccurence = $mostCommonTop12[-1];
+print "Most common top 12 is $theMostCommonAlphabatizedTiedOccurence $isTheTop12{ $theMostCommonAlphabatizedTiedOccurence } occurences. (May be others tied) \n";
 
-#print "@mostCommonTop4 \n";  #print out all the top4s that came out.
+#print "@mostCommonTop12 \n";  #print out all the top12s that came out.
 
 #print "@agaPPRanking <br><br>";
 #print "@agaComputerRanking <br><br>";
@@ -837,8 +730,8 @@ if ($itierations == 1000) {       #only output file if 1000 itierations. otherwi
 
 my $playoffChancesFile = "/home/neville/cfbPlayoffPredictor/data/current/currentPlayoffPercentages.txt"; 
 open (PCFILE, ">$playoffChancesFile") or die "$! error trying to overwrite";
-foreach my $key ( sort { $isInTop4{$b} <=> $isInTop4{$a} } keys %isInTop4 ) {
-   print PCFILE "$key:$isInTop4{$key}\n"; 
+foreach my $key ( sort { $isInTop12{$b} <=> $isInTop12{$a} } keys %isInTop12 ) {
+   print PCFILE "$key:$isInTop12{$key}\n"; 
 }
 close PCFILE;
 }
