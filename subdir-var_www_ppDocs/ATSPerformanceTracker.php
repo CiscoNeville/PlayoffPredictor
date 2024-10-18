@@ -13,9 +13,34 @@ function readSpreadData($filename) {
     return $spreads;
 }
 
+// Function to read and parse the game data file
+function readGameData($filename) {
+    $games = [];
+    $lines = file($filename, FILE_IGNORE_NEW_LINES);
+    foreach ($lines as $line) {
+        $parts = explode(':', $line);
+        if (count($parts) == 2) {
+            $week = trim($parts[0]);
+            $teams = explode(' - ', $parts[1]);
+            if (count($teams) == 2) {
+                $games[] = [
+                    'year' => '2024', // Assuming all games are for 2024 
+                    'week' => '8',  //just pull 8 now
+                    'awayTeam' => trim($teams[0]),
+                    'homeTeam' => trim($teams[1]),
+                    'prediction' => null, // We'll need to set this later
+                    'actual' => null // We'll need to set this later
+                ];
+            }
+        }
+    }
+    return $games;
+}
+
+
 // Function to determine the bet based on the spread and prediction
 function determineBet($spread, $prediction) {
-    $threshold = 2; // You can adjust this value
+    $threshold = 0.5; // You can adjust this value
     if (abs($prediction - $spread) >= $threshold) {
         return ($prediction < $spread) ? 'Away' : 'Home';
     }
@@ -52,7 +77,7 @@ function getClosest($prob) {
 
 
 // Read the spread data
-$spreads = readSpreadData('ncfSpreads.txt');
+$spreads = readSpreadData('/home/neville/cfbPlayoffPredictor/data/2024/week8/ncfSpreads.txt');
 
 
 // Read in current calculated ratings, so can see elo winning probabilities
@@ -197,9 +222,36 @@ $teams = explode(" - ", $input1[1]);
 #2023-08 - formatting $teams[1] to rid \n at the end
 $teams[1] = rtrim($teams[1]);
 
+$nextWeekUp = "week 8";
+$nextWeekUpNumber = explode(" ", $nextWeekUp);
+$nextWeekUpNumber = $nextWeekUpNumber[1];
 
 
+$awayTeam = $teams[0];
+$homeTeam = $teams[1];
 
+#echo "away team is ---$awayTeam--- and home team is ---$homeTeam---<br>";
+#echo "week is $week  <br>";
+#echo "teamRating of Alabama is $teamRating[Alabama]  <br>";
+
+
+$divisor = 1;  #base = 1000 divisor =1
+
+
+$probA = 1/(1+(1000**(($teamRating[$awayTeam]-(($teamRating[$homeTeam])+$homeFieldAdvantageNumber))/$divisor)));
+$probB = 1/(1+(1000**((($teamRating[$homeTeam]+$homeFieldAdvantageNumber)-$teamRating[$awayTeam])/$divisor)));
+
+#note these are exponenets, so on week 1 everyone will have 50% chance to win, regarless of rating.
+
+
+#round the probabilities to 2 significant digits and output %
+$probA = round ($probA,2); 
+$probA = $probA * 100;
+$probB = round ($probB,2);
+$probB = $probB * 100;
+$predictedSpread = getClosest($probB/100);
+
+}
 
 
 
@@ -210,15 +262,33 @@ $teams[1] = rtrim($teams[1]);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Betting Performance Tracker</title>
+    <title>PlayoffPredictor.com ATS Betting Performance Tracker</title>
     <style>
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid black; padding: 8px; text-align: left; }
         .success { background-color: #90EE90; }
         .failure { background-color: #FFCCCB; }
     </style>
+	<link type="text/css" rel="stylesheet" href="/style.css" />
 </head>
 <body>
+
+
+<!--banner and menu-->    
+<?php 
+if($useApp != 'true') {                #do not show this banner if called in the app
+$banner = '/var/www/ppDocs/banner-and-menu.html';
+$data = file($banner) or die('Could not read file!');
+foreach ($data as $line) {
+echo "$line";
+}
+}
+?>
+
+
+
+
+
     <h1>Betting Performance Tracker</h1>
     
     <h2>Selected Period</h2>
@@ -253,7 +323,7 @@ $teams[1] = rtrim($teams[1]);
         <?php
         // Your existing loop to process game data
         foreach ($gameData as $game) {
-            $season = $game['season'];
+            $year = $game['year'];
             $week = $game['week'];
             $awayTeam = $game['awayTeam'];
             $homeTeam = $game['homeTeam'];
