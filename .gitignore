@@ -5,7 +5,7 @@
 /data/*
 !/data/current/README.txt
 !/data/teamIcons.txt
-
+!/data/*/fbsTeamNames.txt
 
 
 # Ignore any hidden files (starting with .)
