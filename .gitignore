@@ -5,6 +5,14 @@
 /data/*
 !/data/*/
 !/data/current/
+# Ignore all these current data files
+/data/current/CurrentAveragedCommitteeBiasFile.txt
+/data/current/CurrentCalculatedRatings.txt
+/data/current/CurrentPredictedRankings.txt
+/data/current/currentPlayoffCommitteeRankings.txt
+/data/current/currentPlayoffPercentages.txt
+/data/current/ncfScheduleFile.txt
+/data/current/ncfScoresFile.txt
 !/data/current/README.txt
 !/data/teamIcons.txt
 !/data/*/fbsTeamNames.txt
