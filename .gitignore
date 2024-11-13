@@ -3,6 +3,7 @@
 
 # Ignore /data subdirectory except specific files
 /data/*
+!/data/*/
 !/data/current/
 !/data/current/README.txt
 !/data/teamIcons.txt
