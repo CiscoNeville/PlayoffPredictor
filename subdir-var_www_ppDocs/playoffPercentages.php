@@ -141,14 +141,14 @@ $conferenceColumn = array(
     "B10" => "188",
     "B12" => "346",
     "ACC" => "502",
-    "Pac12" => "656",
+    "Pac2" => "656",
     "G5" => "810",
 ) ;
 
 $overlap =array();   #for overlapping visuals. if $overlap contains 301 that the SEC 1% slot is filled(needs 2).  3030 is the SEC 30% slot (needs 4). 18862 is B10 62% slot.
 
 
-$conferenceTotalPercentage = array("SEC" => 0, "B10" => 0, "B12" => 0, "ACC" => 0, "Pac12" => 0, "G5" => 0);    #set all to 0 to start
+$conferenceTotalPercentage = array("SEC" => 0, "B10" => 0, "B12" => 0, "ACC" => 0, "Pac2" => 0, "G5" => 0);    #set all to 0 to start
 
 
 
