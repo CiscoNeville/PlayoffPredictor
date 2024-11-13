@@ -1,8 +1,0 @@
-Michigan:990
-Texas:990
-Florida State:990
-Washington:990
-Wyoming:10
-Western Kentucky:10
-Western Michigan:10
-Wisconsin:10

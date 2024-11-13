@@ -1,5 +1,12 @@
 # Ignore testing area for scripts
-scripts/testing/
+/scripts/testing/
+
+# Ignore /data subdirectory except specific files
+/data/*
+!/data/current/README.txt
+!/data/teamIcons.txt
+
+
 
 # Ignore any hidden files (starting with .)
 .*
