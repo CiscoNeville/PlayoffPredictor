@@ -54,7 +54,7 @@ echo "$line";
 
 
 use strict;
-use CGI ':standard';
+#use CGI ':standard';   #commenting this out to overwrite an error.  is this file in use?
 use Math::MatrixReal;
 #use Number::Format;
 use Data::Dumper;
