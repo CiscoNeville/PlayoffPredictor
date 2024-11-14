@@ -1,0 +1,24 @@
+.tooltip {
+    position:absolute;
+    display:none;  
+}
+
+
+
+.content {
+    background-color:#fec;
+    width:300px;
+    padding:5px 15px;
+}
+
+
+.explain {
+	color: #FA7D00
+}
+
+
+body {
+	background-color: #E8E8E8
+}
+
+
