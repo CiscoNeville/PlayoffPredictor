@@ -1,0 +1,961 @@
+[
+  {
+    "team_name": "Boston College",
+    "conference": "ACC",
+    "cbs_sports_icon": "BC",
+    "cfdb_name": "Boston College",
+    "pp_id": "1"
+  },
+  {
+    "team_name": "Clemson",
+    "conference": "ACC",
+    "cbs_sports_icon": "CLEM",
+    "cfdb_name": "Clemson",
+    "pp_id": "2"
+  },
+  {
+    "team_name": "Duke",
+    "conference": "ACC",
+    "cbs_sports_icon": "DUKE",
+    "cfdb_name": "Duke",
+    "pp_id": "3"
+  },
+  {
+    "team_name": "Florida State",
+    "conference": "ACC",
+    "cbs_sports_icon": "FSU",
+    "cfdb_name": "Florida State",
+    "pp_id": "4"
+  },
+  {
+    "team_name": "Georgia Tech",
+    "conference": "ACC",
+    "cbs_sports_icon": "GATECH",
+    "cfdb_name": "Georgia Tech",
+    "pp_id": "5"
+  },
+  {
+    "team_name": "Louisville",
+    "conference": "ACC",
+    "cbs_sports_icon": "LVILLE",
+    "cfdb_name": "Louisville",
+    "pp_id": "6"
+  },
+  {
+    "team_name": "Miami",
+    "conference": "ACC",
+    "cbs_sports_icon": "MIAMI",
+    "cfdb_name": "Miami",
+    "pp_id": "7"
+  },
+  {
+    "team_name": "North Carolina",
+    "conference": "ACC",
+    "cbs_sports_icon": "UNC",
+    "cfdb_name": "North Carolina",
+    "pp_id": "8"
+  },
+  {
+    "team_name": "NC State",
+    "conference": "ACC",
+    "cbs_sports_icon": "NCST",
+    "cfdb_name": "NC State",
+    "pp_id": "9"
+  },
+  {
+    "team_name": "Pittsburgh",
+    "conference": "ACC",
+    "cbs_sports_icon": "PITT",
+    "cfdb_name": "Pittsburgh",
+    "pp_id": "10"
+  },
+  {
+    "team_name": "Syracuse",
+    "conference": "ACC",
+    "cbs_sports_icon": "CUSE",
+    "cfdb_name": "Syracuse",
+    "pp_id": "11"
+  },
+  {
+    "team_name": "Virginia",
+    "conference": "ACC",
+    "cbs_sports_icon": "UVA",
+    "cfdb_name": "Virginia",
+    "pp_id": "12"
+  },
+  {
+    "team_name": "Virginia Tech",
+    "conference": "ACC",
+    "cbs_sports_icon": "VATECH",
+    "cfdb_name": "Virginia Tech",
+    "pp_id": "13"
+  },
+  {
+    "team_name": "Wake Forest",
+    "conference": "ACC",
+    "cbs_sports_icon": "WAKE",
+    "cfdb_name": "Wake Forest",
+    "pp_id": "14"
+  },
+  {
+    "team_name": "Baylor",
+    "conference": "B12",
+    "cbs_sports_icon": "BAYLOR",
+    "cfdb_name": "Baylor",
+    "pp_id": "15"
+  },
+  {
+    "team_name": "Iowa State",
+    "conference": "B12",
+    "cbs_sports_icon": "IOWAST",
+    "cfdb_name": "Iowa State",
+    "pp_id": "16"
+  },
+  {
+    "team_name": "Kansas",
+    "conference": "B12",
+    "cbs_sports_icon": "KANSAS",
+    "cfdb_name": "Kansas",
+    "pp_id": "17"
+  },
+  {
+    "team_name": "Kansas State",
+    "conference": "B12",
+    "cbs_sports_icon": "KSTATE",
+    "cfdb_name": "Kansas State",
+    "pp_id": "18"
+  },
+  {
+    "team_name": "Oklahoma",
+    "conference": "SEC",
+    "cbs_sports_icon": "OKLA",
+    "cfdb_name": "Oklahoma",
+    "pp_id": "19"
+  },
+  {
+    "team_name": "Oklahoma State",
+    "conference": "B12",
+    "cbs_sports_icon": "OKLAST",
+    "cfdb_name": "Oklahoma State",
+    "pp_id": "20"
+  },
+  {
+    "team_name": "TCU",
+    "conference": "B12",
+    "cbs_sports_icon": "TCU",
+    "cfdb_name": "TCU",
+    "pp_id": "21"
+  },
+  {
+    "team_name": "Texas",
+    "conference": "SEC",
+    "cbs_sports_icon": "TEXAS",
+    "cfdb_name": "Texas",
+    "pp_id": "22"
+  },
+  {
+    "team_name": "Texas Tech",
+    "conference": "B12",
+    "cbs_sports_icon": "TXTECH",
+    "cfdb_name": "Texas Tech",
+    "pp_id": "23"
+  },
+  {
+    "team_name": "West Virginia",
+    "conference": "B12",
+    "cbs_sports_icon": "WVU",
+    "cfdb_name": "West Virginia",
+    "pp_id": "24"
+  },
+  {
+    "team_name": "Illinois",
+    "conference": "B10",
+    "cbs_sports_icon": "ILL",
+    "cfdb_name": "Illinois",
+    "pp_id": "25"
+  },
+  {
+    "team_name": "Indiana",
+    "conference": "B10",
+    "cbs_sports_icon": "IND",
+    "cfdb_name": "Indiana",
+    "pp_id": "26"
+  },
+  {
+    "team_name": "Iowa",
+    "conference": "B10",
+    "cbs_sports_icon": "IOWA",
+    "cfdb_name": "Iowa",
+    "pp_id": "27"
+  },
+  {
+    "team_name": "Maryland",
+    "conference": "B10",
+    "cbs_sports_icon": "MD",
+    "cfdb_name": "Maryland",
+    "pp_id": "28"
+  },
+  {
+    "team_name": "Michigan",
+    "conference": "B10",
+    "cbs_sports_icon": "MICH",
+    "cfdb_name": "Michigan",
+    "pp_id": "29"
+  },
+  {
+    "team_name": "Michigan State",
+    "conference": "B10",
+    "cbs_sports_icon": "MICHST",
+    "cfdb_name": "Michigan State",
+    "pp_id": "30"
+  },
+  {
+    "team_name": "Minnesota",
+    "conference": "B10",
+    "cbs_sports_icon": "MINN",
+    "cfdb_name": "Minnesota",
+    "pp_id": "31"
+  },
+  {
+    "team_name": "Nebraska",
+    "conference": "B10",
+    "cbs_sports_icon": "NEB",
+    "cfdb_name": "Nebraska",
+    "pp_id": "32"
+  },
+  {
+    "team_name": "Northwestern",
+    "conference": "B10",
+    "cbs_sports_icon": "NWEST",
+    "cfdb_name": "Northwestern",
+    "pp_id": "33"
+  },
+  {
+    "team_name": "Ohio State",
+    "conference": "B10",
+    "cbs_sports_icon": "OHIOST",
+    "cfdb_name": "Ohio State",
+    "pp_id": "34"
+  },
+  {
+    "team_name": "Penn State",
+    "conference": "B10",
+    "cbs_sports_icon": "PSU",
+    "cfdb_name": "Penn State",
+    "pp_id": "35"
+  },
+  {
+    "team_name": "Purdue",
+    "conference": "B10",
+    "cbs_sports_icon": "PURDUE",
+    "cfdb_name": "Purdue",
+    "pp_id": "36"
+  },
+  {
+    "team_name": "Rutgers",
+    "conference": "B10",
+    "cbs_sports_icon": "RUT",
+    "cfdb_name": "Rutgers",
+    "pp_id": "37"
+  },
+  {
+    "team_name": "Wisconsin",
+    "conference": "B10",
+    "cbs_sports_icon": "WISC",
+    "cfdb_name": "Wisconsin",
+    "pp_id": "38"
+  },
+  {
+    "team_name": "Arizona",
+    "conference": "B12",
+    "cbs_sports_icon": "ARIZ",
+    "cfdb_name": "Arizona",
+    "pp_id": "39"
+  },
+  {
+    "team_name": "Arizona State",
+    "conference": "B12",
+    "cbs_sports_icon": "ARIZST",
+    "cfdb_name": "Arizona State",
+    "pp_id": "40"
+  },
+  {
+    "team_name": "California",
+    "conference": "ACC",
+    "cbs_sports_icon": "CAL",
+    "cfdb_name": "California",
+    "pp_id": "41"
+  },
+  {
+    "team_name": "Colorado",
+    "conference": "B12",
+    "cbs_sports_icon": "COLO",
+    "cfdb_name": "Colorado",
+    "pp_id": "42"
+  },
+  {
+    "team_name": "Oregon",
+    "conference": "B10",
+    "cbs_sports_icon": "OREG",
+    "cfdb_name": "Oregon",
+    "pp_id": "43"
+  },
+  {
+    "team_name": "Oregon State",
+    "conference": "Pac2",
+    "cbs_sports_icon": "OREGST",
+    "cfdb_name": "Oregon State",
+    "pp_id": "44"
+  },
+  {
+    "team_name": "Stanford",
+    "conference": "ACC",
+    "cbs_sports_icon": "STNFRD",
+    "cfdb_name": "Stanford",
+    "pp_id": "45"
+  },
+  {
+    "team_name": "UCLA",
+    "conference": "B10",
+    "cbs_sports_icon": "UCLA",
+    "cfdb_name": "UCLA",
+    "pp_id": "46"
+  },
+  {
+    "team_name": "USC",
+    "conference": "B10",
+    "cbs_sports_icon": "USC",
+    "cfdb_name": "USC",
+    "pp_id": "47"
+  },
+  {
+    "team_name": "Utah",
+    "conference": "B12",
+    "cbs_sports_icon": "UTAH",
+    "cfdb_name": "Utah",
+    "pp_id": "48"
+  },
+  {
+    "team_name": "Washington",
+    "conference": "B10",
+    "cbs_sports_icon": "WASH",
+    "cfdb_name": "Washington",
+    "pp_id": "49"
+  },
+  {
+    "team_name": "Washington State",
+    "conference": "Pac2",
+    "cbs_sports_icon": "WASHST",
+    "cfdb_name": "Washington State",
+    "pp_id": "50"
+  },
+  {
+    "team_name": "Alabama",
+    "conference": "SEC",
+    "cbs_sports_icon": "BAMA",
+    "cfdb_name": "Alabama",
+    "pp_id": "51"
+  },
+  {
+    "team_name": "Arkansas",
+    "conference": "SEC",
+    "cbs_sports_icon": "ARK",
+    "cfdb_name": "Arkansas",
+    "pp_id": "52"
+  },
+  {
+    "team_name": "Auburn",
+    "conference": "SEC",
+    "cbs_sports_icon": "AUBURN",
+    "cfdb_name": "Auburn",
+    "pp_id": "53"
+  },
+  {
+    "team_name": "Florida",
+    "conference": "SEC",
+    "cbs_sports_icon": "FLA",
+    "cfdb_name": "Florida",
+    "pp_id": "54"
+  },
+  {
+    "team_name": "Georgia",
+    "conference": "SEC",
+    "cbs_sports_icon": "UGA",
+    "cfdb_name": "Georgia",
+    "pp_id": "55"
+  },
+  {
+    "team_name": "Kentucky",
+    "conference": "SEC",
+    "cbs_sports_icon": "UK",
+    "cfdb_name": "Kentucky",
+    "pp_id": "56"
+  },
+  {
+    "team_name": "LSU",
+    "conference": "SEC",
+    "cbs_sports_icon": "LSU",
+    "cfdb_name": "LSU",
+    "pp_id": "57"
+  },
+  {
+    "team_name": "Mississippi State",
+    "conference": "SEC",
+    "cbs_sports_icon": "MISSST",
+    "cfdb_name": "Mississippi State",
+    "pp_id": "58"
+  },
+  {
+    "team_name": "Missouri",
+    "conference": "SEC",
+    "cbs_sports_icon": "MIZZOU",
+    "cfdb_name": "Missouri",
+    "pp_id": "59"
+  },
+  {
+    "team_name": "Ole Miss",
+    "conference": "SEC",
+    "cbs_sports_icon": "MISS",
+    "cfdb_name": "Ole Miss",
+    "pp_id": "60"
+  },
+  {
+    "team_name": "South Carolina",
+    "conference": "SEC",
+    "cbs_sports_icon": "SC",
+    "cfdb_name": "South Carolina",
+    "pp_id": "61"
+  },
+  {
+    "team_name": "Tennessee",
+    "conference": "SEC",
+    "cbs_sports_icon": "TENN",
+    "cfdb_name": "Tennessee",
+    "pp_id": "62"
+  },
+  {
+    "team_name": "Texas A&M",
+    "conference": "SEC",
+    "cbs_sports_icon": "TEXAM",
+    "cfdb_name": "Texas A&M",
+    "pp_id": "63"
+  },
+  {
+    "team_name": "Vanderbilt",
+    "conference": "SEC",
+    "cbs_sports_icon": "VANDY",
+    "cfdb_name": "Vanderbilt",
+    "pp_id": "64"
+  },
+  {
+    "team_name": "Cincinnati",
+    "conference": "B12",
+    "cbs_sports_icon": "CINCY",
+    "cfdb_name": "Cincinnati",
+    "pp_id": "65"
+  },
+  {
+    "team_name": "UConn",
+    "conference": "FBS Independent",
+    "cbs_sports_icon": "UCONN",
+    "cfdb_name": "UConn",
+    "pp_id": "66"
+  },
+  {
+    "team_name": "East Carolina",
+    "conference": "AAC",
+    "cbs_sports_icon": "ECU",
+    "cfdb_name": "East Carolina",
+    "pp_id": "67"
+  },
+  {
+    "team_name": "Houston",
+    "conference": "B12",
+    "cbs_sports_icon": "HOU",
+    "cfdb_name": "Houston",
+    "pp_id": "68"
+  },
+  {
+    "team_name": "Memphis",
+    "conference": "AAC",
+    "cbs_sports_icon": "MEMP",
+    "cfdb_name": "Memphis",
+    "pp_id": "69"
+  },
+  {
+    "team_name": "SMU",
+    "conference": "ACC",
+    "cbs_sports_icon": "SMU",
+    "cfdb_name": "SMU",
+    "pp_id": "70"
+  },
+  {
+    "team_name": "South Florida",
+    "conference": "AAC",
+    "cbs_sports_icon": "SFLA",
+    "cfdb_name": "South Florida",
+    "pp_id": "71"
+  },
+  {
+    "team_name": "Temple",
+    "conference": "AAC",
+    "cbs_sports_icon": "TEMPLE",
+    "cfdb_name": "Temple",
+    "pp_id": "72"
+  },
+  {
+    "team_name": "Tulane",
+    "conference": "AAC",
+    "cbs_sports_icon": "TULANE",
+    "cfdb_name": "Tulane",
+    "pp_id": "73"
+  },
+  {
+    "team_name": "Tulsa",
+    "conference": "AAC",
+    "cbs_sports_icon": "TULSA",
+    "cfdb_name": "Tulsa",
+    "pp_id": "74"
+  },
+  {
+    "team_name": "UCF",
+    "conference": "B12",
+    "cbs_sports_icon": "UCF",
+    "cfdb_name": "UCF",
+    "pp_id": "75"
+  },
+  {
+    "team_name": "Charlotte",
+    "conference": "AAC",
+    "cbs_sports_icon": "CHARLO",
+    "cfdb_name": "Charlotte",
+    "pp_id": "76"
+  },
+  {
+    "team_name": "Florida Atlantic",
+    "conference": "AAC",
+    "cbs_sports_icon": "FAU",
+    "cfdb_name": "Florida Atlantic",
+    "pp_id": "77"
+  },
+  {
+    "team_name": "Florida International",
+    "conference": "CUSA",
+    "cbs_sports_icon": "FIU",
+    "cfdb_name": "Florida International",
+    "pp_id": "78"
+  },
+  {
+    "team_name": "Louisiana Tech",
+    "conference": "CUSA",
+    "cbs_sports_icon": "LATECH",
+    "cfdb_name": "Louisiana Tech",
+    "pp_id": "79"
+  },
+  {
+    "team_name": "Marshall",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "MRSHL",
+    "cfdb_name": "Marshall",
+    "pp_id": "80"
+  },
+  {
+    "team_name": "Middle Tennessee",
+    "conference": "CUSA",
+    "cbs_sports_icon": "MTSU",
+    "cfdb_name": "Middle Tennessee",
+    "pp_id": "81"
+  },
+  {
+    "team_name": "North Texas",
+    "conference": "AAC",
+    "cbs_sports_icon": "NTEXAS",
+    "cfdb_name": "North Texas",
+    "pp_id": "82"
+  },
+  {
+    "team_name": "Old Dominion",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "ODU",
+    "cfdb_name": "Old Dominion",
+    "pp_id": "83"
+  },
+  {
+    "team_name": "Rice",
+    "conference": "AAC",
+    "cbs_sports_icon": "RICE",
+    "cfdb_name": "Rice",
+    "pp_id": "84"
+  },
+  {
+    "team_name": "Southern Miss",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "USM",
+    "cfdb_name": "Southern Miss",
+    "pp_id": "85"
+  },
+  {
+    "team_name": "UTEP",
+    "conference": "CUSA",
+    "cbs_sports_icon": "UTEP",
+    "cfdb_name": "UTEP",
+    "pp_id": "86"
+  },
+  {
+    "team_name": "UTSA",
+    "conference": "AAC",
+    "cbs_sports_icon": "TXSA",
+    "cfdb_name": "Texas San Antonio",
+    "pp_id": "87"
+  },
+  {
+    "team_name": "Western Kentucky",
+    "conference": "CUSA",
+    "cbs_sports_icon": "WKY",
+    "cfdb_name": "Western Kentucky",
+    "pp_id": "88"
+  },
+  {
+    "team_name": "Akron",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "AKRON",
+    "cfdb_name": "Akron",
+    "pp_id": "89"
+  },
+  {
+    "team_name": "Ball State",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "BALLST",
+    "cfdb_name": "Ball State",
+    "pp_id": "90"
+  },
+  {
+    "team_name": "Bowling Green",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "BGREEN",
+    "cfdb_name": "Bowling Green",
+    "pp_id": "91"
+  },
+  {
+    "team_name": "Buffalo",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "BUFF",
+    "cfdb_name": "Buffalo",
+    "pp_id": "92"
+  },
+  {
+    "team_name": "Central Michigan",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "CMICH",
+    "cfdb_name": "Central Michigan",
+    "pp_id": "93"
+  },
+  {
+    "team_name": "Eastern Michigan",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "EMICH",
+    "cfdb_name": "Eastern Michigan",
+    "pp_id": "94"
+  },
+  {
+    "team_name": "Kent State",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "KENTST",
+    "cfdb_name": "Kent State",
+    "pp_id": "95"
+  },
+  {
+    "team_name": "Massachusetts",
+    "conference": "FBS Independent",
+    "cbs_sports_icon": "UMASS",
+    "cfdb_name": "Massachusetts",
+    "pp_id": "96"
+  },
+  {
+    "team_name": "Miami (OH)",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "MIAOH",
+    "cfdb_name": "Miami (OH)",
+    "pp_id": "97"
+  },
+  {
+    "team_name": "Northern Illinois",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "NILL",
+    "cfdb_name": "Northern Illinois",
+    "pp_id": "98"
+  },
+  {
+    "team_name": "Ohio",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "OHIO",
+    "cfdb_name": "Ohio",
+    "pp_id": "99"
+  },
+  {
+    "team_name": "Toledo",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "TOLEDO",
+    "cfdb_name": "Toledo",
+    "pp_id": "100"
+  },
+  {
+    "team_name": "Western Michigan",
+    "conference": "Mid-American",
+    "cbs_sports_icon": "WMICH",
+    "cfdb_name": "Western Michigan",
+    "pp_id": "101"
+  },
+  {
+    "team_name": "Air Force",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "AF",
+    "cfdb_name": "Air Force",
+    "pp_id": "102"
+  },
+  {
+    "team_name": "Boise State",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "BOISE",
+    "cfdb_name": "Boise State",
+    "pp_id": "103"
+  },
+  {
+    "team_name": "Colorado State",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "COLOST",
+    "cfdb_name": "Colorado State",
+    "pp_id": "104"
+  },
+  {
+    "team_name": "Fresno State",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "FRESNO",
+    "cfdb_name": "Fresno State",
+    "pp_id": "105"
+  },
+  {
+    "team_name": "Hawaii",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "HAWAII",
+    "cfdb_name": "Hawai'i",
+    "pp_id": "106"
+  },
+  {
+    "team_name": "Nevada",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "NEVADA",
+    "cfdb_name": "Nevada",
+    "pp_id": "107"
+  },
+  {
+    "team_name": "New Mexico",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "NMEX",
+    "cfdb_name": "New Mexico",
+    "pp_id": "108"
+  },
+  {
+    "team_name": "San Diego State",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "SDGST",
+    "cfdb_name": "San Diego State",
+    "pp_id": "109"
+  },
+  {
+    "team_name": "San Jose State",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "SJST",
+    "cfdb_name": "San Jose State",
+    "pp_id": "110"
+  },
+  {
+    "team_name": "UNLV",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "UNLV",
+    "cfdb_name": "UNLV",
+    "pp_id": "111"
+  },
+  {
+    "team_name": "Utah State",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "UTAHST",
+    "cfdb_name": "Utah State",
+    "pp_id": "112"
+  },
+  {
+    "team_name": "Wyoming",
+    "conference": "Mountain West",
+    "cbs_sports_icon": "WYO",
+    "cfdb_name": "Wyoming",
+    "pp_id": "113"
+  },
+  {
+    "team_name": "App State",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "APPST",
+    "cfdb_name": "Appalachian State",
+    "pp_id": "114"
+  },
+  {
+    "team_name": "Arkansas State",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "ARKST",
+    "cfdb_name": "Arkansas State",
+    "pp_id": "115"
+  },
+  {
+    "team_name": "Georgia Southern",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "GASOU",
+    "cfdb_name": "Georgia Southern",
+    "pp_id": "116"
+  },
+  {
+    "team_name": "Georgia State",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "GAST",
+    "cfdb_name": "Georgia State",
+    "pp_id": "117"
+  },
+  {
+    "team_name": "Liberty",
+    "conference": "CUSA",
+    "cbs_sports_icon": "LIB",
+    "cfdb_name": "Liberty",
+    "pp_id": "118"
+  },
+  {
+    "team_name": "Louisiana",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "LALAF",
+    "cfdb_name": "Louisiana",
+    "pp_id": "119"
+  },
+  {
+    "team_name": "UL Monroe",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "LAMON",
+    "cfdb_name": "Louisiana Monroe",
+    "pp_id": "120"
+  },
+  {
+    "team_name": "New Mexico State",
+    "conference": "CUSA",
+    "cbs_sports_icon": "NMEXST",
+    "cfdb_name": "New Mexico State",
+    "pp_id": "121"
+  },
+  {
+    "team_name": "South Alabama",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "SALAB",
+    "cfdb_name": "South Alabama",
+    "pp_id": "122"
+  },
+  {
+    "team_name": "Texas State",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "TXSTSM",
+    "cfdb_name": "Texas State",
+    "pp_id": "123"
+  },
+  {
+    "team_name": "Troy",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "TROY",
+    "cfdb_name": "Troy",
+    "pp_id": "124"
+  },
+  {
+    "team_name": "Army",
+    "conference": "AAC",
+    "cbs_sports_icon": "ARMY",
+    "cfdb_name": "Army",
+    "pp_id": "125"
+  },
+  {
+    "team_name": "BYU",
+    "conference": "B12",
+    "cbs_sports_icon": "BYU",
+    "cfdb_name": "BYU",
+    "pp_id": "126"
+  },
+  {
+    "team_name": "Navy",
+    "conference": "AAC",
+    "cbs_sports_icon": "NAVY",
+    "cfdb_name": "Navy",
+    "pp_id": "127"
+  },
+  {
+    "team_name": "Notre Dame",
+    "conference": "FBS Independent",
+    "cbs_sports_icon": "ND",
+    "cfdb_name": "Notre Dame",
+    "pp_id": "128"
+  },
+  {
+    "team_name": "UAB",
+    "conference": "AAC",
+    "cbs_sports_icon": "UAB",
+    "cfdb_name": "UAB",
+    "pp_id": "129"
+  },
+  {
+    "team_name": "Coastal Carolina",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "CSTCAR",
+    "cfdb_name": "Coastal Carolina",
+    "pp_id": "130"
+  },
+  {
+    "team_name": "James Madison",
+    "conference": "Sun Belt",
+    "cbs_sports_icon": "JMAD",
+    "cfdb_name": "James Madison",
+    "pp_id": "131"
+  },
+  {
+    "team_name": "Sam Houston",
+    "conference": "CUSA",
+    "cbs_sports_icon": "SAMHOU",
+    "cfdb_name": "Sam Houston",
+    "pp_id": "132"
+  },
+  {
+    "team_name": "Jacksonville State",
+    "conference": "CUSA",
+    "cbs_sports_icon": "JAXST",
+    "cfdb_name": "Jacksonville State",
+    "pp_id": "133"
+  },
+  {
+    "team_name": "Kennesaw State",
+    "conference": "CUSA",
+    "cbs_sports_icon": "KENSAW",
+    "cfdb_name": "Kennesaw State",
+    "pp_id": "134"
+  },
+  {
+    "team_name": "Deleware",
+    "conference": "CUSA",
+    "cbs_sports_icon": "DE",
+    "cfdb_name": "Deleware",
+    "pp_id": "135"
+  },
+  {
+    "team_name": "Missouri State",
+    "conference": "CUSA",
+    "cbs_sports_icon": "MOST",
+    "cfdb_name": "Missouri State",
+    "pp_id": "136"
+  },
+  {
+    "team_name": "1AA",
+    "conference": "",
+    "cbs_sports_icon": "NCAA",
+    "cfdb_name": "1AA",
+    "pp_id": "137"
+  }
+]
