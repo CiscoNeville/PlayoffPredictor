@@ -478,6 +478,85 @@ thead th {
 
 
 
-
-
+/* Styles used by the rating bias table */
+.style16 {
+	background:#C6EFCE;
+	color:#006100;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+}
+.style17 {
+  background:#FFEB9C;
+	color:#9C6500;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+}
+.style0 {
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	border:none;
+}
+.rating-biases-table td {
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	white-space:nowrap;
+}
+.xl65 {
+	color:#9C6500;
+	text-align:center;
+	background:#FFEB9C;
+}
+.xl68 {
+	font-weight:700;
+	text-align:center;
+}
+.xl70 {
+	font-size:10.0pt;
+	font-weight:700;
+	font-family:"Arial Unicode MS";
+	vertical-align:middle;
+}
+.xl71 {
+	color:#006100;
+	text-align:center;
+	border-top:none;
+	border-right:none;
+	border-bottom:1.0pt solid windowtext;
+	border-left:none;
+	background:#C6EFCE;
+}
+.xl72 {
+	text-align:center;
+}
+.xl73 {
+	text-align:center;
+}
+.xl74 {
+	font-size:18.0pt;
+	font-weight:700;
+	font-family:Sathu;
+}
 
